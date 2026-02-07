@@ -1,0 +1,25 @@
+---
+interface Props {
+  label?: string;
+  labelGold?: boolean;
+}
+
+const { label, labelGold = false } = Astro.props;
+---
+
+<div class="section-header">
+  {label && (
+    <p class:list={['label', { 'label-gold': labelGold }]}>{label}</p>
+  )}
+  <slot />
+</div>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .section-header .label {
+    margin-bottom: var(--space-xs);
+  }
+</style>

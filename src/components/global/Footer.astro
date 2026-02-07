@@ -1,0 +1,146 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer section-dark" role="contentinfo">
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <img
+        src="/images/codewizwit-logo.jpg"
+        alt="codewizwit logo: a block print hot dog"
+        class="footer-logo"
+        width="200"
+        height="138"
+        loading="lazy"
+      />
+      <p class="footer-tagline">No Human Left Behind.</p>
+      <p class="footer-sub">Technology, ethics, and humanity evolving together.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-col">
+        <h3 class="footer-heading">Explore</h3>
+        <ul role="list">
+          <li><a href="/about" class="footer-link">About</a></li>
+          <li><a href="/the-lift" class="footer-link">The Lift</a></li>
+          <li><a href="/writing" class="footer-link">Writing</a></li>
+          <li><a href="/the-hot-dog" class="footer-link">The Hot Dog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-heading">Connect</h3>
+        <ul role="list">
+          <li><a href="https://github.com/codewizwit" class="footer-link" rel="noopener noreferrer" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/akelstrom" class="footer-link" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+          <li><a href="https://codewizwit.medium.com" class="footer-link" rel="noopener noreferrer" target="_blank">Medium</a></li>
+          <li><a href="/rss.xml" class="footer-link">RSS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer-bottom container">
+    <p class="footer-copy">
+      &copy; {year} Alexandra Kelstrom. Build with care. Ship with purpose.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-lg);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid rgba(245, 243, 238, 0.1);
+  }
+
+  .footer-brand {
+    max-width: 24rem;
+  }
+
+  .footer-logo {
+    width: 160px;
+    height: auto;
+    opacity: 0.9;
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-tagline {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-cream);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .footer-sub {
+    font-size: var(--text-sm);
+    color: var(--color-gray);
+    line-height: 1.5;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: var(--space-2xl);
+  }
+
+  .footer-heading {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gray);
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+  }
+
+  .footer-link {
+    font-size: var(--text-sm);
+    color: var(--color-gray-light);
+    text-decoration: none;
+    transition: color var(--duration-fast);
+  }
+
+  .footer-link:hover {
+    color: var(--color-gold);
+  }
+
+  .footer-bottom {
+    padding-top: var(--space-md);
+  }
+
+  .footer-copy {
+    font-size: var(--text-xs);
+    color: var(--color-gray);
+  }
+
+  @media (max-width: 768px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .footer-nav {
+      gap: var(--space-xl);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+  }
+</style>

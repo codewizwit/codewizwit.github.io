@@ -1,0 +1,162 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="About"
+  description="Alexandra Kelstrom is a software engineer, responsible AI advocate, and the person behind codewizwit. From bartender to AI enablement leader, this is the story."
+>
+  <article class="about">
+    <!-- Hero -->
+    <section class="about-hero section-cream section" aria-labelledby="about-heading">
+      <div class="container container-narrow">
+        <p class="label">About</p>
+        <h1 id="about-heading" class="about-title">
+          The wizard who came in sideways.
+        </h1>
+        <p class="about-lede">
+          Software engineer, responsible AI advocate, and someone who believes
+          the most interesting paths are never straight lines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Act 1: The Story -->
+    <section class="section-cream section" aria-labelledby="act1-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">Act I</p>
+        <h2 id="act1-heading">The story</h2>
+        <div class="prose">
+          <p>
+            I grew up in six countries before settling in the US. Taiwan, Latvia,
+            Czech Republic, England, Scotland, Poland. My father scaled broadband
+            infrastructure across Europe and Asia. He built the connective tissue
+            that made the internet possible for millions.
+          </p>
+          <p>
+            I'm doing the same for AI: building the ethical and practical
+            frameworks that will determine whether it serves people or replaces them.
+          </p>
+          <p>
+            I studied Media and Design at DePaul University in Chicago. I
+            bartended for years. The service industry taught me empathy as an
+            operational skill: reading people, understanding needs, solving
+            problems in real-time. Those skills transferred to engineering more
+            directly than any CS lecture could.
+          </p>
+          <p>
+            Then COVID hit. I got furloughed. I invested my life savings in
+            the UPenn LPS Coding Bootcamp. I received my offer at Vanguard the
+            day I graduated.
+          </p>
+          <p>
+            That pivot wasn't reckless. It was a calculated bet on myself. And
+            it paid off.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Act 2: The Philosophy -->
+    <section class="section-dark section" aria-labelledby="act2-heading">
+      <div class="container container-narrow">
+        <p class="label" style="color: var(--color-gray-light);">Act II</p>
+        <h2 id="act2-heading" style="color: var(--color-cream);">The philosophy</h2>
+        <div class="prose" style="color: var(--color-gray-light);">
+          <p>
+            "No Human Left Behind" isn't a tagline. It's a tension I live with daily.
+          </p>
+          <p>
+            I love AI. I'm a power user. It's transformed how I work, what I
+            can build, how fast I can ship. I want others to experience that
+            acceleration.
+          </p>
+          <p>
+            And I'm deeply aware of the damage it can cause. To jobs, to
+            creativity, to human connection. I've struggled with this. It's
+            not resolved.
+          </p>
+          <p>
+            That tension is the engine. Not anti-AI doomerism. Not uncritical
+            hype. Something harder: using the thing I'm worried about,
+            responsibly, while helping others do the same.
+          </p>
+          <p>
+            As a Senior Software Engineer in AI Enablement at Vanguard, I
+            coach four teams on AI adoption, mentor junior engineers, and
+            drive culture with a responsible AI lens. The philosophy isn't
+            just a belief. It's operationalized. It's literally the job.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Act 3: Beyond the Code -->
+    <section class="section-cream section" aria-labelledby="act3-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">Act III</p>
+        <h2 id="act3-heading">Beyond the code</h2>
+        <div class="prose">
+          <p>
+            Music: everything spanning hip-hop to doo-wop. Food: I believe the
+            best conversations happen over good meals and the best ideas spark
+            from great snacks. Sci-fi: I read it to think about the future we're
+            building. Design: a DePaul Media and Design grad who brings visual
+            thinking to technical problems.
+          </p>
+          <p>
+            I bring structure to chaos, energy to meetings, and intention to
+            process improvements. Known for making teams stronger through
+            collaboration, not just code.
+          </p>
+          <p>
+            US and Czech Republic dual citizen. Chicago roots, Philadelphia home.
+            And yes, the hot dog is a whole thing. <a href="/the-hot-dog">There's a page for that.</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .about-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-lede {
+    font-size: var(--text-xl);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+  }
+
+  .about h2 {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  .about .prose a {
+    color: var(--color-gold-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-gold);
+  }
+
+  .about .prose a:hover {
+    color: var(--color-gold-hover);
+  }
+
+  .section-dark .prose a {
+    color: var(--color-gold);
+  }
+
+  .section-dark .prose a:hover {
+    color: var(--color-cream);
+  }
+</style>

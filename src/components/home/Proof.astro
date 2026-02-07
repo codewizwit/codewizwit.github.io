@@ -1,0 +1,158 @@
+---
+/**
+ * Proof section — speaking + projects.
+ * Clean typeset lists, scannable. Not cards.
+ */
+
+const speaking = [
+  {
+    event: 'AI Summit New York',
+    talk: 'Human-in-the-Loop: Responsible AI Engineering in Practice',
+    year: '2024',
+    note: 'Selected as Future AI Leader',
+  },
+  {
+    event: 'Vanguard IGNITE',
+    talk: 'Testing Strategies for Bias and Blindspots in AI Workflows',
+    year: '2026',
+    note: '',
+  },
+  {
+    event: 'AI Ethics Symposium, Baruch College',
+    talk: 'Invited panelist on AI & Employment',
+    year: '2026',
+    note: 'Cornell Tech co-organized',
+  },
+];
+
+const projects = [
+  {
+    name: 'Human-in-the-Loop CLI',
+    desc: 'Published npm package for responsible AI engineering with Claude',
+    link: 'https://www.npmjs.com/package/@human-in-the-loop/cli',
+  },
+  {
+    name: 'Dispatch №13 Series',
+    desc: 'Writing on responsible AI, developer experience, and human-centered technology',
+    link: '/writing',
+  },
+  {
+    name: 'Awesome AI Registry',
+    desc: 'Governed CI/CD pipeline validating AI tools against responsible AI standards',
+    link: null,
+  },
+];
+---
+
+<section class="proof section-cream section" aria-labelledby="proof-heading">
+  <div class="container">
+    <div class="proof-grid">
+      <!-- Speaking -->
+      <div class="proof-col reveal">
+        <p class="label">Speaking</p>
+        <h2 id="proof-heading" class="proof-heading">On stages</h2>
+        <ul class="proof-list" role="list">
+          {speaking.map(({ event, talk, year, note }) => (
+            <li class="proof-item">
+              <div class="proof-item-header">
+                <span class="proof-event">{event}</span>
+                <span class="proof-year">{year}</span>
+              </div>
+              <p class="proof-talk">{talk}</p>
+              {note && <p class="proof-note">{note}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Projects -->
+      <div class="proof-col reveal">
+        <p class="label">Projects</p>
+        <h3 class="proof-heading">Shipped work</h3>
+        <ul class="proof-list" role="list">
+          {projects.map(({ name, desc, link }) => (
+            <li class="proof-item">
+              {link ? (
+                <a href={link} class="proof-event link" target={link.startsWith('http') ? '_blank' : undefined} rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}>{name}</a>
+              ) : (
+                <span class="proof-event">{name}</span>
+              )}
+              <p class="proof-talk">{desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .proof-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  .proof-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .proof-item {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .proof-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .proof-item-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-3xs);
+  }
+
+  .proof-event {
+    font-weight: 600;
+    font-size: var(--text-base);
+  }
+
+  .proof-year {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-family: var(--font-code);
+    flex-shrink: 0;
+  }
+
+  .proof-talk {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .proof-note {
+    font-size: var(--text-xs);
+    color: var(--color-gold-dark);
+    margin-top: var(--space-3xs);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .proof-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+  }
+</style>

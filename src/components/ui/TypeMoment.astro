@@ -1,0 +1,54 @@
+---
+/**
+ * Full-width one-liner with generous padding.
+ * Used for powerful standalone statements.
+ */
+interface Props {
+  theme?: 'cream' | 'dark' | 'gold';
+}
+
+const { theme = 'cream' } = Astro.props;
+---
+
+<div class:list={['type-moment', `type-moment-${theme}`]}>
+  <div class="container">
+    <p class="type-moment-text">
+      <slot />
+    </p>
+  </div>
+</div>
+
+<style>
+  .type-moment {
+    padding-block: var(--space-2xl);
+  }
+
+  .type-moment-cream {
+    background-color: var(--color-cream);
+  }
+
+  .type-moment-dark {
+    background-color: var(--color-black);
+  }
+
+  .type-moment-gold {
+    background-color: var(--color-gold);
+  }
+
+  .type-moment-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    max-width: var(--max-width-prose);
+  }
+
+  .type-moment-dark .type-moment-text {
+    color: var(--color-cream);
+  }
+
+  .type-moment-gold .type-moment-text {
+    color: var(--color-black);
+  }
+</style>

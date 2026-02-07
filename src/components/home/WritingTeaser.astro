@@ -1,0 +1,124 @@
+---
+/**
+ * Writing section — latest articles.
+ * Hardcoded for v1 (2 articles), will pull from collection later.
+ */
+
+const articles = [
+  {
+    type: 'Dispatch',
+    number: 13,
+    title: 'AI Is the Hot Dog, Infrastructure Is the Bun',
+    description: 'Everyone wants the hot dog. Nobody thought about the bun. How developers can build the responsible AI infrastructure that doesn\'t exist yet.',
+    href: '/writing/dispatch-13-ai-mandate',
+    date: '2025',
+  },
+  {
+    type: 'Field Note',
+    number: 1,
+    title: 'This Meeting Could Have Been a Skill File',
+    description: 'How to stop debating standards and start shipping them. Turn your team\'s implicit knowledge into automated guidance.',
+    href: '/writing/field-note-1-skill-files',
+    date: '2025',
+  },
+];
+---
+
+<section class="writing-teaser section-cream section" aria-labelledby="writing-heading">
+  <div class="container">
+    <p class="label reveal">Writing</p>
+    <h2 id="writing-heading" class="writing-teaser-heading reveal">
+      Signals from where technology and humanity collide.
+    </h2>
+
+    <div class="articles-list">
+      {articles.map(({ type, number, title, description, href, date }) => (
+        <a href={href} class="article-card reveal">
+          <div class="article-meta">
+            <span class="article-type">{type} №{number}</span>
+            <span class="article-date">{date}</span>
+          </div>
+          <h3 class="article-title">{title}</h3>
+          <p class="article-desc">{description}</p>
+        </a>
+      ))}
+    </div>
+
+    <a href="/writing" class="writing-link link">
+      All writing
+    </a>
+  </div>
+</section>
+
+<style>
+  .writing-teaser-heading {
+    font-size: var(--text-3xl);
+    max-width: 30rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    max-width: var(--max-width-prose);
+  }
+
+  .article-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: var(--space-md);
+    border: 1px solid var(--color-gray-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--duration-fast),
+                transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+  }
+
+  .article-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .article-type {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold-dark);
+  }
+
+  .article-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .article-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .article-desc {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .writing-link {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+</style>

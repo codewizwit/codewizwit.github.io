@@ -1,0 +1,174 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const talks = [
+  {
+    event: 'AI Summit New York',
+    title: 'Human-in-the-Loop: Responsible AI Engineering in Practice',
+    year: '2024',
+    status: 'Delivered',
+    note: 'Selected as Future AI Leader. $2,500 ticket comped.',
+    link: 'https://codewizwit.github.io/human-in-the-loop/',
+  },
+  {
+    event: 'Vanguard IGNITE',
+    title: 'Testing Strategies for Bias and Blindspots in AI Workflows',
+    year: '2026',
+    status: 'Upcoming',
+    note: 'Applied and accepted.',
+    link: null,
+  },
+  {
+    event: 'AI Ethics Symposium, Baruch College',
+    title: 'Invited panelist: AI & Employment',
+    year: '2026',
+    status: 'Upcoming',
+    note: 'Invited by Prof. Yafit Lev-Aretz (Baruch/Cornell Tech). Lodging and travel covered.',
+    link: null,
+  },
+];
+---
+
+<PageLayout
+  title="Speaking"
+  description="Conference talks, panels, and presentations by Alexandra Kelstrom on responsible AI, developer experience, and human-centered technology."
+>
+  <section class="speaking section-cream section" aria-labelledby="speaking-heading">
+    <div class="container">
+      <p class="label label-gold">Speaking</p>
+      <h1 id="speaking-heading" class="speaking-title">On stages.</h1>
+      <p class="speaking-lede">
+        Talks on responsible AI engineering, bias testing, and building
+        technology that keeps humans in the loop.
+      </p>
+
+      <div class="talks-list">
+        {talks.map(({ event, title, year, status, note, link }) => (
+          <article class="talk-item">
+            <div class="talk-header">
+              <div>
+                <h2 class="talk-event">{event}</h2>
+                <p class="talk-title">{title}</p>
+              </div>
+              <div class="talk-meta">
+                <span class="talk-year">{year}</span>
+                <span class:list={['talk-status', { upcoming: status === 'Upcoming' }]}>
+                  {status}
+                </span>
+              </div>
+            </div>
+            <p class="talk-note">{note}</p>
+            {link && (
+              <a href={link} class="talk-link link" target="_blank" rel="noopener noreferrer">
+                View presentation
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .speaking-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .speaking-lede {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  .talks-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 48rem;
+  }
+
+  .talk-item {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .talk-item:last-child {
+    border-bottom: none;
+  }
+
+  .talk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .talk-event {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3xs);
+  }
+
+  .talk-title {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+  }
+
+  .talk-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-3xs);
+    flex-shrink: 0;
+  }
+
+  .talk-year {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .talk-status {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-secondary);
+  }
+
+  .talk-status.upcoming {
+    color: var(--color-gold-dark);
+  }
+
+  .talk-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .talk-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .talk-header {
+      flex-direction: column;
+      gap: var(--space-2xs);
+    }
+
+    .talk-meta {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+  }
+</style>

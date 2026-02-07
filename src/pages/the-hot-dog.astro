@@ -1,0 +1,154 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="The Hot Dog"
+  description="A hot dog is more than a quirky logo. It's a symbol of nostalgia, connection, creativity, and continuity. The origin story of the codewizwit mark."
+>
+  <article class="hot-dog">
+    <!-- Hero -->
+    <section class="hot-dog-hero section-cream section" aria-labelledby="hd-heading">
+      <div class="container hot-dog-hero-inner">
+        <img
+          src="/images/codewizwit-logo.jpg"
+          alt="codewizwit logo: a block print style hot dog illustration, rendered with visible grain texture"
+          class="hot-dog-logo"
+          width="400"
+          height="276"
+          loading="eager"
+        />
+        <div>
+          <p class="label label-gold">The Symbol</p>
+          <h1 id="hd-heading" class="hot-dog-title">The Hot Dog</h1>
+          <p class="hot-dog-lede">
+            A symbol of human connection that's followed me my entire life.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Story -->
+    <section class="section-cream section-sm" aria-labelledby="hd-story">
+      <div class="container container-narrow">
+        <h2 id="hd-story" class="sr-only">The story</h2>
+        <div class="prose">
+          <p>
+            Some of my earliest memories are of sharing Chicago dogs with my
+            dad at Gene &amp; Jude's. No ketchup allowed. Small moments that
+            taught me how the simplest things can hold the most meaning.
+          </p>
+          <p>
+            Years later, that same symbol showed up again when I hand-carved a
+            hot dog block print for my college capstone project at DePaul. A
+            physical artifact made with ink, pressure, and patience.
+          </p>
+          <p>
+            The version you see now is an AI-simplified rendering of a photo
+            of that original print. A bridge between memory and technology,
+            past and future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Meta-Proof -->
+    <section class="section-dark section" aria-labelledby="hd-proof">
+      <div class="container container-narrow">
+        <h2 id="hd-proof" class="hot-dog-section-heading" style="color: var(--color-cream);">
+          The meta-proof
+        </h2>
+        <div class="prose" style="color: var(--color-gray-light);">
+          <p>
+            Think about it. The simplest human connection (a father and
+            daughter sharing a hot dog) became a hand-carved print, which
+            became a photograph, which became an AI-rendered logo. The meaning
+            didn't get lost. It got amplified.
+          </p>
+          <p>
+            That's the whole thesis in one image. AI can refine creativity.
+            It can carry a symbol forward. But the spark, the story, the
+            meaning? That part is irreplaceably human.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="section-cream section" aria-labelledby="hd-close">
+      <div class="container container-narrow text-center">
+        <h2 id="hd-close" class="hot-dog-closing">
+          More AI. More human.
+        </h2>
+        <p class="hot-dog-closing-sub">
+          That hot dog is more than a quirky logo. It's a reminder of where I
+          come from, what I care about, and the future I want to help build.
+        </p>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .hot-dog-hero-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .hot-dog-logo {
+    width: clamp(200px, 30vw, 360px);
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .hot-dog-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hot-dog-lede {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    max-width: 28rem;
+  }
+
+  .hot-dog-section-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .hot-dog-closing {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hot-dog-closing-sub {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: var(--max-width-prose);
+    margin-inline: auto;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .hot-dog-hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hot-dog-logo {
+      margin-inline: auto;
+    }
+
+    .hot-dog-lede {
+      margin-inline: auto;
+    }
+  }
+</style>

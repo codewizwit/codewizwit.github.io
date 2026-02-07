@@ -1,0 +1,177 @@
+---
+title: "AI Is the Hot Dog, Infrastructure Is the Bun"
+description: "Everyone wants the hot dog. Nobody thought about the bun. How developers can build the responsible AI infrastructure that doesn't exist yet."
+type: dispatch
+number: 13
+publishDate: 2025-01-15
+tags: ["responsible-ai", "infrastructure", "developer-culture", "ai-ethics"]
+draft: false
+---
+
+You've probably seen the meme.
+
+"What do we want?"
+
+"AI!"
+
+"AI to do what?"
+
+"We don't know!"
+
+"When do we want it?"
+
+"Right now!"
+
+It's funny because it's accurate. Everyone wants the hot dog. Nobody thought about the bun.
+
+AI is happening. We're using it. We're shipping it. There's no turning back. But here's the thing: AI without infrastructure is like a hot dog without a bun. Sure, you can technically eat it. But it's messy, hard to handle, and you're probably going to regret it.
+
+The question isn't whether we use AI. The question is whether we build the infrastructure to hold it together. And developers are uniquely positioned to solve this.
+
+We're the ones integrating AI into production systems. We're the ones writing the code, running the tests, and deploying to prod. Which means we're the ones who can build the infrastructure to make AI safe, reliable, and scalable.
+
+This dispatch is about that opportunity. AI is here. Let's help build it right.
+
+---
+
+## The Gap We Can Fill
+
+Right now, AI is being integrated into production systems faster than the tooling can keep up. LLMs generating code. Models making recommendations. AI triaging tickets, writing tests, summarizing data.
+
+And most teams are figuring out testing, monitoring, and deployment patterns as they go.
+
+There's no standard yet for testing AI behavior. No established patterns for versioning prompts or managing context. No common frameworks for detecting when a model starts drifting. No agreed-upon way to make decisions traceable.
+
+We're all learning. And that creates an opportunity.
+
+Developers can build the infrastructure that doesn't exist yet. We can take what we're learning on our teams and turn it into reusable tools, shared libraries, good documentation, best practices, and common patterns that make responsible AI the default.
+
+This is the work. And it's work that extends our craft.
+
+---
+
+## Using AI to Extend Craft Instead of Replace It
+
+Here's the interesting part: we can use AI to help us build the infrastructure we need to use AI responsibly.
+
+AI is brilliant at tasks that don't drain the joy or creativity from engineering: generating boilerplate test cases, scaffolding monitoring dashboards, writing documentation for deployment patterns, or surfacing edge cases we might not have considered.
+
+When I use AI to write code, I treat it like pair programming with a junior engineer. AI suggests. I review, refine, and take ownership. By the time I'm done, that code is fully mine. I understand every line. I've tested it. I can explain it.
+
+That's how AI extends craft. It handles the repetitive scaffolding so I can focus on the interesting problems: architecture, edge cases, trade-offs, and design decisions.
+
+The key is intent. Use AI to accelerate execution, not to offload judgment. Use it to augment your thinking, not to outsource it. And always own the output.
+
+---
+
+## The Infrastructure We Have the Opportunity to Build
+
+So what does responsible AI infrastructure look like? It's the same engineering discipline we bring to any critical system, adapted for AI's unique challenges.
+
+**Testing frameworks that catch AI-specific failures.**
+
+Unit tests aren't enough for AI. We need tests for bias, fairness, and edge cases. Tests that validate model outputs against expected behavior. Regression tests that catch drift. Frameworks that make it as easy to test AI as it is to test traditional code.
+
+Some teams are already building these. The opportunity is to standardize and share them.
+
+**Versioning and rollback strategies for models and prompts.**
+
+Prompts should be versioned like code. Every change tracked. Every deployment tagged. Rollbacks should be trivial.
+
+Right now, most teams are inventing these patterns from scratch. We have a chance to make them standard.
+
+**Monitoring and observability for model behavior.**
+
+Log inputs and outputs. Track latency and error rates. Monitor for drift, anomalies, and unexpected patterns. Set up alerts when behavior changes.
+
+If we can see what our AI is doing in production, we can fix it when things go wrong.
+
+**Human-in-the-loop checkpoints for high-stakes decisions.**
+
+AI suggests. Humans decide. Build approval workflows. Create review gates. Make it easy to override or reject AI outputs.
+
+This keeps humans accountable and in control. And it's a pattern we can standardize.
+
+**Audit trails that make decisions traceable.**
+
+Who approved this model? Who deployed this prompt? Who signed off on this decision? Build systems that answer those questions.
+
+This is infrastructure. And it's the unsexy work that makes AI safe to ship.
+
+---
+
+## Building Infrastructure Is an Opportunity
+
+Here's the mindset shift: building responsible AI infrastructure isn't a burden. It's a career opportunity.
+
+Right now, responsible AI engineering is an emerging field. Most teams don't have standardized patterns yet. Most companies are still figuring out testing, monitoring, and deployment strategies.
+
+That means developers who build this infrastructure are solving novel problems. Building new tools. Defining best practices. Contributing to open source. Writing the playbooks that other teams will follow.
+
+This is valuable work. Work that makes you a better engineer. Work that positions you as a leader. Work that lets you shape how an entire industry builds AI.
+
+And it's work that lets us innovate faster. Less time reinventing the wheel. More time building features. And we do it more safely because the guardrails are baked in.
+
+Developers who build responsible AI infrastructure aren't slowing things down. We're making it possible to move fast without breaking things.
+
+---
+
+## What This Looks Like in Practice
+
+Let's get concrete. Here's what responsible AI infrastructure could look like on your team:
+
+You ship an AI feature. Before it goes to production, it runs through a standardized test suite: unit tests for logic, integration tests for the model API, bias tests for fairness, and regression tests for drift. All automated. All part of CI/CD.
+
+You version your prompts the same way you version code. Every change is tracked. Every deployment is tagged. If something breaks, you roll back to the last known good version in minutes.
+
+You have dashboards that show model behavior in real time. Input distribution. Output patterns. Latency. Error rates. Alerts fire if anything looks off. You catch drift before users do.
+
+High-stakes decisions go through a human review process. AI suggests. A human approves. The approval is logged. If something goes wrong, you know exactly who signed off and why.
+
+When questions come up, you have answers. Audit logs. Version history. Test results. Decision trails. Everything documented. Everything traceable.
+
+This is just good engineering. And it's what we have the opportunity to build.
+
+---
+
+## Tips for Getting Started
+
+If you're ready to start building responsible AI infrastructure on your team, here's where to begin:
+
+**Start with testing.** Add bias tests to your test suite. Write regression tests that catch when model behavior changes. Build libraries that make AI testing as easy as unit testing.
+
+**Version everything.** Treat prompts like code. Track changes. Tag deployments. Make rollbacks easy.
+
+**Add observability.** Log model inputs and outputs. Set up dashboards. Monitor for drift and anomalies.
+
+**Build human-in-the-loop patterns.** For high-stakes decisions, require human approval. Make it easy to override AI.
+
+**Document what works.** Share patterns with your team. Write runbooks. Build institutional knowledge.
+
+**Use AI to help.** Let AI generate test scaffolding, write documentation, and suggest monitoring patterns. Then review, refine, and own it.
+
+**Advocate for time to build infrastructure.** Make the case that building responsibly is faster in the long run than cleaning up problems later.
+
+This is how we help solve this. By building the systems that let us innovate without sacrificing quality or accountability.
+
+---
+
+## The Future We Get to Build
+
+AI is here. We're using it. And we have a choice in how we build it.
+
+We can keep inventing solutions in isolation, or we can work together to build the infrastructure, standards, and tools that make responsible AI the norm.
+
+Developers have the skills and the opportunity to lead this. By building testing frameworks. By standardizing deployment patterns. By creating tooling that makes it easy to do the right thing. By using AI to extend our craft, not replace it.
+
+This is how we make sure technology serves people. This is how we build systems that scale responsibly.
+
+And this is how we make sure No Human Is Left Behind.
+
+---
+
+*Written from Philadelphia, PA, USA. A signal for those building a future where progress and humanity move forward together.*
+
+**No Human Left Behind.**
+
+*Alexandra Kelstrom* · [@codewizwit](https://github.com/codewizwit)

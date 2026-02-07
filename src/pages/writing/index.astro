@@ -1,0 +1,233 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allWriting = await getCollection('writing', ({ data }) => !data.draft);
+const sortedWriting = allWriting.sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+const typeLabels: Record<string, string> = {
+  'dispatch': 'Dispatch',
+  'field-note': 'Field Note',
+  'side-piece': 'Side Piece',
+  'case-study': 'Case Study',
+  'think-piece': 'Think Piece',
+};
+
+const types = ['all', ...Object.keys(typeLabels)] as const;
+---
+
+<PageLayout
+  title="Writing"
+  description="Dispatches, Field Notes, and more from codewizwit. Writing on responsible AI, developer experience, and human-centered technology."
+>
+  <section class="writing-page section-cream section" aria-labelledby="writing-heading">
+    <div class="container">
+      <p class="label label-gold">Writing</p>
+      <h1 id="writing-heading" class="writing-title">
+        Signals from the field.
+      </h1>
+      <p class="writing-lede">
+        Dispatches on responsible AI, field notes on developer tools, and
+        reflections on building technology that serves people.
+      </p>
+
+      <!-- Filters -->
+      <nav class="writing-filters" aria-label="Filter articles by type">
+        {types.map((t) => (
+          <button
+            class:list={['filter-btn', { active: t === 'all' }]}
+            data-filter={t}
+            aria-pressed={t === 'all' ? 'true' : 'false'}
+          >
+            {t === 'all' ? 'All' : typeLabels[t]}
+          </button>
+        ))}
+      </nav>
+
+      <!-- Articles -->
+      <div class="writing-list">
+        {sortedWriting.map((article) => {
+          const { title, description, type, number, publishDate } = article.data;
+          const formattedDate = publishDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+          });
+          return (
+            <a
+              href={`/writing/${article.id}`}
+              class="writing-card"
+              data-type={type}
+            >
+              <div class="writing-card-meta">
+                <span class="writing-card-type">{typeLabels[type]} №{number}</span>
+                <time datetime={publishDate.toISOString()} class="writing-card-date">
+                  {formattedDate}
+                </time>
+              </div>
+              <h2 class="writing-card-title">{title}</h2>
+              <p class="writing-card-desc">{description}</p>
+            </a>
+          );
+        })}
+      </div>
+
+      <p class="writing-empty" hidden>No articles match this filter.</p>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .writing-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .writing-lede {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ---- Filters ---- */
+
+  .writing-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    margin-bottom: var(--space-lg);
+  }
+
+  .filter-btn {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 100px;
+    padding: 0.4em 1.2em;
+    cursor: pointer;
+    transition: color var(--duration-fast),
+                background-color var(--duration-fast),
+                border-color var(--duration-fast);
+  }
+
+  .filter-btn:hover {
+    color: var(--color-text);
+    border-color: var(--color-text);
+  }
+
+  .filter-btn.active {
+    color: var(--color-cream);
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+  }
+
+  /* ---- Article Cards ---- */
+
+  .writing-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    max-width: var(--max-width-prose);
+  }
+
+  .writing-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding: var(--space-md);
+    border: 1px solid var(--color-gray-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--duration-fast),
+                transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+  }
+
+  .writing-card:hover {
+    border-color: var(--color-gold);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .writing-card[hidden] {
+    display: none;
+  }
+
+  .writing-card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .writing-card-type {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold-dark);
+  }
+
+  .writing-card-date {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .writing-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .writing-card-desc {
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+  }
+
+  .writing-empty {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    padding: var(--space-xl) 0;
+  }
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const cards = document.querySelectorAll<HTMLAnchorElement>('.writing-card');
+  const emptyMsg = document.querySelector('.writing-empty');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+
+      // Update active states
+      buttons.forEach((b) => {
+        b.classList.toggle('active', b === btn);
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+
+      // Filter cards
+      let visibleCount = 0;
+      cards.forEach((card) => {
+        const show = filter === 'all' || card.dataset.type === filter;
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      // Empty state
+      if (emptyMsg) {
+        emptyMsg.hidden = visibleCount > 0;
+      }
+    });
+  });
+</script>

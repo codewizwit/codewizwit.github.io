@@ -1,0 +1,163 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const projects = [
+  {
+    name: 'Human-in-the-Loop CLI',
+    desc: 'Published npm package providing AI toolkit for Claude prompts with quality controls, standardization framework, and responsible AI guidelines. Built with Claude, using a human-in-the-loop process, to help other developers stay human-in-the-loop.',
+    tech: ['TypeScript', 'Node.js', 'npm'],
+    links: [
+      { label: 'npm', href: 'https://www.npmjs.com/package/@human-in-the-loop/cli' },
+      { label: 'Presentation', href: 'https://codewizwit.github.io/human-in-the-loop/' },
+    ],
+  },
+  {
+    name: 'Awesome AI Registry',
+    desc: 'Governed registry of AI tools and prompts with CI checks for documentation quality, developer trust, and ethical impact. Governance pipeline validates submissions through automated checks. Claude is used only for responsible AI assessment; all other validation is pure TypeScript.',
+    tech: ['TypeScript', 'GitHub Actions', 'AWS Bedrock'],
+    links: [],
+  },
+  {
+    name: 'Dispatch №13 Series',
+    desc: 'Ongoing writing series on Medium exploring responsible AI and design ethics. Dispatches are the big essays. Field Notes are practical guides. Side Pieces are personal reflections. Each connects the technical with the human.',
+    tech: ['Writing', 'Medium'],
+    links: [
+      { label: 'Read on Medium', href: 'https://codewizwit.medium.com' },
+      { label: 'Read on site', href: '/writing' },
+    ],
+  },
+  {
+    name: 'Curiosity Documentation',
+    desc: 'Five years of "How Does This Actually Work?" — a GitHub repository documenting the learning journey from bootcamp to production engineer. Angular, TypeScript, MongoDB, AWS, testing, and even ancient pyramids.',
+    tech: ['Markdown', 'GitHub'],
+    links: [
+      { label: 'GitHub', href: 'https://github.com/codewizwit' },
+    ],
+  },
+];
+---
+
+<PageLayout
+  title="Projects"
+  description="Shipped work by Alexandra Kelstrom. Tools, writing, and open source contributions in responsible AI and developer experience."
+>
+  <section class="projects section-cream section" aria-labelledby="projects-heading">
+    <div class="container">
+      <p class="label label-gold">Projects</p>
+      <h1 id="projects-heading" class="projects-title">Shipped work.</h1>
+      <p class="projects-lede">
+        Tools, writing, and frameworks. Built to prove the philosophy works.
+      </p>
+
+      <div class="projects-list">
+        {projects.map(({ name, desc, tech, links }) => (
+          <article class="project-item">
+            <h2 class="project-name">{name}</h2>
+            <p class="project-desc">{desc}</p>
+            <div class="project-footer">
+              <div class="project-tech">
+                {tech.map((t) => (
+                  <span class="project-tech-tag">{t}</span>
+                ))}
+              </div>
+              {links.length > 0 && (
+                <div class="project-links">
+                  {links.map(({ label, href }) => (
+                    <a
+                      href={href}
+                      class="link"
+                      target={href.startsWith('http') ? '_blank' : undefined}
+                      rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    >
+                      {label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .projects-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .projects-lede {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 48rem;
+  }
+
+  .project-item {
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .project-item:last-child {
+    border-bottom: none;
+  }
+
+  .project-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .project-desc {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+  }
+
+  .project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .project-tech {
+    display: flex;
+    gap: var(--space-2xs);
+    flex-wrap: wrap;
+  }
+
+  .project-tech-tag {
+    font-size: var(--text-xs);
+    font-family: var(--font-code);
+    color: var(--color-text-muted);
+    padding: 0.2em 0.6em;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 100px;
+  }
+
+  .project-links {
+    display: flex;
+    gap: var(--space-sm);
+  }
+
+  .project-links .link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,509 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+
+const phases = [
+  {
+    number: 0,
+    name: 'Trust',
+    summary: 'Before anything else. Address the fear directly. Build psychological safety. This phase is often skipped, and that\'s why adoption fails.',
+    building: 'Permission to try',
+  },
+  {
+    number: 1,
+    name: 'Discovery',
+    summary: 'Meet teams where they are. Learn how they work today. Identify pain points and find the early adopters and the skeptics.',
+    building: 'Understanding and buy-in',
+  },
+  {
+    number: 2,
+    name: 'Standards',
+    summary: 'Collaborative workshops where teams define their own rules. Quality bar is defined by the team, not imposed. AI captures and encodes these standards.',
+    building: 'Shared ownership of quality',
+  },
+  {
+    number: 3,
+    name: 'Infrastructure',
+    summary: 'The foundation that makes everything else possible. Static testing, CI/CD pipelines, architecture patterns, governance structures.',
+    building: 'The safety net',
+  },
+  {
+    number: 4,
+    name: 'Encoding Intent',
+    summary: 'Teams learn to create blueprints AI can build from. Configs, guardrails, planning prompts. Engineers shift from writing code to defining structure.',
+    building: 'The environment for AI to succeed',
+  },
+  {
+    number: 5,
+    name: 'The Table',
+    summary: 'Hands-on collaboration. Devs, product, design, domain experts building together. Ideas move from concept to working prototype fast.',
+    building: 'A new way of working together',
+  },
+  {
+    number: 6,
+    name: 'Scale',
+    summary: 'The model spreads because it works. Teams teach teams. Internal champions emerge. The model becomes the culture.',
+    building: 'Sustainable transformation',
+  },
+];
+
+const roles = [
+  {
+    title: 'Enablers',
+    who: 'Engineers, tech leads, AI champions',
+    does: 'Build the environment: configs, guardrails, infrastructure. Create the space where others can build.',
+    shift: 'From gatekeeper to enabler',
+    human: 'Mentorship matters more. Seniors teach judgment, architecture, and intent.',
+  },
+  {
+    title: 'Builders',
+    who: 'Anyone with ideas and domain expertise',
+    does: 'Build inside the environment. Prototype, test, iterate without waiting in line.',
+    shift: 'From requester to creator',
+    human: 'Domain expertise finally gets a seat at the table. Ideas don\'t die in backlogs.',
+  },
+  {
+    title: 'Advocates',
+    who: 'Test practitioners, quality engineers',
+    does: 'Ensure what gets built is trustworthy. Test for quality, security, bias, fairness.',
+    shift: 'From checkers to architects of quality',
+    human: 'Critical thinking becomes essential. Catching what AI misses is more valuable than ever.',
+  },
+  {
+    title: 'Facilitators',
+    who: 'Team leads, coaches, trained practitioners',
+    does: 'Run The Table. Keep collaboration flowing. Make sure every voice is heard.',
+    shift: 'From project manager to collaboration architect',
+    human: 'Empathy and communication become core technical skills.',
+  },
+];
+
+const shifts = [
+  { before: 'Engineers write code', after: 'Engineers build blueprints' },
+  { before: 'AI assists', after: 'AI executes from the blueprint' },
+  { before: 'Value = lines of code', after: 'Value = ideas, structure, judgment' },
+  { before: 'Junior devs do grunt work', after: 'Junior devs learn to think, challenge, design' },
+  { before: 'Quality is tested after', after: 'Quality is encoded before' },
+  { before: 'Trust is assumed', after: 'Trust is built through transparency' },
+  { before: 'Only technical people build', after: 'Everyone builds inside the environment' },
+  { before: 'Handoffs between teams', after: 'Collaboration at The Table' },
+  { before: 'Agile sprints and pivots', after: 'Encode intent upfront, build fast' },
+];
+---
+
+<PageLayout
+  title="The Lift"
+  description="A framework for AI adoption that lifts everyone. Seven phases, four roles, and a methodology called Encoding Intent. No Human Left Behind."
+>
+  <article class="lift">
+    <!-- Hero -->
+    <section class="lift-hero section-cream section" aria-labelledby="lift-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">The Framework</p>
+        <h1 id="lift-heading" class="lift-title">The Lift</h1>
+        <p class="lift-lede">
+          AI adoption that lifts everyone. Not just the technical. Not just the
+          early adopters. Everyone.
+        </p>
+        <p class="lift-core">
+          Programming is a task. Software engineering is a role. AI can do the
+          task. Our job is still to solve the problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Shift Table -->
+    <section class="section-dark section" aria-labelledby="shift-heading">
+      <div class="container">
+        <p class="label" style="color: var(--color-gray-light);">The Shift</p>
+        <h2 id="shift-heading" style="color: var(--color-cream);" class="lift-section-heading">
+          What changes when you adopt The Lift
+        </h2>
+        <div class="shift-table-wrap">
+          <table class="shift-table" role="table">
+            <thead>
+              <tr>
+                <th scope="col">Without The Lift</th>
+                <th scope="col" class="col-after">With The Lift</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shifts.map(({ before, after }) => (
+                <tr>
+                  <td class="cell-before">{before}</td>
+                  <td class="cell-after">{after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phases Stepper -->
+    <section class="section-cream section" aria-labelledby="phases-heading">
+      <div class="container">
+        <p class="label label-gold">The Phases</p>
+        <h2 id="phases-heading" class="lift-section-heading">
+          Seven phases. Trust comes first.
+        </h2>
+        <ol class="phases" role="list">
+          {phases.map(({ number, name, summary, building }) => (
+            <li class="phase reveal">
+              <div class="phase-number" aria-hidden="true">{number}</div>
+              <div class="phase-content">
+                <h3 class="phase-name">Phase {number}: {name}</h3>
+                <p class="phase-summary">{summary}</p>
+                <p class="phase-building">
+                  <strong>What you're building:</strong> {building}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="section-cream section" aria-labelledby="roles-heading">
+      <div class="container">
+        <p class="label label-gold">The Roles</p>
+        <h2 id="roles-heading" class="lift-section-heading">
+          Four roles. Everyone has a place.
+        </h2>
+        <div class="roles-grid">
+          {roles.map(({ title, who, does: roleAction, shift, human }) => (
+            <div class="role-card-full">
+              <h3 class="role-card-title">{title}</h3>
+              <p class="role-card-who">{who}</p>
+              <p class="role-card-does">{roleAction}</p>
+              <div class="role-card-footer">
+                <p class="role-card-shift">
+                  <span class="role-card-shift-label">Mindset shift:</span> {shift}
+                </p>
+                <p class="role-card-human">{human}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Encoding Intent -->
+    <section class="section-dark section" aria-labelledby="intent-heading">
+      <div class="container container-narrow">
+        <p class="label" style="color: var(--color-gray-light);">The Methodology</p>
+        <h2 id="intent-heading" class="lift-section-heading" style="color: var(--color-cream);">
+          Encoding Intent
+        </h2>
+        <div class="prose" style="color: var(--color-gray-light);">
+          <p style="font-size: var(--text-xl); color: var(--color-cream); font-family: var(--font-heading); font-weight: 700;">
+            Plan first. Prompt second.
+          </p>
+          <p>
+            Before AI writes a single line of code, it needs to understand:
+            who you are, how you work, what quality looks like, the patterns
+            you trust, and the standards you won't compromise.
+          </p>
+          <ol style="list-style: decimal; padding-left: var(--space-md); color: var(--color-gray-light);">
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Define the structure</strong> &mdash; Architecture, patterns, boundaries</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Set the standards</strong> &mdash; Quality bar, testing requirements, style</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Build the infrastructure</strong> &mdash; CI/CD, validation, governance</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent</strong> &mdash; Configs, guardrails, planning prompts</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Then let AI build</strong> &mdash; Inside the structure, following the intent</li>
+          </ol>
+          <p style="margin-top: var(--space-lg); font-size: var(--text-lg); color: var(--color-cream);">
+            More time in planning and encoding = less time debugging and fixing.
+            The human stays in control because the structure holds. Speed comes
+            from automation. Direction comes from intent.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section-gold section" aria-labelledby="lift-cta-heading">
+      <div class="container container-narrow text-center">
+        <h2 id="lift-cta-heading" class="lift-cta-text">
+          No Human Left Behind.
+        </h2>
+        <p class="lift-cta-sub">
+          AI adoption that lifts everyone. This is the work.
+        </p>
+        <a href="/connect" class="lift-cta-btn">
+          Get in touch
+        </a>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .lift-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-hero);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .lift-lede {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    max-width: 36rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .lift-core {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 36rem;
+  }
+
+  .lift-section-heading {
+    font-size: var(--text-3xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xl);
+    max-width: 28rem;
+  }
+
+  /* ---- Shift Table ---- */
+
+  .shift-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shift-table {
+    width: 100%;
+    max-width: 52rem;
+    font-size: var(--text-sm);
+    border-collapse: collapse;
+  }
+
+  .shift-table th {
+    text-align: left;
+    font-weight: 600;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-gray);
+    border-bottom: 2px solid var(--color-gray);
+  }
+
+  .col-after {
+    color: var(--color-gold) !important;
+    border-bottom-color: var(--color-gold) !important;
+  }
+
+  .shift-table td {
+    padding: var(--space-xs) var(--space-sm);
+    border-bottom: 1px solid rgba(245, 243, 238, 0.08);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .cell-before {
+    color: var(--color-gray);
+  }
+
+  .cell-after {
+    color: var(--color-cream);
+    font-weight: 500;
+  }
+
+  /* ---- Phases ---- */
+
+  .phases {
+    max-width: 40rem;
+    position: relative;
+  }
+
+  .phase {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: var(--space-md);
+    padding-bottom: var(--space-xl);
+    position: relative;
+  }
+
+  .phase:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 2rem;
+    top: 4rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-gray-border);
+  }
+
+  .phase-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-gold-dark);
+    line-height: 1;
+    text-align: center;
+    padding-top: 0.1em;
+  }
+
+  .phase-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .phase-summary {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-xs);
+  }
+
+  .phase-building {
+    font-size: var(--text-sm);
+    color: var(--color-gold-dark);
+  }
+
+  .phase-building strong {
+    font-weight: 600;
+  }
+
+  /* ---- Roles ---- */
+
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .role-card-full {
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--color-gray-border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    transition: border-color var(--duration-fast);
+  }
+
+  .role-card-full:hover {
+    border-color: var(--color-gold);
+  }
+
+  .role-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3xs);
+  }
+
+  .role-card-who {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .role-card-does {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    flex: 1;
+  }
+
+  .role-card-footer {
+    border-top: 1px solid var(--color-gray-border);
+    padding-top: var(--space-sm);
+  }
+
+  .role-card-shift {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-gold-dark);
+    margin-bottom: var(--space-2xs);
+  }
+
+  .role-card-shift-label {
+    color: var(--color-text-secondary);
+    font-weight: 400;
+  }
+
+  .role-card-human {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ---- CTA ---- */
+
+  .lift-cta-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    color: var(--color-black);
+    margin-bottom: var(--space-sm);
+  }
+
+  .lift-cta-sub {
+    font-size: var(--text-xl);
+    color: rgba(26, 26, 26, 0.7);
+    margin-bottom: var(--space-lg);
+  }
+
+  .lift-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: var(--text-base);
+    color: var(--color-black);
+    text-decoration: none;
+    padding: 0.75em 2em;
+    border: 2px solid var(--color-black);
+    border-radius: var(--radius-sm);
+    transition: background-color var(--duration-fast),
+                color var(--duration-fast);
+  }
+
+  .lift-cta-btn:hover {
+    background: var(--color-black);
+    color: var(--color-gold);
+  }
+
+  @media (max-width: 768px) {
+    .roles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .phase {
+      grid-template-columns: 3rem 1fr;
+      gap: var(--space-sm);
+    }
+
+    .phase:not(:last-child)::before {
+      left: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    reveals.forEach((el) => observer.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+</script>

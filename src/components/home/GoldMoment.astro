@@ -1,0 +1,78 @@
+---
+/**
+ * The Gold Moment — ONE full-bleed mustard gold section.
+ * The single color pop on the entire homepage.
+ * A powerful statement. Black text on gold.
+ */
+---
+
+<section class="gold-moment section-gold" aria-labelledby="gold-heading">
+  <div class="container gold-inner">
+    <h2 id="gold-heading" class="gold-statement reveal">
+      The future of work isn't AI replacing humans.
+      It's humans and AI building together.
+    </h2>
+    <p class="gold-sub reveal">
+      I teach the skills and build the frameworks that make it real.
+    </p>
+    <a href="/connect" class="gold-cta reveal">
+      Let's talk
+      <span class="gold-arrow" aria-hidden="true">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .gold-moment {
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+    padding-block: var(--space-2xl);
+  }
+
+  .gold-inner {
+    max-width: 44rem;
+  }
+
+  .gold-statement {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+    margin-bottom: var(--space-md);
+  }
+
+  .gold-sub {
+    font-size: var(--text-xl);
+    color: rgba(26, 26, 26, 0.7);
+    margin-bottom: var(--space-lg);
+    line-height: 1.4;
+  }
+
+  .gold-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-black);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--color-black);
+    transition: gap var(--duration-base) var(--ease-out);
+  }
+
+  .gold-cta:hover {
+    gap: var(--space-xs);
+  }
+
+  .gold-arrow {
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+
+  .gold-cta:hover .gold-arrow {
+    transform: translateX(4px);
+  }
+</style>

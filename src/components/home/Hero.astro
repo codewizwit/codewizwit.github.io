@@ -1,0 +1,140 @@
+---
+/**
+ * Hero section — cream background, full viewport.
+ * "No Human Left Behind." in Lora serif 5-6rem.
+ * Rotated hot dog mark above. Subtitle + one CTA.
+ */
+---
+
+<section class="hero section-cream" aria-labelledby="hero-heading">
+  <div class="hero-inner">
+    <img
+      src="/images/codewizwit-logo.jpg"
+      alt=""
+      class="hero-mark"
+      width="80"
+      height="55"
+      loading="eager"
+    />
+    <h1 id="hero-heading" class="hero-heading">
+      No Human Left Behind.
+    </h1>
+    <p class="hero-subtitle">
+      Technology, ethics, and humanity evolving together.
+    </p>
+    <a href="/the-lift" class="btn btn-primary btn-lg hero-cta">
+      Explore The Lift
+    </a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100dvh - 4.5rem);
+    text-align: center;
+    padding-inline: var(--gutter);
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 48rem;
+  }
+
+  .hero-mark {
+    width: 70px;
+    height: auto;
+    transform: rotate(-12deg);
+    opacity: 0.85;
+    margin-bottom: var(--space-md);
+    animation: hero-mark-in 0.8s var(--ease-out) both;
+    animation-delay: 0.2s;
+  }
+
+  .hero-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-hero);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    animation: hero-text-in 0.8s var(--ease-out) both;
+    animation-delay: 0.4s;
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+    max-width: 32rem;
+    margin-bottom: var(--space-lg);
+    animation: hero-text-in 0.8s var(--ease-out) both;
+    animation-delay: 0.6s;
+  }
+
+  .hero-cta {
+    animation: hero-text-in 0.8s var(--ease-out) both;
+    animation-delay: 0.8s;
+  }
+
+  /* Button styles (inline for hero scope) */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: background-color var(--duration-fast),
+                box-shadow var(--duration-fast),
+                transform var(--duration-fast);
+    cursor: pointer;
+  }
+
+  .btn:active { transform: translateY(1px); }
+  .btn-lg { font-size: var(--text-base); padding: 0.75em 2em; }
+  .btn-primary { background-color: var(--color-black); color: var(--color-cream); }
+  .btn-primary:hover { background-color: #333; box-shadow: var(--shadow-md); }
+
+  @keyframes hero-mark-in {
+    from {
+      opacity: 0;
+      transform: rotate(-30deg) scale(0.8);
+    }
+    to {
+      opacity: 0.85;
+      transform: rotate(-12deg) scale(1);
+    }
+  }
+
+  @keyframes hero-text-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mark,
+    .hero-heading,
+    .hero-subtitle,
+    .hero-cta {
+      animation: none;
+      opacity: 1;
+    }
+
+    .hero-mark {
+      opacity: 0.85;
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/global/Header.astro';
+import Footer from '../components/global/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import Paradox from '../components/home/Paradox.astro';
+import Thesis from '../components/home/Thesis.astro';
+import LiftTeaser from '../components/home/LiftTeaser.astro';
+import WritingTeaser from '../components/home/WritingTeaser.astro';
+import GoldMoment from '../components/home/GoldMoment.astro';
+import Proof from '../components/home/Proof.astro';
+---
+
+<BaseLayout
+  title="codewizwit"
+  description="No Human Left Behind. Alexandra Kelstrom builds frameworks and teaches skills for AI adoption that lifts everyone. Technology, ethics, and humanity evolving together."
+>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <Paradox />
+    <Thesis />
+    <LiftTeaser />
+    <WritingTeaser />
+    <GoldMoment />
+    <Proof />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<!-- Scroll-triggered reveal for .reveal elements -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  if (reveals.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+  } else {
+    // Reduced motion: show everything immediately
+    reveals.forEach((el) => el.classList.add('visible'));
+  }
+</script>
