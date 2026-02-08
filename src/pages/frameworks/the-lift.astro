@@ -5,43 +5,43 @@ const phases = [
   {
     number: 0,
     name: 'Trust',
-    summary: 'Before anything else. Address the fear directly. Build psychological safety. This phase is often skipped, and that\'s why adoption fails.',
+    summary: 'Before anything else. Have honest conversations about what AI means for the team. Listen to the fears, the excitement, and everything in between. Build psychological safety so people feel comfortable experimenting together.',
     building: 'Permission to try',
   },
   {
     number: 1,
     name: 'Discovery',
-    summary: 'Meet teams where they are. Learn how they work today. Identify pain points and find the early adopters and the skeptics.',
+    summary: 'Sit with teams. Learn how they actually work today. Understand what frustrates them, what they care about, and where AI could genuinely help. The early adopters and the skeptics both have something to teach you.',
     building: 'Understanding and buy-in',
   },
   {
     number: 2,
     name: 'Standards',
-    summary: 'Collaborative workshops where teams define their own rules. Quality bar is defined by the team. AI captures and encodes these standards.',
+    summary: 'Teams come together to define their own rules. What does quality look like? What matters to us? These conversations build shared ownership. AI captures and encodes the standards the team agrees on.',
     building: 'Shared ownership of quality',
   },
   {
     number: 3,
     name: 'Infrastructure',
-    summary: 'The foundation that makes everything else possible. Static testing, CI/CD pipelines, architecture patterns, governance structures.',
+    summary: 'Build the foundation that gives everyone confidence to move fast. Static testing, CI/CD pipelines, architecture patterns, governance structures. The safety net that lets people take creative risks.',
     building: 'The safety net',
   },
   {
     number: 4,
-    name: 'Encoding Intent',
-    summary: 'Teams learn to create blueprints AI can build from. Configs, guardrails, planning prompts. Engineers shift from writing code to defining structure.',
-    building: 'The environment for AI to succeed',
+    name: 'The Table',
+    summary: 'Everyone in the room. Devs, product, design, domain experts building side by side. Ideas move from conversation to working prototype because the people who understand the problem are the ones solving it.',
+    building: 'A new way of working together',
   },
   {
     number: 5,
-    name: 'The Table',
-    summary: 'Hands-on collaboration. Devs, product, design, domain experts building together. Ideas move from concept to working prototype fast.',
-    building: 'A new way of working together',
+    name: 'Encoding Intent',
+    summary: 'Teams learn to articulate what they want before AI builds it. Configs, guardrails, planning prompts. The human judgment, experience, and vision go in first. Then AI executes from that blueprint.',
+    building: 'The environment for AI to succeed',
   },
   {
     number: 6,
     name: 'Scale',
-    summary: 'The model spreads because it works. Teams teach teams. Internal champions emerge. The model becomes the culture.',
+    summary: 'The model spreads because people believe in it. Teams teach teams. Internal champions emerge. Knowledge flows through relationships. The model becomes the culture because it made work better for the humans doing it.',
     building: 'Sustainable transformation',
   },
 ];
@@ -209,11 +209,19 @@ const shifts = [
             who you are, how you work, what quality looks like, the patterns
             you trust, and the standards you won't compromise.
           </p>
+          <p>
+            In practice, this means skill files, instruction files, and
+            configuration that capture your team's voice, standards, and
+            decision-making patterns. The knowledge that lives in people's
+            heads gets written down, shared, and made available to AI as
+            context. The encoding process itself becomes a collaborative act:
+            teams articulate what they know together.
+          </p>
           <ol style="list-style: decimal; padding-left: var(--space-md); color: var(--color-gray-light);">
             <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Define the structure.</strong> Architecture, patterns, boundaries.</li>
             <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Set the standards.</strong> Quality bar, testing requirements, style.</li>
             <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Build the infrastructure.</strong> CI/CD, validation, governance.</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent.</strong> Configs, guardrails, planning prompts.</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent.</strong> Skill files, instruction files, configs, guardrails, planning prompts.</li>
             <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Then let AI build.</strong> Inside the structure, following the intent.</li>
           </ol>
           <p style="margin-top: var(--space-lg); font-size: var(--text-lg); color: var(--color-cream);">
