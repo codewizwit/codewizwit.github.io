@@ -16,6 +16,7 @@
       height="55"
       loading="eager"
     />
+    <p class="hero-label">Human-centered AI adoption</p>
     <h1 id="hero-heading" class="hero-heading">
       No Human Left Behind.
     </h1>
@@ -51,6 +52,17 @@
     margin-bottom: var(--space-md);
     animation: hero-mark-in 0.8s var(--ease-out) both;
     animation-delay: 0.2s;
+  }
+
+  .hero-label {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
+    animation: hero-text-in 0.8s var(--ease-out) both;
+    animation-delay: 0.3s;
   }
 
   .hero-heading {
@@ -100,6 +112,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-mark,
+    .hero-label,
     .hero-heading,
     .hero-subtitle {
       animation: none;
