@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://codewizwit.github.io',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   build: { format: 'directory' },
   integrations: [mdx(), sitemap()],
   markdown: {

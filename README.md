@@ -1,43 +1,63 @@
-# Astro Starter Kit: Minimal
+# codewizwit.com
 
-```sh
-npm create astro@latest -- --template minimal
+Personal site and platform for Alexandra Kelstrom. Human-centered AI adoption, responsible AI frameworks, and the mission behind "No Human Left Behind."
+
+**Live:** [codewizwit.github.io](https://codewizwit.github.io)
+
+## What this is
+
+- **The Mission** — AI adoption that keeps humans at the center
+- **The Lift** — A framework built on trust, collaboration, and Encoding Intent
+- **The Four Lenses** — A responsible AI assessment for evaluating tools through the eyes of the people who use them
+- **Writing** — Dispatches on responsible AI and reflections on building technology that serves people
+
+## Stack
+
+- [Astro](https://astro.build) — static site generator, zero JS by default
+- MDX — content collections for articles
+- Self-hosted fonts — Lora, Inter, JetBrains Mono (WOFF2)
+- GitHub Pages — deployed via GitHub Actions on push to `main`
+
+## Local development
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Opens at `http://localhost:4321`
 
-## 🚀 Project Structure
+## Build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Static output goes to `dist/`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Project structure
 
-Any static assets, like images, can be placed in the `public/` directory.
+```
+src/
+├── components/
+│   ├── global/       # Header, Footer, SEO, GrainOverlay
+│   └── home/         # Hero, Thesis, Paradox, LiftTeaser, WritingTeaser, GoldMoment, Proof
+├── content/
+│   └── writing/      # MDX articles (Dispatches, Side Pieces)
+├── layouts/          # BaseLayout, PageLayout, ArticleLayout
+├── pages/
+│   ├── frameworks/   # The Lift, The Four Lenses
+│   ├── writing/      # Article index and dynamic routes
+│   └── *.astro       # Home, About, Connect, The Hot Dog, Projects, Speaking
+├── styles/           # Global CSS, typography, utilities
+└── data/             # Navigation, projects, speaking data
+```
 
-## 🧞 Commands
+## Deployment
 
-All commands are run from the root of the project, from a terminal:
+Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds and deploys to GitHub Pages automatically.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## License
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+All content and design are original work by Alexandra Kelstrom. All rights reserved.

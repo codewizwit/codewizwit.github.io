@@ -115,34 +115,6 @@ const shifts = [
       </div>
     </section>
 
-    <!-- The Shift Table -->
-    <section class="section-dark section" aria-labelledby="shift-heading">
-      <div class="container">
-        <p class="label" style="color: var(--color-gray-light);">The Shift</p>
-        <h2 id="shift-heading" style="color: var(--color-cream);" class="lift-section-heading">
-          What changes when you adopt The Lift
-        </h2>
-        <div class="shift-table-wrap">
-          <table class="shift-table" role="table">
-            <thead>
-              <tr>
-                <th scope="col">Without The Lift</th>
-                <th scope="col" class="col-after">With The Lift</th>
-              </tr>
-            </thead>
-            <tbody>
-              {shifts.map(({ before, after }) => (
-                <tr>
-                  <td class="cell-before">{before}</td>
-                  <td class="cell-after">{after}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
     <!-- Phases Stepper -->
     <section class="section-cream section" aria-labelledby="phases-heading">
       <div class="container">
@@ -164,31 +136,6 @@ const shifts = [
             </li>
           ))}
         </ol>
-      </div>
-    </section>
-
-    <!-- Roles -->
-    <section class="section-cream section" aria-labelledby="roles-heading">
-      <div class="container">
-        <p class="label">The Roles</p>
-        <h2 id="roles-heading" class="lift-section-heading">
-          Four roles. Everyone has a place.
-        </h2>
-        <div class="roles-grid">
-          {roles.map(({ title, who, does: roleAction, shift, human }) => (
-            <div class="role-card-full">
-              <h3 class="role-card-title">{title}</h3>
-              <p class="role-card-who">{who}</p>
-              <p class="role-card-does">{roleAction}</p>
-              <div class="role-card-footer">
-                <p class="role-card-shift">
-                  <span class="role-card-shift-label">Mindset shift:</span> {shift}
-                </p>
-                <p class="role-card-human">{human}</p>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -228,6 +175,59 @@ const shifts = [
             The human stays in control because the structure holds. Speed comes
             from automation. Direction comes from intent.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="section-cream section" aria-labelledby="roles-heading">
+      <div class="container">
+        <p class="label">The Roles</p>
+        <h2 id="roles-heading" class="lift-section-heading">
+          Four roles. Everyone has a place.
+        </h2>
+        <div class="roles-grid">
+          {roles.map(({ title, who, does: roleAction, shift, human }) => (
+            <div class="role-card-full">
+              <h3 class="role-card-title">{title}</h3>
+              <p class="role-card-who">{who}</p>
+              <p class="role-card-does">{roleAction}</p>
+              <div class="role-card-footer">
+                <p class="role-card-shift">
+                  <span class="role-card-shift-label">Mindset shift:</span> {shift}
+                </p>
+                <p class="role-card-human">{human}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The Shift Table -->
+    <section class="section-dark section" aria-labelledby="shift-heading">
+      <div class="container">
+        <p class="label" style="color: var(--color-gray-light);">The Shift</p>
+        <h2 id="shift-heading" style="color: var(--color-cream);" class="lift-section-heading">
+          What changes when you adopt The Lift
+        </h2>
+        <div class="shift-table-wrap">
+          <table class="shift-table" role="table">
+            <thead>
+              <tr>
+                <th scope="col">Without The Lift</th>
+                <th scope="col" class="col-after">With The Lift</th>
+              </tr>
+            </thead>
+            <tbody>
+              {shifts.map(({ before, after }) => (
+                <tr>
+                  <td class="cell-before">{before}</td>
+                  <td class="cell-after">{after}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
