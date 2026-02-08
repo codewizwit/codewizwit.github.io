@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const pages = [
   { path: '/', h1: 'No Human Left Behind.', key: 'Technology, ethics, and humanity evolving together.' },
-  { path: '/about', h1: 'The wiz who came in sideways.', key: 'AI Enablement Engineer' },
+  { path: '/about', h1: 'The wiz who dove in sideways.', key: 'AI Enablement Engineer' },
   { path: '/the-hot-dog', h1: /hot dog/i, key: 'codewizwit' },
   { path: '/frameworks', h1: 'Frameworks', key: 'No Human Left Behind' },
   { path: '/frameworks/the-lift', h1: 'The Lift', key: 'Encoding Intent' },
