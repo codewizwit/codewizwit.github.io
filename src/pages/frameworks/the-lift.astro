@@ -1,93 +1,6 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
-
-const phases = [
-  {
-    number: 0,
-    name: 'Trust',
-    summary: 'Before anything else. Have honest conversations about what AI means for the team. Listen to the fears, the excitement, and everything in between. Build psychological safety so people feel comfortable experimenting together.',
-    building: 'Permission to try',
-  },
-  {
-    number: 1,
-    name: 'Discovery',
-    summary: 'Sit with teams. Learn how they actually work today. Understand what frustrates them, what they care about, and where AI could genuinely help. The early adopters and the skeptics both have something to teach you.',
-    building: 'Understanding and buy-in',
-  },
-  {
-    number: 2,
-    name: 'Standards',
-    summary: 'Teams come together to define their own rules. What does quality look like? What matters to us? These conversations build shared ownership. AI captures and encodes the standards the team agrees on.',
-    building: 'Shared ownership of quality',
-  },
-  {
-    number: 3,
-    name: 'Infrastructure',
-    summary: 'Build the foundation that gives everyone confidence to move fast. Static testing, CI/CD pipelines, architecture patterns, governance structures. The safety net that lets people take creative risks.',
-    building: 'The safety net',
-  },
-  {
-    number: 4,
-    name: 'The Table',
-    summary: 'Everyone in the room. Devs, product, design, domain experts building side by side. Ideas move from conversation to working prototype because the people who understand the problem are the ones solving it.',
-    building: 'A new way of working together',
-  },
-  {
-    number: 5,
-    name: 'Encoding Intent',
-    summary: 'Teams learn to articulate what they want before AI builds it. Configs, guardrails, planning prompts. The human judgment, experience, and vision go in first. Then AI executes from that blueprint.',
-    building: 'The environment for AI to succeed',
-  },
-  {
-    number: 6,
-    name: 'Scale',
-    summary: 'The model spreads because people believe in it. Teams teach teams. Internal champions emerge. Knowledge flows through relationships. The model becomes the culture because it made work better for the humans doing it.',
-    building: 'Sustainable transformation',
-  },
-];
-
-const roles = [
-  {
-    title: 'Enablers',
-    who: 'Engineers, tech leads, AI champions',
-    does: 'Build the environment: configs, guardrails, infrastructure. Create the space where others can build.',
-    shift: 'From gatekeeper to enabler',
-    human: 'Mentorship matters more. Seniors teach judgment, architecture, and intent.',
-  },
-  {
-    title: 'Builders',
-    who: 'Anyone with ideas and domain expertise',
-    does: 'Build inside the environment. Prototype, test, iterate without waiting in line.',
-    shift: 'From requester to creator',
-    human: 'Domain expertise finally gets a seat at the table. Ideas don\'t die in backlogs.',
-  },
-  {
-    title: 'Advocates',
-    who: 'Test practitioners, quality engineers',
-    does: 'Ensure what gets built is trustworthy. Test for quality, security, bias, fairness.',
-    shift: 'From checkers to architects of quality',
-    human: 'Critical thinking becomes essential. Catching what AI misses is more valuable than ever.',
-  },
-  {
-    title: 'Facilitators',
-    who: 'Team leads, coaches, trained practitioners',
-    does: 'Run The Table. Keep collaboration flowing. Make sure every voice is heard.',
-    shift: 'From project manager to collaboration architect',
-    human: 'Empathy and communication become core technical skills.',
-  },
-];
-
-const shifts = [
-  { before: 'Engineers write code', after: 'Engineers build blueprints' },
-  { before: 'AI assists', after: 'AI executes from the blueprint' },
-  { before: 'Value = lines of code', after: 'Value = ideas, structure, judgment' },
-  { before: 'Junior devs do grunt work', after: 'Junior devs learn to think, challenge, design' },
-  { before: 'Quality is tested after', after: 'Quality is encoded before' },
-  { before: 'Trust is assumed', after: 'Trust is built through transparency' },
-  { before: 'Only technical people build', after: 'Everyone builds inside the environment' },
-  { before: 'Handoffs between teams', after: 'Collaboration at The Table' },
-  { before: 'Agile sprints and pivots', after: 'Encode intent upfront, build fast' },
-];
+import { phases, roles, shifts } from '../../data/liftFramework';
 ---
 
 <PageLayout
@@ -99,7 +12,7 @@ const shifts = [
     <section class="lift-hero section-cream section" aria-labelledby="lift-heading">
       <div class="container container-narrow">
         <p class="label">The Framework</p>
-        <h1 id="lift-heading" class="lift-title">The Lift™</h1>
+        <h1 id="lift-heading" class="lift-title">The Lift</h1>
         <p class="lift-lede">
           AI adoption that lifts everyone.
         </p>
@@ -142,12 +55,12 @@ const shifts = [
     <!-- Encoding Intent -->
     <section class="section-dark section" aria-labelledby="intent-heading">
       <div class="container container-narrow">
-        <p class="label" style="color: var(--color-gray-light);">The Methodology</p>
-        <h2 id="intent-heading" class="lift-section-heading" style="color: var(--color-cream);">
-          Encoding Intent™
+        <p class="label intent-label">The Methodology</p>
+        <h2 id="intent-heading" class="lift-section-heading intent-heading">
+          Encoding Intent
         </h2>
-        <div class="prose" style="color: var(--color-gray-light);">
-          <p style="font-size: var(--text-xl); color: var(--color-cream); font-family: var(--font-heading); font-weight: 700;">
+        <div class="prose intent-prose">
+          <p class="intent-lead">
             Plan first. Prompt second.
           </p>
           <p>
@@ -163,14 +76,14 @@ const shifts = [
             context. The encoding process itself becomes a collaborative act:
             teams articulate what they know together.
           </p>
-          <ol style="list-style: decimal; padding-left: var(--space-md); color: var(--color-gray-light);">
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Define the structure.</strong> Architecture, patterns, boundaries.</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Set the standards.</strong> Quality bar, testing requirements, style.</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Build the infrastructure.</strong> CI/CD, validation, governance.</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent.</strong> Skill files, instruction files, configs, guardrails, planning prompts.</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Then let AI build.</strong> Inside the structure, following the intent.</li>
+          <ol class="intent-steps">
+            <li><strong>Define the structure.</strong> Architecture, patterns, boundaries.</li>
+            <li><strong>Set the standards.</strong> Quality bar, testing requirements, style.</li>
+            <li><strong>Build the infrastructure.</strong> CI/CD, validation, governance.</li>
+            <li><strong>Encode the intent.</strong> Skill files, instruction files, configs, guardrails, planning prompts.</li>
+            <li><strong>Then let AI build.</strong> Inside the structure, following the intent.</li>
           </ol>
-          <p style="margin-top: var(--space-lg); font-size: var(--text-lg); color: var(--color-cream);">
+          <p class="intent-closing">
             More time in planning and encoding = less time debugging and fixing.
             The human stays in control because the structure holds. Speed comes
             from automation. Direction comes from intent.
@@ -207,8 +120,8 @@ const shifts = [
     <!-- The Shift Table -->
     <section class="section-dark section" aria-labelledby="shift-heading">
       <div class="container">
-        <p class="label" style="color: var(--color-gray-light);">The Shift</p>
-        <h2 id="shift-heading" style="color: var(--color-cream);" class="lift-section-heading">
+        <p class="label shift-label">The Shift</p>
+        <h2 id="shift-heading" class="lift-section-heading shift-heading">
           What changes when you adopt The Lift
         </h2>
         <div class="shift-table-wrap">
@@ -287,6 +200,58 @@ const shifts = [
     margin-top: var(--space-xs);
     margin-bottom: var(--space-md);
     max-width: 28rem;
+  }
+
+  /* ---- Encoding Intent (dark section) ---- */
+
+  .intent-label {
+    color: var(--color-gray-light);
+  }
+
+  .intent-heading {
+    color: var(--color-cream);
+  }
+
+  .intent-prose {
+    color: var(--color-gray-light);
+  }
+
+  .intent-lead {
+    font-size: var(--text-xl);
+    color: var(--color-cream);
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  .intent-steps {
+    list-style: decimal;
+    padding-left: var(--space-md);
+    color: var(--color-gray-light);
+  }
+
+  .intent-steps li {
+    padding-left: var(--space-3xs);
+    margin-top: var(--space-xs);
+  }
+
+  .intent-steps strong {
+    color: var(--color-cream);
+  }
+
+  .intent-closing {
+    margin-top: var(--space-lg);
+    font-size: var(--text-lg);
+    color: var(--color-cream);
+  }
+
+  /* ---- Shift (dark section) ---- */
+
+  .shift-label {
+    color: var(--color-gray-light);
+  }
+
+  .shift-heading {
+    color: var(--color-cream);
   }
 
   /* ---- Shift Table ---- */
@@ -533,21 +498,6 @@ const shifts = [
 </style>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  if (reveals.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
-    );
-    reveals.forEach((el) => observer.observe(el));
-  } else {
-    reveals.forEach((el) => el.classList.add('visible'));
-  }
+  import { initRevealAnimations } from '../../utils/reveal';
+  initRevealAnimations({ threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
 </script>

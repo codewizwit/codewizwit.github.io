@@ -3,6 +3,7 @@
  * Frameworks teaser. Editorial presentation matching
  * the homepage's type-driven, vertical-flow design.
  */
+import { frameworks } from '../../data/messaging';
 ---
 
 <section class="fw-teaser section-dark section" aria-labelledby="fw-teaser-heading">
@@ -15,21 +16,19 @@
     <div class="fw-teaser-list">
       <div class="fw-teaser-item reveal">
         <a href="/frameworks/the-lift" class="fw-teaser-name link-light">
-          The Lift™
+          The Lift
         </a>
         <p class="fw-teaser-desc">
-          AI adoption built on trust, driven by collaboration, and sustained
-          through Encoding Intent. A framework that starts and ends with people.
+          {frameworks.lift.description}
         </p>
       </div>
 
       <div class="fw-teaser-item reveal">
         <a href="/frameworks/four-lenses" class="fw-teaser-name link-light">
-          The Four Lenses™
+          The Four Lenses
         </a>
         <p class="fw-teaser-desc">
-          A responsible AI assessment built around the people using the tools,
-          because the tools are only as responsible as the teams behind them.
+          {frameworks.fourLenses.description}
         </p>
       </div>
     </div>

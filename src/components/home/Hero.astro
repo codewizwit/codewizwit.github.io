@@ -1,9 +1,10 @@
 ---
 /**
- * Hero section — cream background, full viewport.
+ * Hero section: cream background, full viewport.
  * "No Human Left Behind." in Lora serif 5-6rem.
  * Rotated hot dog mark above. Subtitle + one CTA.
  */
+import { taglines } from '../../data/messaging';
 ---
 
 <section class="hero section-cream" aria-labelledby="hero-heading">
@@ -21,7 +22,7 @@
       No Human Left Behind.
     </h1>
     <p class="hero-subtitle">
-      Technology, ethics, and humanity evolving together.
+      {taglines.subtitle}
     </p>
   </div>
 </section>

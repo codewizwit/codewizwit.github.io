@@ -1,0 +1,52 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Page Not Found"
+  description="The page you're looking for doesn't exist."
+>
+  <section class="not-found section-cream section" aria-labelledby="not-found-heading">
+    <div class="container not-found-inner">
+      <p class="label">404</p>
+      <h1 id="not-found-heading" class="not-found-heading">
+        Page not found.
+      </h1>
+      <p class="not-found-body">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      <a href="/" class="not-found-link link">
+        Back to home
+      </a>
+    </div>
+  </section>
+</PageLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+  }
+
+  .not-found-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .not-found-body {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    max-width: var(--max-width-prose);
+    margin-bottom: var(--space-lg);
+  }
+
+  .not-found-link {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+</style>

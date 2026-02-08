@@ -1,4 +1,5 @@
 ---
+import { taglines } from '../../data/messaging';
 const year = new Date().getFullYear();
 ---
 
@@ -15,7 +16,7 @@ const year = new Date().getFullYear();
       />
       <p class="footer-brand-name">codewizwit</p>
       <p class="footer-tagline">No Human Left Behind.</p>
-      <p class="footer-sub">Technology, ethics, and humanity evolving together.</p>
+      <p class="footer-sub">{taglines.subtitle}</p>
     </div>
 
     <nav class="footer-nav" aria-label="Footer navigation">
@@ -47,7 +48,7 @@ const year = new Date().getFullYear();
     <p class="footer-license">
       Code is <a href="https://opensource.org/licenses/MIT" class="footer-link" rel="noopener noreferrer" target="_blank">MIT</a>.
       Content is <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-link" rel="noopener noreferrer" target="_blank">CC BY-NC-SA 4.0</a>.
-      The Lift™, The Four Lenses™, Encoding Intent™, and No Human Left Behind™ are trademarks of Alexandra Kelstrom.
+      The Lift, The Four Lenses, Encoding Intent, and No Human Left Behind are trademarks of Alexandra Kelstrom.
     </p>
   </div>
 </footer>
