@@ -94,10 +94,8 @@ const lenses = [
         <p class="lenses-origin">
           This framework grew out of building the
           <a href="https://www.npmjs.com/package/@human-in-the-loop/cli" class="inline-link" target="_blank" rel="noopener noreferrer">Human-in-the-Loop CLI</a>
-          and applying responsible AI principles in practice. Most RAI
-          frameworks evaluate technology readiness. This one evaluates
-          human readiness. Because the tools are only as responsible as the
-          teams using them.
+          and is at the center of everything I'm building. The tools are
+          only as responsible as the teams using them.
         </p>
       </div>
     </section>
@@ -160,21 +158,28 @@ const lenses = [
         <h2 id="usage-heading" class="usage-heading">How to use The Four Lenses</h2>
         <div class="usage-grid">
           <div class="usage-item">
-            <h3 class="usage-step">1. Before you adopt</h3>
+            <h3 class="usage-step">1. While building</h3>
+            <p class="usage-desc">
+              Apply the lenses as you build, not after. Shift left. The earlier
+              you ask these questions, the less you have to fix later.
+            </p>
+          </div>
+          <div class="usage-item">
+            <h3 class="usage-step">2. Before you adopt</h3>
             <p class="usage-desc">
               Run any new AI tool through all four lenses before deploying to
               your team. Surface the risks early. Decide with open eyes.
             </p>
           </div>
           <div class="usage-item">
-            <h3 class="usage-step">2. During rollout</h3>
+            <h3 class="usage-step">3. During rollout</h3>
             <p class="usage-desc">
               Pilot with willing team members. Collect feedback against each
               lens. Watch for red flags. Adjust before scaling.
             </p>
           </div>
           <div class="usage-item">
-            <h3 class="usage-step">3. Ongoing</h3>
+            <h3 class="usage-step">4. Ongoing</h3>
             <p class="usage-desc">
               Revisit quarterly. Tools change. Teams change. What passed six
               months ago might fail today. Keep asking the questions.
@@ -346,7 +351,7 @@ const lenses = [
 
   .usage-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
   }
 
