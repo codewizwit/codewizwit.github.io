@@ -66,6 +66,10 @@ const currentPath = Astro.url.pathname;
     -webkit-backdrop-filter: blur(8px);
   }
 
+  .site-header.menu-open {
+    z-index: 9999;
+  }
+
   .site-nav {
     display: flex;
     align-items: center;
@@ -243,6 +247,7 @@ const currentPath = Astro.url.pathname;
       toggle.setAttribute('aria-expanded', String(!expanded));
       toggle.setAttribute('aria-label', expanded ? 'Open menu' : 'Close menu');
       menu.classList.toggle('open');
+      header?.classList.toggle('menu-open');
       document.body.style.overflow = expanded ? '' : 'hidden';
     });
 
@@ -252,6 +257,7 @@ const currentPath = Astro.url.pathname;
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');
         menu.classList.remove('open');
+        header?.classList.remove('menu-open');
         document.body.style.overflow = '';
       });
     });
@@ -262,6 +268,7 @@ const currentPath = Astro.url.pathname;
         toggle.setAttribute('aria-expanded', 'false');
         toggle.setAttribute('aria-label', 'Open menu');
         menu.classList.remove('open');
+        header?.classList.remove('menu-open');
         document.body.style.overflow = '';
         (toggle as HTMLElement).focus();
       }
