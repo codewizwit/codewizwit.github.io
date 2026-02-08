@@ -14,7 +14,7 @@ const links = [
   description="Get in touch with Alexandra Kelstrom. Speaking inquiries, collaboration, or just to say hello. Links, resume, and ways to connect."
 >
   <section class="connect section-cream section" aria-labelledby="connect-heading">
-    <div class="container container-narrow">
+    <div class="container">
       <p class="label label-gold">Connect</p>
       <h1 id="connect-heading" class="connect-title">
         Let's build something together.
@@ -25,11 +25,19 @@ const links = [
         building technology that serves humans.
       </p>
 
-      <div class="connect-email">
-        <h2 class="connect-section-label">Email</h2>
-        <a href="mailto:akelstrom@icloud.com" class="connect-email-link">
-          akelstrom@icloud.com
-        </a>
+      <div class="connect-email-row">
+        <div>
+          <h2 class="connect-section-label">Email</h2>
+          <a href="mailto:akelstrom@icloud.com" class="connect-email-link">
+            akelstrom@icloud.com
+          </a>
+        </div>
+        <div>
+          <h2 class="connect-section-label">Resume</h2>
+          <a href="/resume/ResumeAlexandraKelstrom2026.pdf" class="connect-resume-btn" download>
+            Download (PDF)
+          </a>
+        </div>
       </div>
 
       <div class="connect-links">
@@ -45,13 +53,6 @@ const links = [
             </li>
           ))}
         </ul>
-      </div>
-
-      <div class="connect-resume">
-        <h2 class="connect-section-label">Resume</h2>
-        <a href="/resume/ResumeAlexandraKelstrom2026.pdf" class="connect-resume-btn" download>
-          Download resume (PDF)
-        </a>
       </div>
     </div>
   </section>
@@ -70,7 +71,7 @@ const links = [
     line-height: 1.6;
     color: var(--color-text-secondary);
     max-width: 36rem;
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-lg);
   }
 
   .connect-section-label {
@@ -80,12 +81,16 @@ const links = [
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--color-text-secondary);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-xs);
   }
 
-  /* Email */
-  .connect-email {
-    margin-bottom: var(--space-xl);
+  /* Email + Resume row */
+  .connect-email-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
   }
 
   .connect-email-link {
@@ -108,7 +113,7 @@ const links = [
 
   /* Links */
   .connect-links {
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
 
   .connect-list {

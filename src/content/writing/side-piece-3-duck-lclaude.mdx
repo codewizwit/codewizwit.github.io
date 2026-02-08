@@ -1,0 +1,58 @@
+---
+title: "Duck L'Claude: When Your Rubber Duck Talks Back"
+description: "Classic rubber duck debugging meets Claude. Same principle, better pushback. The prompts to turn AI into your most honest senior engineer."
+type: side-piece
+number: 3
+publishDate: 2026-01-18
+tags: ["developer-experience", "claude-code", "debugging", "responsible-ai"]
+draft: false
+canonicalUrl: "https://codewizwit.medium.com/"
+---
+
+When I graduated from UPenn's coding bootcamp during COVID lockdown, they sent me a congratulations package. Inside: a YETI water bottle and a mini rubber duck with a hipster mustache.
+
+As an avid bath lover, I was pleased. Also kinda confused. How did they know I'd love this? Did everyone get one?
+
+They did. Turned out rubber duck debugging was a wholeee thing.
+
+The rubber duck origin story: junior devs kept interrupting senior engineers with questions. But halfway through explaining the problem, they'd solve it themselves. The senior hadn't said anything yet. The insight? Articulating the problem forces you to actually think through it and come to the solution on your own. So instead of bothering someone, you explain your problem to a rubber duck. Out loud, line by line. Sounds silly but it works surprisingly well.
+
+That little hipster duck served me well for a good amount of time. But lately, I've upgraded.
+
+## Welcome, Duck L'Claude
+
+Same debugging energy, but this one talks back.
+
+**Classic rubber duck debugging:** you explain, you catch your own mistake.
+
+**Claude as rubber duck:** you explain, it asks follow-up questions, pokes holes, catches what you glossed over.
+
+The danger is that Claude can also just agree with you if you are not careful. The skill is prompting it to challenge your thinking rather than validate it.
+
+## The Prompts (Copy These)
+
+**When you're stuck:**
+
+> You're a senior engineer helping me debug. I'm going to explain [problem/what I'm seeing]. Don't solve it for me. Ask me one question at a time to help me find the issue myself. Be direct.
+
+**Before you commit:**
+
+> You're a senior engineer reviewing my approach to [thing]. Your job is to find what will break in production. Ask about edge cases, failure modes, and assumptions I haven't questioned. Be specific, not generic.
+
+**When something feels off:**
+
+> Something's wrong with my approach to [thing] but I can't name it. Act as a senior engineer and ask me targeted questions, one at a time, until we surface the problem together. Start with the most fundamental assumption.
+
+**Pressure testing:**
+
+> You're a skeptical senior engineer. I'm going to explain [my solution]. Challenge it. What's the weakest part? What am I overconfident about? Push back hard but be constructive.
+
+## The Catch
+
+Trust the pushback when it asks something you can't answer. Ignore it when it's hallucinating about your domain.
+
+Knowing the difference requires actually understanding what you're building. No shortcut there.
+
+The hipster mustache duck still sits on my desk. Retired, but not forgotten.
+
+The principle hasn't changed: if you can't explain it clearly, that's where the real problem is.

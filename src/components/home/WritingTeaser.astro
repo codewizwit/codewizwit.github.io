@@ -7,19 +7,19 @@
 const articles = [
   {
     type: 'Dispatch',
-    number: 13,
-    title: 'AI Is the Hot Dog, Infrastructure Is the Bun',
-    description: 'Everyone wants the hot dog. Nobody thought about the bun. How developers can build the responsible AI infrastructure that doesn\'t exist yet.',
-    href: '/writing/dispatch-13-ai-mandate',
-    date: '2025',
+    number: 3,
+    title: 'Would You Eat a Hot Dog You Prompted AI to Make from Scratch?',
+    description: 'AI is an amplifier. If you\'ve got taste and fundamentals, it supercharges you. If you don\'t, you\'re just plating whatever comes out.',
+    href: '/writing/dispatch-3-hot-dog-from-scratch',
+    date: '2026',
   },
   {
-    type: 'Field Note',
-    number: 1,
-    title: 'This Meeting Could Have Been a Skill File',
-    description: 'How to stop debating standards and start shipping them. Turn your team\'s implicit knowledge into automated guidance.',
-    href: '/writing/field-note-1-skill-files',
-    date: '2025',
+    type: 'Dispatch',
+    number: 2,
+    title: 'AI Is the Hot Dog, Infrastructure Is the Bun',
+    description: 'Everyone wants the hot dog. Nobody thought about the bun. How developers can build the responsible AI infrastructure that doesn\'t exist yet.',
+    href: '/writing/dispatch-2-ai-hot-dog',
+    date: '2026',
   },
 ];
 ---
@@ -33,14 +33,14 @@ const articles = [
 
     <div class="articles-list">
       {articles.map(({ type, number, title, description, href, date }) => (
-        <a href={href} class="article-card reveal">
+        <div class="article-item reveal">
           <div class="article-meta">
             <span class="article-type">{type} №{number}</span>
             <span class="article-date">{date}</span>
           </div>
-          <h3 class="article-title">{title}</h3>
+          <a href={href} class="article-title link">{title}</a>
           <p class="article-desc">{description}</p>
-        </a>
+        </div>
       ))}
     </div>
 
@@ -52,35 +52,28 @@ const articles = [
 
 <style>
   .writing-teaser-heading {
+    font-family: var(--font-heading);
     font-size: var(--text-3xl);
     max-width: 30rem;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   .articles-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-md);
     margin-bottom: var(--space-lg);
     max-width: var(--max-width-prose);
   }
 
-  .article-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    padding: var(--space-md);
-    border: 1px solid var(--color-gray-border);
-    border-radius: var(--radius-lg);
-    transition: border-color var(--duration-fast),
-                transform var(--duration-base) var(--ease-out),
-                box-shadow var(--duration-base) var(--ease-out);
+  .article-item {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-gray-border);
   }
 
-  .article-card:hover {
-    border-color: var(--color-gold);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lift);
+  .article-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .article-meta {

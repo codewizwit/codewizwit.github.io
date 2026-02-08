@@ -1,0 +1,383 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const lenses = [
+  {
+    number: 1,
+    name: 'Developer Experience & Growth',
+    core: 'Does this AI tool make developers better at their jobs, or just faster?',
+    questions: [
+      'Does this tool enhance developer happiness and creativity?',
+      'Does it support learning by providing explainable suggestions, or just auto-fix without context?',
+      'Are we maintaining opportunities for craftsmanship and skill development?',
+      'Does it reduce cognitive load in helpful ways, or create new friction?',
+      'Can developers opt out or adjust the level of AI assistance?',
+    ],
+    redFlags: [
+      'Developers feel pressured to accept AI suggestions without understanding them',
+      'Tools make decisions that bypass learning opportunities',
+      'Increasing dependency on AI for basic tasks',
+      'Loss of creative autonomy or flow state',
+    ],
+  },
+  {
+    number: 2,
+    name: 'Responsibility & Equity',
+    core: 'Does everyone benefit equally, or are some people left behind?',
+    questions: [
+      'Are the AI\'s suggestions biased toward certain styles, patterns, or contributors?',
+      'Do all team members benefit equally, regardless of experience level or role?',
+      'Have we built in ways to monitor for unintended impacts on quality or fairness?',
+      'Are we considering how this affects different working styles and accessibility needs?',
+      'Who is accountable when AI suggestions introduce bugs or security issues?',
+    ],
+    redFlags: [
+      'Junior developers are disadvantaged by tools optimized for senior workflows',
+      'Certain coding styles or frameworks receive better AI support than others',
+      'No clear ownership when AI-generated code causes problems',
+      'Accessibility barriers in AI-assisted workflows',
+    ],
+  },
+  {
+    number: 3,
+    name: 'Culture & Collaboration',
+    core: 'Is AI strengthening how your team works together, or quietly eroding it?',
+    questions: [
+      'How does this tool change how team members interact?',
+      'Are we using AI to enhance collaboration and shared understanding, or replacing valuable discussion?',
+      'Are we balancing speed with depth in our work?',
+      'Does this strengthen psychological safety and trust on the team?',
+      'Are we preserving space for mentorship, pair programming, and knowledge sharing?',
+    ],
+    redFlags: [
+      'Code reviews become automated checklist exercises instead of conversations',
+      'Decreased pair programming or collaborative problem-solving',
+      'Team members stop asking questions because "AI already answered"',
+      'Loss of shared code ownership and understanding',
+    ],
+  },
+  {
+    number: 4,
+    name: 'Transparency & Trust',
+    core: 'Can your team see, understand, and challenge what the AI is doing?',
+    questions: [
+      'Are AI-generated suggestions clearly labeled and explainable?',
+      'Can developers challenge, override, or contextualize AI feedback easily?',
+      'Are we transparent about when and how AI is used in workflows?',
+      'Do we provide visibility into how AI tools make decisions?',
+      'Are limitations and failure modes clearly communicated?',
+    ],
+    redFlags: [
+      'Developers can\'t tell what was AI-generated vs human-written',
+      'No way to understand why AI made a specific suggestion',
+      'Hidden AI assistance that affects performance evaluations',
+      'Lack of documentation on AI tool capabilities and limits',
+    ],
+  },
+];
+---
+
+<PageLayout
+  title="The Four Lenses"
+  description="A responsible AI assessment framework for evaluating AI tools through four accountability lenses: Developer Experience, Equity, Culture, and Transparency."
+>
+  <article class="lenses">
+    <!-- Hero -->
+    <section class="section-cream section" aria-labelledby="lenses-heading">
+      <div class="container container-narrow">
+        <p class="label">Responsible AI Framework</p>
+        <h1 id="lenses-heading" class="lenses-title">The Four Lenses</h1>
+        <p class="lenses-lede">
+          A framework for evaluating AI tools through the lens of the people
+          who use them. Not compliance checklists. Not governance theater.
+          Real questions that surface real impact.
+        </p>
+        <p class="lenses-origin">
+          This framework grew out of building the
+          <a href="https://www.npmjs.com/package/@human-in-the-loop/cli" class="inline-link" target="_blank" rel="noopener noreferrer">Human-in-the-Loop CLI</a>
+          and applying responsible AI principles in practice. Most RAI
+          frameworks evaluate technology readiness. This one evaluates
+          human readiness. Because the tools are only as responsible as the
+          teams using them.
+        </p>
+      </div>
+    </section>
+
+    <!-- The Four Lenses -->
+    {lenses.map(({ number, name, core, questions, redFlags }) => (
+      <section
+        class={`section ${number % 2 === 0 ? 'section-dark' : 'section-cream'}`}
+        aria-labelledby={`lens-${number}-heading`}
+      >
+        <div class="container container-narrow">
+          <div class="lens-header">
+            <span class="lens-number">Lens {number}</span>
+            <h2 id={`lens-${number}-heading`} class={`lens-name ${number % 2 === 0 ? 'lens-name-light' : ''}`}>
+              {name}
+            </h2>
+            <p class={`lens-core ${number % 2 === 0 ? 'lens-core-light' : ''}`}>{core}</p>
+          </div>
+
+          <div class="lens-content">
+            <div class="lens-col">
+              <h3 class={`lens-subhead ${number % 2 === 0 ? 'lens-subhead-light' : ''}`}>Questions to ask</h3>
+              <ul class={`lens-list ${number % 2 === 0 ? 'lens-list-light' : ''}`}>
+                {questions.map((q) => (
+                  <li>{q}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="lens-col">
+              <h3 class={`lens-subhead lens-subhead-warn ${number % 2 === 0 ? 'lens-subhead-light' : ''}`}>Red flags</h3>
+              <ul class={`lens-list lens-list-warn ${number % 2 === 0 ? 'lens-list-light' : ''}`}>
+                {redFlags.map((f) => (
+                  <li>{f}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- The Principle -->
+    <section class="section-gold section" aria-labelledby="principle-heading">
+      <div class="container container-narrow" style="text-align: center;">
+        <h2 id="principle-heading" class="principle-text">
+          AI tools should enhance developers, not replace their judgment.
+        </h2>
+        <p class="principle-sub">
+          If a tool fails any lens, it's not ready. Redesign it. Pilot it.
+          Collect feedback. Iterate. The humans come first.
+        </p>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="section-cream section" aria-labelledby="usage-heading">
+      <div class="container container-narrow">
+        <p class="label">In Practice</p>
+        <h2 id="usage-heading" class="usage-heading">How to use The Four Lenses</h2>
+        <div class="usage-grid">
+          <div class="usage-item">
+            <h3 class="usage-step">1. Before you adopt</h3>
+            <p class="usage-desc">
+              Run any new AI tool through all four lenses before deploying to
+              your team. Surface the risks early. Decide with open eyes.
+            </p>
+          </div>
+          <div class="usage-item">
+            <h3 class="usage-step">2. During rollout</h3>
+            <p class="usage-desc">
+              Pilot with willing team members. Collect feedback against each
+              lens. Watch for red flags. Adjust before scaling.
+            </p>
+          </div>
+          <div class="usage-item">
+            <h3 class="usage-step">3. Ongoing</h3>
+            <p class="usage-desc">
+              Revisit quarterly. Tools change. Teams change. What passed six
+              months ago might fail today. Keep asking the questions.
+            </p>
+          </div>
+        </div>
+        <div style="margin-top: var(--space-xl);">
+          <a href="/frameworks" class="back-link link">Back to Frameworks</a>
+        </div>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .lenses-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .lenses-lede {
+    font-size: var(--text-xl);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .lenses-origin {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+  }
+
+  .inline-link {
+    color: var(--color-gold-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-decoration-color: var(--color-gold);
+  }
+
+  .inline-link:hover {
+    color: var(--color-gold-hover);
+  }
+
+  .lens-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .lens-number {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gold-dark);
+  }
+
+  .lens-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    margin-top: var(--space-2xs);
+    margin-bottom: var(--space-sm);
+  }
+
+  .lens-name-light {
+    color: var(--color-cream);
+  }
+
+  .lens-core {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--color-text-secondary);
+    max-width: 36rem;
+  }
+
+  .lens-core-light {
+    color: var(--color-gray-light);
+  }
+
+  .lens-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+
+  .lens-subhead {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .lens-subhead-light {
+    color: var(--color-cream);
+  }
+
+  .lens-subhead-warn {
+    color: var(--color-gold-dark);
+  }
+
+  .lens-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .lens-list li {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    padding-left: var(--space-md);
+    position: relative;
+  }
+
+  .lens-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-gold);
+  }
+
+  .lens-list-light li {
+    color: var(--color-gray-light);
+  }
+
+  .lens-list-warn li::before {
+    background: var(--color-gold-dark);
+    border-radius: 0;
+    width: 8px;
+    height: 2px;
+    top: 0.75em;
+  }
+
+  .principle-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    color: var(--color-near-black);
+    max-width: 30rem;
+    margin: 0 auto var(--space-md);
+  }
+
+  .principle-sub {
+    font-size: var(--text-base);
+    color: var(--color-near-black);
+    opacity: 0.8;
+    max-width: 28rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .usage-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-md);
+  }
+
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .usage-step {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .usage-desc {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+
+  .back-link {
+    font-size: var(--text-base);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .lens-content {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .usage-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+</style>

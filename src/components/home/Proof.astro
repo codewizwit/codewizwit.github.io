@@ -8,20 +8,23 @@ const speaking = [
   {
     event: 'AI Summit New York',
     talk: 'Human-in-the-Loop: Responsible AI Engineering in Practice',
-    year: '2024',
+    year: '2025',
     note: 'Selected as Future AI Leader',
+    upcoming: false,
   },
   {
     event: 'Vanguard IGNITE',
     talk: 'Testing Strategies for Bias and Blindspots in AI Workflows',
     year: '2026',
     note: '',
+    upcoming: true,
   },
   {
     event: 'AI Ethics Symposium, Baruch College',
     talk: 'Invited panelist on AI & Employment',
     year: '2026',
     note: 'Cornell Tech co-organized',
+    upcoming: true,
   },
 ];
 
@@ -36,39 +39,23 @@ const projects = [
     desc: 'Writing on responsible AI, developer experience, and human-centered technology',
     link: '/writing',
   },
-  {
-    name: 'Awesome AI Registry',
-    desc: 'Governed CI/CD pipeline validating AI tools against responsible AI standards',
-    link: null,
-  },
+];
+
+const affiliations = [
+  'Future AI Leaders Cohort',
+  'AI Connect Committee',
+  'Responsible AI Institute',
+  'All Tech Is Human',
 ];
 ---
 
 <section class="proof section-cream section" aria-labelledby="proof-heading">
   <div class="container">
     <div class="proof-grid">
-      <!-- Speaking -->
-      <div class="proof-col reveal">
-        <p class="label">Speaking</p>
-        <h2 id="proof-heading" class="proof-heading">On stages</h2>
-        <ul class="proof-list" role="list">
-          {speaking.map(({ event, talk, year, note }) => (
-            <li class="proof-item">
-              <div class="proof-item-header">
-                <span class="proof-event">{event}</span>
-                <span class="proof-year">{year}</span>
-              </div>
-              <p class="proof-talk">{talk}</p>
-              {note && <p class="proof-note">{note}</p>}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <!-- Projects -->
       <div class="proof-col reveal">
         <p class="label">Projects</p>
-        <h3 class="proof-heading">Shipped work</h3>
+        <h2 id="proof-heading" class="proof-heading">Shipped work</h2>
         <ul class="proof-list" role="list">
           {projects.map(({ name, desc, link }) => (
             <li class="proof-item">
@@ -82,6 +69,37 @@ const projects = [
           ))}
         </ul>
       </div>
+
+      <!-- Speaking -->
+      <div class="proof-col reveal">
+        <p class="label">Speaking</p>
+        <h3 class="proof-heading">On stages</h3>
+        <ul class="proof-list" role="list">
+          {speaking.map(({ event, talk, year, note, upcoming }) => (
+            <li class="proof-item">
+              <div class="proof-item-header">
+                <span class="proof-event">{event}</span>
+                <span class="proof-year">{upcoming ? `${year} (Upcoming)` : year}</span>
+              </div>
+              <p class="proof-talk">{talk}</p>
+              {note && <p class="proof-note">{note}</p>}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Affiliations -->
+      <div class="proof-col reveal">
+        <p class="label">Affiliations</p>
+        <h3 class="proof-heading">At the table</h3>
+        <ul class="proof-list" role="list">
+          {affiliations.map((name) => (
+            <li class="proof-item proof-item-simple">
+              <span class="proof-event">{name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -89,7 +107,7 @@ const projects = [
 <style>
   .proof-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-2xl);
   }
 
@@ -97,7 +115,7 @@ const projects = [
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     margin-top: var(--space-xs);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   .proof-list {
@@ -147,6 +165,10 @@ const projects = [
     color: var(--color-gold-dark);
     margin-top: var(--space-3xs);
     font-weight: 500;
+  }
+
+  .proof-item-simple {
+    padding-bottom: var(--space-xs);
   }
 
   @media (max-width: 768px) {

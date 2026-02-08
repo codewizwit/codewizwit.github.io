@@ -21,6 +21,11 @@
   padding-block: var(--space-section);
 }
 
+/* Tighten gap between header and first section */
+main > .section:first-child {
+  padding-top: calc(var(--space-section) - 0.5rem);
+}
+
 .section-sm {
   padding-block: var(--space-xl);
 }
@@ -48,6 +53,15 @@
 
 .section-gold .label {
   color: rgba(26, 26, 26, 0.6);
+}
+
+/* Collapse top padding when same-colored sections stack */
+.section-cream + .section-cream {
+  padding-top: 0;
+}
+
+.section-dark + .section-dark {
+  padding-top: 0;
 }
 
 /* ---- Flexbox ---- */

@@ -1,194 +1,86 @@
 ---
 /**
- * The Lift Preview — cream background + gold accents.
- * Old/New World table + 4 Role cards.
+ * Frameworks teaser. Editorial presentation matching
+ * the homepage's type-driven, vertical-flow design.
  */
-
-const shifts = [
-  { before: 'Engineers write code', after: 'Engineers build blueprints' },
-  { before: 'AI assists', after: 'AI executes from the blueprint' },
-  { before: 'Value = lines of code', after: 'Value = ideas, structure, judgment' },
-  { before: 'Quality is tested after', after: 'Quality is encoded before' },
-  { before: 'Only technical people build', after: 'Everyone builds inside the environment' },
-  { before: 'Handoffs between teams', after: 'Collaboration at The Table' },
-];
-
-const roles = [
-  {
-    title: 'Enablers',
-    who: 'Engineers, tech leads',
-    shift: 'From gatekeeper to enabler',
-  },
-  {
-    title: 'Builders',
-    who: 'Anyone with ideas and domain expertise',
-    shift: 'From requester to creator',
-  },
-  {
-    title: 'Advocates',
-    who: 'Test practitioners, quality engineers',
-    shift: 'From checkers to architects of quality',
-  },
-  {
-    title: 'Facilitators',
-    who: 'Team leads, coaches',
-    shift: 'From project manager to collaboration architect',
-  },
-];
 ---
 
-<section class="lift-teaser section-cream section" aria-labelledby="lift-heading">
+<section class="fw-teaser section-dark section" aria-labelledby="fw-teaser-heading">
   <div class="container">
-    <p class="label label-gold reveal">The Lift</p>
-    <h2 id="lift-heading" class="lift-teaser-heading reveal">
-      A framework for AI adoption that lifts everyone.
+    <p class="label reveal">Frameworks</p>
+    <h2 id="fw-teaser-heading" class="fw-teaser-heading reveal">
+      Work smarter, not harder.
     </h2>
 
-    <!-- The Shift Table -->
-    <div class="shift-table-wrap reveal">
-      <table class="shift-table" role="table">
-        <thead>
-          <tr>
-            <th scope="col">Without The Lift</th>
-            <th scope="col" class="shift-after">With The Lift</th>
-          </tr>
-        </thead>
-        <tbody>
-          {shifts.map(({ before, after }) => (
-            <tr>
-              <td class="shift-before">{before}</td>
-              <td class="shift-after-cell">{after}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div class="fw-teaser-list">
+      <div class="fw-teaser-item reveal">
+        <a href="/frameworks/the-lift" class="fw-teaser-name link-light">
+          The Lift
+        </a>
+        <p class="fw-teaser-desc">
+          An AI adoption framework that starts with trust and works up. Seven
+          phases, four roles, and a methodology called Encoding Intent.
+        </p>
+      </div>
+
+      <div class="fw-teaser-item reveal">
+        <a href="/frameworks/four-lenses" class="fw-teaser-name link-light">
+          The Four Lenses
+        </a>
+        <p class="fw-teaser-desc">
+          A responsible AI assessment framework. Four accountability lenses
+          for evaluating AI tools through the eyes of the people who use them.
+        </p>
+      </div>
     </div>
 
-    <!-- Role Cards -->
-    <div class="roles-grid reveal">
-      {roles.map(({ title, who, shift }) => (
-        <div class="role-card">
-          <h3 class="role-title">{title}</h3>
-          <p class="role-who">{who}</p>
-          <p class="role-shift">{shift}</p>
-        </div>
-      ))}
-    </div>
-
-    <a href="/the-lift" class="lift-link link">
-      Explore the full framework
+    <a href="/frameworks" class="fw-teaser-link link-light">
+      About the frameworks
     </a>
   </div>
 </section>
 
 <style>
-  .lift-teaser-heading {
+  .fw-teaser-heading {
+    font-family: var(--font-heading);
     font-size: var(--text-3xl);
     max-width: 32rem;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
   }
 
-  /* ---- Shift Table ---- */
-
-  .shift-table-wrap {
-    overflow-x: auto;
-    margin-bottom: var(--space-xl);
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .shift-table {
-    width: 100%;
-    max-width: 48rem;
-    font-size: var(--text-sm);
-    border-collapse: collapse;
-  }
-
-  .shift-table th {
-    text-align: left;
-    font-weight: 600;
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: var(--space-xs) var(--space-sm);
-    border-bottom: 2px solid var(--color-black);
-  }
-
-  .shift-table th.shift-after {
-    color: var(--color-gold-dark);
-    border-bottom-color: var(--color-gold);
-  }
-
-  .shift-table td {
-    padding: var(--space-xs) var(--space-sm);
-    border-bottom: 1px solid var(--color-gray-border);
-    vertical-align: top;
-    line-height: 1.5;
-  }
-
-  .shift-before {
-    color: var(--color-text-secondary);
-  }
-
-  .shift-after-cell {
-    font-weight: 500;
-    color: var(--color-text);
-  }
-
-  /* ---- Role Cards ---- */
-
-  .roles-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-sm);
+  .fw-teaser-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: var(--max-width-prose);
     margin-bottom: var(--space-lg);
-    max-width: 48rem;
   }
 
-  .role-card {
-    padding: var(--space-md);
-    border: 1px solid var(--color-gray-border);
-    border-radius: var(--radius-lg);
-    transition: border-color var(--duration-fast),
-                box-shadow var(--duration-fast);
+  .fw-teaser-item {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(245, 243, 238, 0.12);
   }
 
-  .role-card:hover {
-    border-color: var(--color-gold);
-    box-shadow: var(--shadow-sm);
+  .fw-teaser-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
-  .role-title {
+  .fw-teaser-name {
     font-family: var(--font-heading);
     font-size: var(--text-xl);
     font-weight: 700;
-    margin-bottom: var(--space-2xs);
   }
 
-  .role-who {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-xs);
+  .fw-teaser-desc {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-gray-light);
+    margin-top: var(--space-2xs);
   }
 
-  .role-shift {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--color-gold-dark);
-  }
-
-  .lift-link {
+  .fw-teaser-link {
     font-size: var(--text-base);
     font-weight: 500;
-  }
-
-  @media (max-width: 640px) {
-    .roles-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .shift-table td,
-    .shift-table th {
-      padding: var(--space-2xs) var(--space-xs);
-    }
   }
 </style>

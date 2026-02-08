@@ -15,7 +15,9 @@ const typeLabels: Record<string, string> = {
   'think-piece': 'Think Piece',
 };
 
-const types = ['all', ...Object.keys(typeLabels)] as const;
+// Only show filter buttons for types that have published articles
+const activeTypes = [...new Set(sortedWriting.map((a) => a.data.type))];
+const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
 ---
 
 <PageLayout
@@ -33,18 +35,20 @@ const types = ['all', ...Object.keys(typeLabels)] as const;
         reflections on building technology that serves people.
       </p>
 
-      <!-- Filters -->
-      <nav class="writing-filters" aria-label="Filter articles by type">
-        {types.map((t) => (
-          <button
-            class:list={['filter-btn', { active: t === 'all' }]}
-            data-filter={t}
-            aria-pressed={t === 'all' ? 'true' : 'false'}
-          >
-            {t === 'all' ? 'All' : typeLabels[t]}
-          </button>
-        ))}
-      </nav>
+      <!-- Filters (only shown when multiple types exist) -->
+      {types.length > 0 && (
+        <nav class="writing-filters" aria-label="Filter articles by type">
+          {types.map((t) => (
+            <button
+              class:list={['filter-btn', { active: t === 'all' }]}
+              data-filter={t}
+              aria-pressed={t === 'all' ? 'true' : 'false'}
+            >
+              {t === 'all' ? 'All' : typeLabels[t]}
+            </button>
+          ))}
+        </nav>
+      )}
 
       <!-- Articles -->
       <div class="writing-list">
@@ -83,7 +87,7 @@ const types = ['all', ...Object.keys(typeLabels)] as const;
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     margin-top: var(--space-xs);
-    margin-bottom: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
 
   .writing-lede {
@@ -91,7 +95,7 @@ const types = ['all', ...Object.keys(typeLabels)] as const;
     color: var(--color-text-secondary);
     max-width: 36rem;
     line-height: 1.6;
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
 
   /* ---- Filters ---- */

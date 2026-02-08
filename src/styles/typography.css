@@ -124,15 +124,13 @@ h4, .h4 {
   background-image: linear-gradient(var(--color-gold), var(--color-gold));
   background-position: 0% 100%;
   background-repeat: no-repeat;
-  background-size: 0% 2px;
-  transition: background-size var(--duration-base) var(--ease-out),
-              color var(--duration-fast);
+  background-size: 100% 2px;
+  transition: color var(--duration-fast);
   padding-bottom: 1px;
 }
 
 .link:hover,
 .link:focus-visible {
-  background-size: 100% 2px;
   color: var(--color-link-hover);
 }
 
@@ -140,6 +138,10 @@ h4, .h4 {
 .link-light {
   color: var(--color-cream);
   background-image: linear-gradient(var(--color-gold), var(--color-gold));
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  padding-bottom: 1px;
 }
 
 .link-light:hover,

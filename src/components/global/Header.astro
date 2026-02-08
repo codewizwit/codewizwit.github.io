@@ -15,6 +15,7 @@ const currentPath = Astro.url.pathname;
         height="33"
         loading="eager"
       />
+      <span class="site-logo-text">codewizwit</span>
     </a>
 
     <button
@@ -92,6 +93,14 @@ const currentPath = Astro.url.pathname;
 
   .site-logo:hover .site-logo-img {
     transform: rotate(-25deg);
+  }
+
+  .site-logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-left: var(--space-xs);
   }
 
   .nav-list {

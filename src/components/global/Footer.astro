@@ -13,6 +13,7 @@ const year = new Date().getFullYear();
         height="138"
         loading="lazy"
       />
+      <p class="footer-brand-name">codewizwit</p>
       <p class="footer-tagline">No Human Left Behind.</p>
       <p class="footer-sub">Technology, ethics, and humanity evolving together.</p>
     </div>
@@ -22,7 +23,7 @@ const year = new Date().getFullYear();
         <h3 class="footer-heading">Explore</h3>
         <ul role="list">
           <li><a href="/about" class="footer-link">About</a></li>
-          <li><a href="/the-lift" class="footer-link">The Lift</a></li>
+          <li><a href="/frameworks" class="footer-link">Frameworks</a></li>
           <li><a href="/writing" class="footer-link">Writing</a></li>
           <li><a href="/the-hot-dog" class="footer-link">The Hot Dog</a></li>
         </ul>
@@ -69,6 +70,15 @@ const year = new Date().getFullYear();
     height: auto;
     opacity: 0.9;
     margin-bottom: var(--space-sm);
+  }
+
+  .footer-brand-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--color-gray-light);
+    margin-bottom: var(--space-xs);
   }
 
   .footer-tagline {

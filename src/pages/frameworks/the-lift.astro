@@ -1,5 +1,5 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 
 const phases = [
   {
@@ -98,7 +98,7 @@ const shifts = [
     <!-- Hero -->
     <section class="lift-hero section-cream section" aria-labelledby="lift-heading">
       <div class="container container-narrow">
-        <p class="label label-gold">The Framework</p>
+        <p class="label">The Framework</p>
         <h1 id="lift-heading" class="lift-title">The Lift</h1>
         <p class="lift-lede">
           AI adoption that lifts everyone. Not just the technical. Not just the
@@ -107,6 +107,11 @@ const shifts = [
         <p class="lift-core">
           Programming is a task. Software engineering is a role. AI can do the
           task. Our job is still to solve the problems.
+        </p>
+        <p class="lift-diff">
+          Most AI maturity models measure adoption from the top down. The Lift
+          starts with trust and works up. It's a human-first framework built by
+          someone doing the work, not a consultancy selling the audit.
         </p>
       </div>
     </section>
@@ -142,7 +147,7 @@ const shifts = [
     <!-- Phases Stepper -->
     <section class="section-cream section" aria-labelledby="phases-heading">
       <div class="container">
-        <p class="label label-gold">The Phases</p>
+        <p class="label">The Phases</p>
         <h2 id="phases-heading" class="lift-section-heading">
           Seven phases. Trust comes first.
         </h2>
@@ -166,7 +171,7 @@ const shifts = [
     <!-- Roles -->
     <section class="section-cream section" aria-labelledby="roles-heading">
       <div class="container">
-        <p class="label label-gold">The Roles</p>
+        <p class="label">The Roles</p>
         <h2 id="roles-heading" class="lift-section-heading">
           Four roles. Everyone has a place.
         </h2>
@@ -205,11 +210,11 @@ const shifts = [
             you trust, and the standards you won't compromise.
           </p>
           <ol style="list-style: decimal; padding-left: var(--space-md); color: var(--color-gray-light);">
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Define the structure</strong> &mdash; Architecture, patterns, boundaries</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Set the standards</strong> &mdash; Quality bar, testing requirements, style</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Build the infrastructure</strong> &mdash; CI/CD, validation, governance</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent</strong> &mdash; Configs, guardrails, planning prompts</li>
-            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Then let AI build</strong> &mdash; Inside the structure, following the intent</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Define the structure.</strong> Architecture, patterns, boundaries.</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Set the standards.</strong> Quality bar, testing requirements, style.</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Build the infrastructure.</strong> CI/CD, validation, governance.</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Encode the intent.</strong> Configs, guardrails, planning prompts.</li>
+            <li style="padding-left: var(--space-3xs); margin-top: var(--space-xs);"><strong style="color: var(--color-cream);">Then let AI build.</strong> Inside the structure, following the intent.</li>
           </ol>
           <p style="margin-top: var(--space-lg); font-size: var(--text-lg); color: var(--color-cream);">
             More time in planning and encoding = less time debugging and fixing.
@@ -262,10 +267,18 @@ const shifts = [
     max-width: 36rem;
   }
 
+  .lift-diff {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    max-width: 36rem;
+    margin-top: var(--space-md);
+  }
+
   .lift-section-heading {
     font-size: var(--text-3xl);
     margin-top: var(--space-xs);
-    margin-bottom: var(--space-xl);
+    margin-bottom: var(--space-md);
     max-width: 28rem;
   }
 
