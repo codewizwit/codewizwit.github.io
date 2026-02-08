@@ -491,12 +491,36 @@ const shifts = [
     }
 
     .phase {
-      grid-template-columns: 3rem 1fr;
+      grid-template-columns: 2.5rem 1fr;
       gap: var(--space-sm);
     }
 
+    .phase-number {
+      font-size: var(--text-2xl);
+    }
+
     .phase:not(:last-child)::before {
-      left: 1.5rem;
+      left: 1.25rem;
+      top: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .phase {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding-left: var(--space-md);
+      border-left: 1px solid var(--color-gray-border);
+    }
+
+    .phase:not(:last-child)::before {
+      display: none;
+    }
+
+    .phase-number {
+      font-size: var(--text-xl);
+      text-align: left;
+      margin-bottom: var(--space-3xs);
     }
   }
 </style>
