@@ -77,11 +77,11 @@ export const roles = [
 export const shifts = [
   { before: 'Engineers write code', after: 'Engineers build blueprints' },
   { before: 'AI assists', after: 'AI executes from the blueprint' },
-  { before: 'Value = lines of code', after: 'Value = ideas, structure, judgment' },
+  { before: 'Value = velocity', after: 'Value = ideas, structure, judgment' },
   { before: 'Junior devs do grunt work', after: 'Junior devs learn to think, challenge, design' },
-  { before: 'Quality is tested after', after: 'Quality is encoded before' },
+  { before: 'Quality is tested after', after: 'Quality is encoded before and validated throughout' },
   { before: 'Trust is assumed', after: 'Trust is built through transparency' },
-  { before: 'Only technical people build', after: 'Everyone builds inside the environment' },
+  { before: 'Only technical people build', after: 'Anyone can build inside the environment' },
   { before: 'Handoffs between teams', after: 'Collaboration at The Table' },
-  { before: 'Agile sprints and pivots', after: 'Encode intent upfront, build fast' },
+  { before: 'Build first, fix later', after: 'Plan first, build with intent' },
 ];
