@@ -1,27 +1,29 @@
 ---
-/**
- * Writing section: latest articles.
- * Hardcoded for v1 (2 articles), will pull from collection later.
- */
+import { getCollection } from 'astro:content';
 
-const articles = [
-  {
-    type: 'Dispatch',
-    number: 3,
-    title: 'Would You Eat a Hot Dog You Prompted AI to Make from Scratch?',
-    description: 'AI is an amplifier. If you\'ve got taste and fundamentals, it supercharges you. If you don\'t, you\'re just plating whatever comes out.',
-    href: '/writing/dispatch-3-hot-dog-from-scratch',
-    date: '2026',
-  },
-  {
-    type: 'Dispatch',
-    number: 2,
-    title: 'AI Is the Hot Dog, Infrastructure Is the Bun',
-    description: 'Everyone wants the hot dog. Nobody thought about the bun. How developers can build the responsible AI infrastructure that doesn\'t exist yet.',
-    href: '/writing/dispatch-2-ai-hot-dog',
-    date: '2026',
-  },
-];
+const typeLabels: Record<string, string> = {
+  'dispatch': 'Dispatch',
+  'field-note': 'Field Note',
+  'side-piece': 'Side Piece',
+  'case-study': 'Case Study',
+  'think-piece': 'Think Piece',
+};
+
+const allWriting = await getCollection('writing', ({ data }) => !data.draft);
+const articles = allWriting
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 2)
+  .map((entry) => ({
+    type: typeLabels[entry.data.type] || entry.data.type,
+    number: entry.data.number,
+    title: entry.data.title,
+    description: entry.data.description,
+    href: `/writing/${entry.id}`,
+    date: entry.data.publishDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+    }),
+  }));
 ---
 
 <section class="writing-teaser section-cream section" aria-labelledby="writing-heading">
