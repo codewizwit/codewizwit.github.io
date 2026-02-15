@@ -84,9 +84,9 @@ import PageLayout from '../layouts/PageLayout.astro';
           <h2 id="act2-heading" class="about-dark-heading">The work</h2>
           <div class="prose about-dark-prose">
             <p>
-              The engineering came first. Applications, automated tests,
-              component libraries. Quality wasn't negotiable, and neither was
-              empathy for the people using what I built.
+              The engineering came first. Full-stack applications,
+              web-services, automated tests, the cloud. I was passionate
+              about delivering high-quality work that users could trust.
             </p>
             <p>
               When ChatGPT dropped in late 2022, I went all in. I figured
@@ -117,7 +117,7 @@ import PageLayout from '../layouts/PageLayout.astro';
             height="1024"
             loading="lazy"
           />
-          <figcaption>AI Summit NY 2025</figcaption>
+          <figcaption>AI Summit NY 2025, Future AI Leaders Cohort</figcaption>
         </figure>
       </div>
     </section>
@@ -230,7 +230,11 @@ import PageLayout from '../layouts/PageLayout.astro';
     display: grid;
     grid-template-columns: 1fr clamp(260px, 32vw, 380px);
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
+  }
+
+  .act2-figure {
+    padding-top: var(--space-xl);
   }
 
   .act2-photo {
