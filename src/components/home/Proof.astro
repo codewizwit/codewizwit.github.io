@@ -14,7 +14,7 @@ const speaking = [
   },
   {
     event: 'Vanguard IGNITE',
-    talk: 'Testing Strategies for Bias and Blindspots in AI Workflows',
+    talk: 'Blind Spots and Bias Beyond the Model: Testing Strategies for AI Workflows',
     year: '2026',
     note: '',
     upcoming: true,
@@ -72,7 +72,7 @@ const affiliations = [
             <li class="proof-item">
               <div class="proof-item-header">
                 <span class="proof-event">{event}</span>
-                <span class="proof-year">{upcoming ? `${year} (Upcoming)` : year}</span>
+                <span class="proof-year">{year}</span>
               </div>
               <p class="proof-talk">{talk}</p>
               {note && <p class="proof-note">{note}</p>}
@@ -101,7 +101,14 @@ const affiliations = [
   .proof-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: var(--space-2xl);
+    grid-template-rows: auto auto auto auto;
+    column-gap: var(--space-2xl);
+  }
+
+  .proof-col {
+    display: grid;
+    grid-row: 1 / -1;
+    grid-template-rows: subgrid;
   }
 
   .proof-heading {
@@ -112,14 +119,19 @@ const affiliations = [
   }
 
   .proof-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
+    grid-row: 3 / -1;
+    display: grid;
+    grid-template-rows: subgrid;
   }
 
   .proof-item {
+    padding-top: var(--space-md);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .proof-item:first-child {
+    padding-top: 0;
   }
 
   .proof-item:last-child {
@@ -138,6 +150,11 @@ const affiliations = [
   .proof-event {
     font-weight: 600;
     font-size: var(--text-base);
+  }
+
+  .proof-item > .proof-event {
+    display: inline-block;
+    margin-bottom: var(--space-3xs);
   }
 
   .proof-year {
@@ -164,10 +181,27 @@ const affiliations = [
     padding-bottom: var(--space-xs);
   }
 
+  .proof-col:last-child .proof-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
   @media (max-width: 768px) {
     .proof-grid {
       grid-template-columns: 1fr;
+      grid-template-rows: auto;
       gap: var(--space-xl);
+    }
+
+    .proof-col {
+      grid-row: auto;
+      grid-template-rows: auto;
+    }
+
+    .proof-list {
+      grid-row: auto;
+      grid-template-rows: auto;
     }
   }
 </style>

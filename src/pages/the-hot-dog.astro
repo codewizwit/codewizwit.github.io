@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import TypingAnimation from '../components/TypingAnimation.astro';
 ---
 
 <PageLayout
@@ -24,7 +25,7 @@ import PageLayout from '../layouts/PageLayout.astro';
             </p>
             <p>
               Years later, that same symbol showed up again when I hand-carved a
-              hot dog block print for my college capstone project at DePaul. A
+              hot dog block print, "Drag It Through the Garden," for my college capstone project at DePaul. A
               physical artifact made with ink, pressure, and patience.
             </p>
             <p>
@@ -85,7 +86,7 @@ import PageLayout from '../layouts/PageLayout.astro';
     <section class="section-cream section" aria-labelledby="hd-close">
       <div class="container text-center">
         <h2 id="hd-close" class="hot-dog-closing">
-          More AI. More human.
+          <TypingAnimation static="More AI." typed=" More human." id="hotdog" />
         </h2>
         <p class="hot-dog-closing-sub">
           That hot dog is more than a quirky logo. It's a reminder of where I
@@ -137,7 +138,7 @@ import PageLayout from '../layouts/PageLayout.astro';
     display: grid;
     grid-template-columns: 1fr clamp(240px, 30vw, 360px);
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
   }
 
   .hd-meta-photo {

@@ -1,0 +1,88 @@
+---
+/**
+ * Reusable typing animation.
+ * Shows static text with a blinking cursor, then types out the rest.
+ * Degrades gracefully: full text visible with no-JS or prefers-reduced-motion.
+ */
+interface Props {
+  static: string;
+  typed: string;
+  id: string;
+}
+
+const { static: staticText, typed: typedText, id } = Astro.props;
+---
+
+<span class="typing-anim" data-typing-id={id}>{staticText}<span class="typing-typed" data-typing-typed={id}>{typedText}</span><span class="typing-cursor" data-typing-cursor={id} aria-hidden="true"></span></span>
+
+<style>
+  .typing-cursor {
+    display: none;
+    width: 0.07em;
+    height: 0.85em;
+    background-color: var(--color-gold);
+    margin-left: 0.15em;
+    vertical-align: baseline;
+    animation: typing-blink 1.06s step-end infinite;
+  }
+
+  @keyframes typing-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .typing-cursor {
+      display: none !important;
+    }
+  }
+</style>
+
+<script>
+  function initTypingAnimation(id: string) {
+    const typed = document.querySelector(`[data-typing-typed="${id}"]`) as HTMLElement;
+    const cursor = document.querySelector(`[data-typing-cursor="${id}"]`) as HTMLElement;
+    const wrapper = document.querySelector(`[data-typing-id="${id}"]`) as HTMLElement;
+
+    if (!typed || !cursor || !wrapper || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const fullText = typed.textContent || '';
+    typed.textContent = '';
+    cursor.style.display = 'inline-block';
+
+    const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+
+    const observer = new IntersectionObserver(async (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+
+          // Wait for reveal fade-in + let cursor blink to build anticipation
+          await sleep(1400);
+
+          // Type out character by character
+          for (let i = 0; i < fullText.length; i++) {
+            typed.textContent += fullText[i];
+            await sleep(75 + Math.random() * 35);
+          }
+
+          // Blink once more, then fade out
+          await sleep(1060);
+          cursor.style.animation = 'none';
+          cursor.style.opacity = '1';
+          cursor.offsetHeight;
+          cursor.style.transition = 'opacity 0.6s ease';
+          cursor.style.opacity = '0';
+        }
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(wrapper.closest('section') || wrapper);
+  }
+
+  // Initialize all typing animations on the page
+  document.querySelectorAll('[data-typing-id]').forEach((el) => {
+    const id = (el as HTMLElement).dataset.typingId;
+    if (id) initTypingAnimation(id);
+  });
+</script>
