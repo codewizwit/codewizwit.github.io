@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 const projects = [
   {
     name: 'Human-in-the-Loop CLI',
-    desc: 'Published npm package providing AI toolkit for Claude prompts with quality controls, standardization framework, and responsible AI guidelines. Built with Claude, using a human-in-the-loop process, to help other developers stay human-in-the-loop.',
+    desc: 'A prompt library of human-centered prompts designed to augment expertise while keeping developers in control.',
     tech: ['TypeScript', 'Node.js', 'npm'],
     links: [
       { label: 'npm', href: 'https://www.npmjs.com/package/@human-in-the-loop/cli' },
@@ -12,14 +12,22 @@ const projects = [
     ],
   },
   {
+    name: 'The Jira Chronicles',
+    desc: 'An interactive click-through story exploring what project management could look like if we reimagined it with AI.',
+    tech: ['React', 'Vite', 'Storytelling'],
+    links: [
+      { label: 'Experience it', href: 'https://codewizwit.github.io/jira-chronicles/' },
+    ],
+  },
+  {
     name: 'Awesome AI Registry',
-    desc: 'Governed registry of AI tools and prompts with CI checks for documentation quality, developer trust, and ethical impact. Governance pipeline validates submissions through automated checks. Claude is used only for responsible AI assessment; all other validation is pure TypeScript.',
+    desc: 'A governed registry of AI tools and prompts with CI checks for documentation quality, developer trust, and ethical impact.',
     tech: ['TypeScript', 'GitHub Actions', 'AWS Bedrock'],
     links: [],
   },
   {
     name: 'Dispatch №13 Series',
-    desc: 'Ongoing writing series on Medium exploring responsible AI and design ethics. Dispatches are the big essays. Field Notes are practical guides. Side Pieces are personal reflections. Each connects the technical with the human.',
+    desc: 'Ongoing writing series exploring responsible AI and design ethics, connecting the technical with the human.',
     tech: ['Writing', 'Medium'],
     links: [
       { label: 'Read on Medium', href: 'https://codewizwit.medium.com' },
@@ -28,7 +36,7 @@ const projects = [
   },
   {
     name: 'Curiosity Documentation',
-    desc: 'Five years of "How Does This Actually Work?" A GitHub repository documenting the learning journey from bootcamp to production engineer. Angular, TypeScript, MongoDB, AWS, testing, and even ancient pyramids.',
+    desc: 'Five years of "How Does This Actually Work?" — documenting the learning journey from bootcamp to production engineer.',
     tech: ['Markdown', 'GitHub'],
     links: [
       { label: 'GitHub', href: 'https://github.com/codewizwit' },
@@ -44,9 +52,9 @@ const projects = [
   <section class="projects section-cream section" aria-labelledby="projects-heading">
     <div class="container">
       <p class="label label-gold">Projects</p>
-      <h1 id="projects-heading" class="projects-title">Shipped work.</h1>
+      <h1 id="projects-heading" class="projects-title">On the side.</h1>
       <p class="projects-lede">
-        Tools, writing, and frameworks. Built to prove the philosophy works.
+        Dogfooding my own AI principles.
       </p>
 
       <div class="projects-list">
@@ -118,7 +126,7 @@ const projects = [
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
     font-weight: 700;
-    margin-bottom: var(--space-xs);
+    margin-bottom: var(--space-sm);
   }
 
   .project-desc {
