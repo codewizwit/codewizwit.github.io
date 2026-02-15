@@ -52,16 +52,16 @@ import TypingAnimation from '../components/TypingAnimation.astro';
     <section class="section-dark section" aria-labelledby="hd-proof">
       <div class="container hd-meta-layout">
         <div>
-          <h2 id="hd-proof" class="hot-dog-section-heading" style="color: var(--color-cream);">
+          <h2 id="hd-proof" class="hot-dog-section-heading hd-dark-heading">
             The meta-proof
           </h2>
-          <div class="prose" style="color: var(--color-gray-light);">
+          <div class="prose hd-dark-prose">
             <p>
               A memory became a carving. A carving became a print. A print
               became a digital logo. The technology changed at every step,
               and the meaning only got stronger.
             </p>
-            <p style="color: var(--color-cream);">
+            <p class="hd-dark-highlight">
               <strong>This is a reminder that while AI can refine creativity and
               carry a symbol forward, the spark, the story, the deeply
               human part always comes first.</strong>
@@ -119,8 +119,6 @@ import TypingAnimation from '../components/TypingAnimation.astro';
   .hot-dog-title {
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
-    margin-top: var(--space-xs);
-    margin-bottom: var(--space-md);
   }
 
   .hot-dog-lede {
@@ -161,7 +159,18 @@ import TypingAnimation from '../components/TypingAnimation.astro';
   .hot-dog-section-heading {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
-    margin-bottom: var(--space-md);
+  }
+
+  .hd-dark-heading {
+    color: var(--color-cream);
+  }
+
+  .hd-dark-prose {
+    color: var(--color-gray-light);
+  }
+
+  .hd-dark-highlight {
+    color: var(--color-cream);
   }
 
   .hot-dog-closing {
