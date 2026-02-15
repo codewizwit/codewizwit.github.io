@@ -9,15 +9,25 @@ import PageLayout from '../layouts/PageLayout.astro';
   <article class="about">
     <!-- Hero -->
     <section class="about-hero section-cream section" aria-labelledby="about-heading">
-      <div class="container">
-        <p class="label">About</p>
-        <h1 id="about-heading" class="about-title">
-          The wiz who dove in sideways.
-        </h1>
-        <p class="about-lede">
-          AI Enablement Engineer, responsible AI advocate, and living proof that
-          the path doesn't have to be straight.
-        </p>
+      <div class="container about-hero-inner">
+        <img
+          src="/images/image.png"
+          alt="Alexandra Kelstrom portrait"
+          class="about-portrait"
+          width="1024"
+          height="1219"
+          loading="eager"
+        />
+        <div>
+          <p class="label">Hello world, I'm Alexandra.</p>
+          <h1 id="about-heading" class="about-title">
+            The wiz who dove in sideways.
+          </h1>
+          <p class="about-lede">
+            AI Enablement Engineer, responsible AI advocate, and living proof that
+            the path doesn't have to be straight.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -26,71 +36,96 @@ import PageLayout from '../layouts/PageLayout.astro';
       <div class="container">
         <p class="label label-gold">Act I</p>
         <h2 id="act1-heading">The story</h2>
-        <div class="prose">
-          <p>
-            With roots in Chicago, I lived in six different countries outside
-            the US. Taiwan, Latvia, Czech Republic, England, Scotland, Poland.
-            That kind of movement taught me how to read rooms fast and adapt
-            to anything.
-          </p>
-          <p>
-            I studied Media and Design at DePaul University in Chicago, then
-            bartended for ten years before getting into tech. The service
-            industry taught me empathy as an operational skill: reading
-            people, understanding needs, solving problems in real-time.
-          </p>
-          <p>
-            Then COVID hit. I got furloughed. I invested my life savings in
-            the UPenn LPS Coding Bootcamp and received my first Software
-            Engineer job offer the day I graduated. That pivot wasn't
-            reckless. It was a calculated bet on myself that paid off big time.
-          </p>
-          <p>
-            Now I coach engineering teams and build systems that keep humans
-            at the center of AI adoption. Every room I've been in has prepared
-            me for this one.
-          </p>
+        <div class="act1-layout">
+          <div class="prose">
+            <p>
+              With roots in Chicago, I lived in six different countries outside
+              the US. Taiwan, Latvia, Czech Republic, England, Scotland, Poland.
+              That kind of movement taught me how to read rooms fast and adapt
+              to anything.
+            </p>
+            <p>
+              I studied Media and Design at DePaul University in Chicago, then
+              bartended for ten years before getting into tech. The service
+              industry taught me empathy as an operational skill: reading
+              people, understanding needs, solving problems in real-time.
+            </p>
+            <p>
+              Then COVID hit. I got furloughed. I invested my life savings in
+              the UPenn LPS Coding Bootcamp and received my first Software
+              Engineer job offer the day I graduated. That pivot wasn't
+              reckless. It was a calculated bet on myself that paid off big time.
+            </p>
+            <p>
+              Now I coach engineering teams and build systems that keep humans
+              at the center of AI adoption. Every room I've been in has prepared
+              me for this one.
+            </p>
+          </div>
+          <figure class="about-door">
+            <img
+              src="/images/door.jpg"
+              alt="Red door with stenciled city names: Chicago, Gdansk, Riga, Taipei and others"
+              width="998"
+              height="1734"
+              loading="lazy"
+            />
+            <figcaption>The places I've lived</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- Act 2: The Work -->
     <section class="section-dark section" aria-labelledby="act2-heading">
-      <div class="container">
-        <p class="label about-dark-label">Act II</p>
-        <h2 id="act2-heading" class="about-dark-heading">The work</h2>
-        <div class="prose about-dark-prose">
-          <p>
-            The engineering came first: applications, automated tests,
-            component libraries. What carried through all of it was a commitment to quality
-            and solving problems with real empathy for the people on the
-            other side of the screen.
-          </p>
-          <p>
-            Once ChatGPT beta was released in late 2022, everything began
-            to change for me. First, I used it in a personal setting and
-            then I increasingly experimented with using other AI models for
-            engineering work. I figured out how to use
-            AI to build with my intent and my style but 100x faster, and the
-            quality held. That was the aha moment. But I felt the tension
-            just as fast: if AI can do this, what happens to the people?
-            That question consumed me, and the perspective I was building,
-            alongside the engineering work, naturally wove me into an AI
-            enablement role.
-          </p>
-          <p>
-            Now I work with engineering teams and figure out how AI fits.
-            What to automate, what to protect, where the human judgment
-            still matters. I build frameworks and shape how teams think
-            about responsible adoption. The frameworks came from the work
-            itself. Experimenting, trying things, seeing what landed and
-            what missed, and shaping that into something others could use.
-          </p>
-          <p>
-            It's part coaching, part building, part reading the room. The
-            inflection point of everything I've learned.
-          </p>
+      <div class="container act2-layout">
+        <div>
+          <p class="label about-dark-label">Act II</p>
+          <h2 id="act2-heading" class="about-dark-heading">The work</h2>
+          <div class="prose about-dark-prose">
+            <p>
+              The engineering came first: applications, automated tests,
+              component libraries. What carried through all of it was a commitment to quality
+              and solving problems with real empathy for the people on the
+              other side of the screen.
+            </p>
+            <p>
+              Once ChatGPT beta was released in late 2022, everything began
+              to change for me. First, I used it in a personal setting and
+              then I increasingly experimented with using other AI models for
+              engineering work. I figured out how to use
+              AI to build with my intent and my style but 100x faster, and the
+              quality held. That was the aha moment. But I felt the tension
+              just as fast: if AI can do this, what happens to the people?
+              That question consumed me, and the perspective I was building,
+              alongside the engineering work, naturally wove me into an AI
+              enablement role.
+            </p>
+            <p>
+              Now I work with engineering teams and figure out how AI fits.
+              What to automate, what to protect, where the human judgment
+              still matters. I build frameworks and shape how teams think
+              about responsible adoption. The frameworks came from the work
+              itself. Experimenting, trying things, seeing what landed and
+              what missed, and shaping that into something others could use.
+            </p>
+            <p>
+              It's part coaching, part building, part reading the room. The
+              inflection point of everything I've learned.
+            </p>
+          </div>
         </div>
+        <figure class="act2-figure">
+          <img
+            src="/images/ai-summit.jpeg"
+            alt="Alexandra at AI Summit New York, placing a tile on an interactive pixel art wall"
+            class="act2-photo"
+            width="768"
+            height="1024"
+            loading="lazy"
+          />
+          <figcaption>Future AI Leader, AI Summit 2025</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -143,6 +178,22 @@ import PageLayout from '../layouts/PageLayout.astro';
 </PageLayout>
 
 <style>
+  .about-hero-inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .about-portrait {
+    width: clamp(180px, 22vw, 280px);
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 15%;
+    border-radius: 50%;
+  }
+
   .about-title {
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
@@ -158,9 +209,52 @@ import PageLayout from '../layouts/PageLayout.astro';
     max-width: 36rem;
   }
 
+  .act1-layout {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-xl);
+    align-items: start;
+  }
+
+  .about-door {
+    position: sticky;
+    top: var(--space-lg);
+  }
+
+  .about-door img {
+    width: 280px;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+
   .about h2 {
     margin-top: var(--space-xs);
     margin-bottom: var(--space-md);
+  }
+
+  .act2-layout {
+    display: grid;
+    grid-template-columns: 1fr clamp(260px, 32vw, 380px);
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .act2-photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .about figcaption {
+    margin-top: var(--space-3xs);
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .section-dark figcaption {
+    color: var(--color-gray-light);
   }
 
   .about-dark-label {
@@ -238,6 +332,48 @@ import PageLayout from '../layouts/PageLayout.astro';
   }
 
   @media (max-width: 768px) {
+    .about-hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .about-portrait {
+      margin-inline: auto;
+    }
+
+    .about-lede {
+      margin-inline: auto;
+    }
+
+    .act1-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .about-door {
+      text-align: center;
+      position: static;
+    }
+
+    .about-door img {
+      width: 100%;
+      max-width: 360px;
+      margin-inline: auto;
+    }
+
+    .act2-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .act2-figure {
+      text-align: center;
+    }
+
+    .act2-photo {
+      max-width: 280px;
+      margin-inline: auto;
+      position: static;
+    }
+
     .beyond-grid {
       grid-template-columns: 1fr 1fr;
     }

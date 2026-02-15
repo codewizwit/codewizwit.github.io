@@ -7,69 +7,77 @@ import PageLayout from '../layouts/PageLayout.astro';
   description="A hot dog is more than a quirky logo. It's a symbol of nostalgia, connection, creativity, and continuity. The origin story of the codewizwit mark."
 >
   <article class="hot-dog">
-    <!-- Hero -->
-    <section class="hot-dog-hero section-cream section" aria-labelledby="hd-heading">
-      <div class="container hot-dog-hero-inner">
-        <img
-          src="/images/codewizwit-logo.jpg"
-          alt="codewizwit logo: a block print style hot dog illustration, rendered with visible grain texture"
-          class="hot-dog-logo"
-          width="400"
-          height="276"
-          loading="eager"
-        />
+    <!-- Hero + Story -->
+    <section class="section-cream section" aria-labelledby="hd-heading">
+      <div class="container hd-main-layout">
         <div>
           <p class="label label-gold">The Symbol</p>
           <h1 id="hd-heading" class="hot-dog-title">The Hot Dog</h1>
           <p class="hot-dog-lede">
             A symbol of human connection that's followed me my entire life.
           </p>
+          <div class="prose hd-story-prose">
+            <p>
+              Some of my earliest memories are of sharing Chicago dogs with my
+              dad at Gene &amp; Jude's. No ketchup allowed. Small moments that
+              taught me how the simplest things can hold the most meaning.
+            </p>
+            <p>
+              Years later, that same symbol showed up again when I hand-carved a
+              hot dog block print for my college capstone project at DePaul. A
+              physical artifact made with ink, pressure, and patience.
+            </p>
+            <p>
+              My logo is an AI-generated rendering of my original print.
+              A bridge between memory and technology, past and future.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- The Story -->
-    <section class="section-cream section-sm" aria-labelledby="hd-story">
-      <div class="container">
-        <h2 id="hd-story" class="sr-only">The story</h2>
-        <div class="prose">
-          <p>
-            Some of my earliest memories are of sharing Chicago dogs with my
-            dad at Gene &amp; Jude's. No ketchup allowed. Small moments that
-            taught me how the simplest things can hold the most meaning.
-          </p>
-          <p>
-            Years later, that same symbol showed up again when I hand-carved a
-            hot dog block print for my college capstone project at DePaul. A
-            physical artifact made with ink, pressure, and patience.
-          </p>
-          <p>
-            The version you see now is an AI-simplified rendering of a photo
-            of that original print. A bridge between memory and technology,
-            past and future.
-          </p>
-        </div>
+        <figure class="hd-side-figure">
+          <img
+            src="/images/hot-dog-print-sheet.jpg"
+            alt="Hot dog block print in blue ink on a restaurant guest check"
+            class="hd-side-photo"
+            width="422"
+            height="764"
+            loading="eager"
+          />
+          <figcaption>The original print on a guest check</figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- The Meta-Proof -->
     <section class="section-dark section" aria-labelledby="hd-proof">
-      <div class="container">
-        <h2 id="hd-proof" class="hot-dog-section-heading" style="color: var(--color-cream);">
-          The meta-proof
-        </h2>
-        <div class="prose" style="color: var(--color-gray-light);">
-          <p>
-            A memory became a carving. A carving became a print. A print
-            became a digital logo. The technology changed at every step,
-            and the meaning only got stronger.
-          </p>
-          <p>
-            This is a reminder that while AI can refine creativity and
-            carry a symbol forward, the spark, the story, the deeply human part
-            always comes first.
-          </p>
+      <div class="container hd-meta-layout">
+        <div>
+          <h2 id="hd-proof" class="hot-dog-section-heading" style="color: var(--color-cream);">
+            The meta-proof
+          </h2>
+          <div class="prose" style="color: var(--color-gray-light);">
+            <p>
+              A memory became a carving. A carving became a print. A print
+              became a digital logo. The technology changed at every step,
+              and the meaning only got stronger.
+            </p>
+            <p>
+              This is a reminder that while AI can refine creativity and
+              carry a symbol forward, the spark, the story, the deeply human part
+              always comes first.
+            </p>
+          </div>
         </div>
+        <figure class="hd-meta-figure">
+          <img
+            src="/images/hot-dog-promo-shoot.jpg"
+            alt="Alexandra at Vienna Beef hot dog stand, hands on hips"
+            class="hd-meta-photo"
+            width="2594"
+            height="1722"
+            loading="lazy"
+          />
+          <figcaption>Vienna Beef, Chicago</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -89,17 +97,19 @@ import PageLayout from '../layouts/PageLayout.astro';
 </PageLayout>
 
 <style>
-  .hot-dog-hero-inner {
+  .hd-main-layout {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
   }
 
-  .hot-dog-logo {
-    width: clamp(200px, 30vw, 360px);
+  .hd-side-photo {
+    width: clamp(220px, 28vw, 340px);
     height: auto;
     border-radius: var(--radius-lg);
+    position: sticky;
+    top: var(--space-lg);
   }
 
   .hot-dog-title {
@@ -114,6 +124,34 @@ import PageLayout from '../layouts/PageLayout.astro';
     color: var(--color-text-secondary);
     line-height: 1.5;
     max-width: 28rem;
+  }
+
+  .hd-story-prose {
+    margin-top: var(--space-lg);
+  }
+
+  .hd-meta-layout {
+    display: grid;
+    grid-template-columns: 1fr clamp(240px, 30vw, 360px);
+    gap: var(--space-xl);
+    align-items: center;
+  }
+
+  .hd-meta-photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .hot-dog figcaption {
+    margin-top: var(--space-3xs);
+    font-size: var(--text-sm);
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  .section-dark figcaption {
+    color: var(--color-gray-light);
   }
 
   .hot-dog-section-heading {
@@ -137,12 +175,30 @@ import PageLayout from '../layouts/PageLayout.astro';
   }
 
   @media (max-width: 768px) {
-    .hot-dog-hero-inner {
+    .hd-main-layout {
       grid-template-columns: 1fr;
+    }
+
+    .hd-side-figure {
       text-align: center;
     }
 
-    .hot-dog-logo {
+    .hd-side-photo {
+      max-width: 160px;
+      margin-inline: auto;
+      position: static;
+    }
+
+    .hd-meta-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .hd-meta-figure {
+      text-align: center;
+    }
+
+    .hd-meta-photo {
+      max-width: 320px;
       margin-inline: auto;
     }
 
