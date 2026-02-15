@@ -3,6 +3,7 @@
  * Hero section: cream background, full viewport.
  * "No Human Left Behind." in Lora serif 5-6rem.
  * Rotated hot dog mark above. Subtitle + one CTA.
+ * Everything static on load. Only the period is typed.
  */
 import { taglines } from '../../data/messaging';
 ---
@@ -19,7 +20,7 @@ import { taglines } from '../../data/messaging';
     />
     <p class="hero-label">Human-centered AI adoption</p>
     <h1 id="hero-heading" class="hero-heading">
-      No Human Left Behind.
+      No Human Left Behind<span class="hero-period">.</span><span class="hero-cursor" aria-hidden="true"></span>
     </h1>
     <p class="hero-subtitle">
       {taglines.subtitle}
@@ -51,8 +52,6 @@ import { taglines } from '../../data/messaging';
     transform: rotate(-12deg);
     opacity: 0.85;
     margin-bottom: var(--space-md);
-    animation: hero-mark-in 0.8s var(--ease-out) both;
-    animation-delay: 0.2s;
   }
 
   .hero-label {
@@ -62,8 +61,6 @@ import { taglines } from '../../data/messaging';
     letter-spacing: 0.12em;
     color: var(--color-text-secondary);
     margin-bottom: var(--space-sm);
-    animation: hero-text-in 0.8s var(--ease-out) both;
-    animation-delay: 0.3s;
   }
 
   .hero-heading {
@@ -74,8 +71,29 @@ import { taglines } from '../../data/messaging';
     letter-spacing: -0.03em;
     color: var(--color-text);
     margin-bottom: var(--space-sm);
-    animation: hero-text-in 0.8s var(--ease-out) both;
-    animation-delay: 0.4s;
+  }
+
+  .hero-cursor {
+    display: inline-block;
+    width: 0.07em;
+    height: 0.85em;
+    background-color: var(--color-gold);
+    margin-left: 0.35em;
+    vertical-align: baseline;
+    animation: cursor-blink 1.06s step-end infinite;
+  }
+
+  .hero-period {
+    display: none;
+  }
+
+  .hero-period.typed {
+    display: inline;
+  }
+
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 
   .hero-subtitle {
@@ -84,45 +102,54 @@ import { taglines } from '../../data/messaging';
     line-height: 1.4;
     max-width: 32rem;
     margin-bottom: var(--space-lg);
-    animation: hero-text-in 0.8s var(--ease-out) both;
-    animation-delay: 0.6s;
-  }
-
-
-  @keyframes hero-mark-in {
-    from {
-      opacity: 0;
-      transform: rotate(-30deg) scale(0.8);
-    }
-    to {
-      opacity: 0.85;
-      transform: rotate(-12deg) scale(1);
-    }
-  }
-
-  @keyframes hero-text-in {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-mark,
-    .hero-label,
-    .hero-heading,
-    .hero-subtitle {
-      animation: none;
-      opacity: 1;
+    .hero-period {
+      display: inline;
     }
 
-    .hero-mark {
-      opacity: 0.85;
+    .hero-cursor {
+      display: none;
     }
-
   }
 </style>
+
+<script>
+  const period = document.querySelector('.hero-period') as HTMLElement;
+  const cursor = document.querySelector('.hero-cursor') as HTMLElement;
+
+  if (period && cursor && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+
+    async function animate() {
+      // Cursor is blinking two spaces after "d". Let the reader take it in.
+      await sleep(2100);
+
+      // First backspace
+      cursor.style.transition = 'margin-left 0.12s ease';
+      cursor.style.marginLeft = '0.15em';
+
+      // Pause between keystrokes
+      await sleep(180);
+
+      // Second backspace
+      cursor.style.marginLeft = '0';
+
+      // Small beat, then the period appears
+      await sleep(150);
+      period.classList.add('typed');
+
+      // One more blink cycle, then fade out
+      await sleep(1060);
+      cursor.style.animation = 'none';
+      cursor.style.opacity = '1';
+      // Force reflow so the transition applies
+      cursor.offsetHeight;
+      cursor.style.transition = 'opacity 0.6s ease';
+      cursor.style.opacity = '0';
+    }
+
+    animate();
+  }
+</script>
