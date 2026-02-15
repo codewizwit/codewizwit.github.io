@@ -102,11 +102,23 @@ h4, .h4 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--color-text-secondary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 
 .label-gold {
   color: var(--color-gold-dark);
+}
+
+/* Section heading spacing — consistent across all pages */
+.section h1,
+.section h2 {
+  margin-top: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.label + h1,
+.label + h2 {
+  margin-top: 0;
 }
 
 /* ---- Body Text ---- */

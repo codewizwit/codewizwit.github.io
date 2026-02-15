@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import TypingAnimation from '../components/TypingAnimation.astro';
 ---
 
 <PageLayout
@@ -81,7 +82,7 @@ import PageLayout from '../layouts/PageLayout.astro';
     <section class="section-dark section" aria-labelledby="act2-heading">
       <div class="container act2-layout">
         <div>
-          <p class="about-dark-label">Act II</p>
+          <p class="label about-dark-label">Act II</p>
           <h2 id="act2-heading" class="about-dark-heading">The work</h2>
           <div class="prose about-dark-prose">
             <p>
@@ -130,15 +131,6 @@ import PageLayout from '../layouts/PageLayout.astro';
       </div>
     </section>
 
-    <!-- The Hot Dog -->
-    <section class="section-cream section" aria-labelledby="hot-dog-heading">
-      <div class="container">
-        <h2 id="hot-dog-heading" class="hot-dog-section-title">
-          And yes, <a href="/the-hot-dog" class="link">the hot dog is a whole thing.</a>
-        </h2>
-      </div>
-    </section>
-
     <!-- Act 3: Beyond the Code -->
     <section class="section-cream section" aria-labelledby="act3-heading">
       <div class="container">
@@ -175,6 +167,15 @@ import PageLayout from '../layouts/PageLayout.astro';
         </div>
       </div>
     </section>
+
+    <!-- The Hot Dog -->
+    <section class="section-gold section" aria-labelledby="hot-dog-heading">
+      <div class="container">
+        <h2 id="hot-dog-heading" class="hot-dog-section-title">
+          And yes, <a href="/the-hot-dog" class="link"><TypingAnimation static="" typed="the hot dog is a whole thing." id="hotdog-about" /></a>
+        </h2>
+      </div>
+    </section>
   </article>
 </PageLayout>
 
@@ -199,8 +200,6 @@ import PageLayout from '../layouts/PageLayout.astro';
     font-family: var(--font-heading);
     font-size: var(--text-4xl);
     line-height: 1.1;
-    margin-top: var(--space-xs);
-    margin-bottom: var(--space-md);
   }
 
   .about-lede {
@@ -230,19 +229,18 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 
   .about h2 {
-    margin-top: var(--space-xs);
-    margin-bottom: var(--space-md);
+    margin-top: 0;
   }
 
   .act2-layout {
     display: grid;
-    grid-template-columns: 1fr clamp(260px, 32vw, 380px);
+    grid-template-columns: 1fr clamp(300px, 36vw, 440px);
     gap: var(--space-xl);
     align-items: start;
   }
 
   .act2-figure {
-    padding-top: var(--space-xl);
+    padding-top: var(--space-3xl);
   }
 
   .act2-photo {
@@ -274,9 +272,30 @@ import PageLayout from '../layouts/PageLayout.astro';
     color: var(--color-gray-light);
   }
 
+  .section-gold.section:has(.hot-dog-section-title) {
+    padding-block: var(--space-lg);
+  }
+
   .hot-dog-section-title {
     font-family: var(--font-heading);
     font-size: var(--text-2xl);
+    color: var(--color-black);
+  }
+
+  .hot-dog-section-title .link {
+    color: var(--color-black);
+    text-decoration: underline;
+    text-decoration-color: var(--color-black);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+  }
+
+  .hot-dog-section-title .link:hover {
+    color: rgba(26, 26, 26, 0.7);
+  }
+
+  .hot-dog-section-title :global(.typing-cursor) {
+    background-color: var(--color-black);
   }
 
   .about .prose a {
@@ -371,6 +390,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 
     .act2-figure {
       text-align: center;
+      padding-top: 0;
     }
 
     .act2-photo {

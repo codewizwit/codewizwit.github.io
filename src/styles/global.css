@@ -55,7 +55,7 @@
   --space-xl: clamp(3rem, 2rem + 5vw, 5rem);
   --space-2xl: clamp(4rem, 2.5rem + 7.5vw, 7.5rem);
   --space-3xl: clamp(5rem, 3rem + 10vw, 10rem);
-  --space-section: clamp(4rem, 3rem + 4vw, 6rem);
+  --space-section: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
 
   /* Layout */
   --max-width: 72rem;      /* 1152px content max */
