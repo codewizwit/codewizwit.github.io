@@ -1,5 +1,5 @@
 ---
-title: "The Anti-Vibe-Coding Playbook."
+title: "Plan First, Prompt Second. No Vibes Required."
 description: "Before AI wrote a single line of code for codewizwit.com, I built 15 skill files, a brand voice guide, and a visual style system. This is Encoding Intent in practice."
 type: dispatch
 number: 4
