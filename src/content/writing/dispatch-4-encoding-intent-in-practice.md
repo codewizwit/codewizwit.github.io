@@ -1,5 +1,5 @@
 ---
-title: "I Built This Site With AI. Here's What I Encoded First."
+title: "The Anti-Vibe-Coding Playbook."
 description: "Before AI wrote a single line of code for codewizwit.com, I built 15 skill files, a brand voice guide, and a visual style system. This is Encoding Intent in practice."
 type: dispatch
 number: 4
