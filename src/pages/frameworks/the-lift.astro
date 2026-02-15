@@ -1,11 +1,12 @@
 ---
 import PageLayout from '../../layouts/PageLayout.astro';
 import { phases, roles, shifts } from '../../data/liftFramework';
+import { frameworks } from '../../data/messaging';
 ---
 
 <PageLayout
   title="The Lift"
-  description="A framework for AI adoption that lifts everyone. Seven phases, four roles, and a methodology called Encoding Intent. No Human Left Behind."
+  description={`A framework for ${frameworks.lift.tagline.toLowerCase().replace(/\.$/, '')}. Seven phases, four roles, and a methodology called Encoding Intent. No Human Left Behind.`}
 >
   <article class="lift">
     <!-- Hero -->
@@ -14,16 +15,11 @@ import { phases, roles, shifts } from '../../data/liftFramework';
         <p class="label">The Framework</p>
         <h1 id="lift-heading" class="lift-title">The Lift</h1>
         <p class="lift-lede">
-          AI adoption that lifts everyone.
+          {frameworks.lift.tagline}
         </p>
         <p class="lift-core">
           AI handles the repetitive work. That gives us time to elevate the
           ideas, the quality, and the craft of what we build.
-        </p>
-        <p class="lift-diff">
-          The Lift starts with trust, shifts quality and accountability left,
-          and builds through collaboration. Every phase is designed around the
-          people doing the work.
         </p>
       </div>
     </section>
@@ -88,6 +84,9 @@ import { phases, roles, shifts } from '../../data/liftFramework';
             The human stays in control because the structure holds. Speed comes
             from automation. Direction comes from intent.
           </p>
+          <a href="/writing/dispatch-4-encoding-intent-in-practice" class="intent-callout">
+            See it in practice: how this site was built with 15 skill files and zero vibes.
+          </a>
         </div>
       </div>
     </section>
@@ -152,7 +151,7 @@ import { phases, roles, shifts } from '../../data/liftFramework';
           No Human Left Behind.
         </h2>
         <p class="lift-cta-sub">
-          AI adoption that lifts everyone. This is the work.
+          {frameworks.lift.tagline} This is the work.
         </p>
         <a href="/connect" class="lift-cta-btn">
           Get in touch
@@ -185,14 +184,6 @@ import { phases, roles, shifts } from '../../data/liftFramework';
     color: var(--color-text-secondary);
     line-height: 1.6;
     max-width: 36rem;
-  }
-
-  .lift-diff {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    max-width: 36rem;
-    margin-top: var(--space-md);
   }
 
   .lift-section-heading {
@@ -242,6 +233,25 @@ import { phases, roles, shifts } from '../../data/liftFramework';
     margin-top: var(--space-lg);
     font-size: var(--text-lg);
     color: var(--color-cream);
+  }
+
+  .intent-callout {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-gold);
+    text-decoration: none;
+    border: 1px solid var(--color-gold);
+    border-radius: var(--radius-sm);
+    padding: 0.6em 1.2em;
+    transition: background-color var(--duration-fast),
+                color var(--duration-fast);
+  }
+
+  .intent-callout:hover {
+    background: var(--color-gold);
+    color: var(--color-black);
   }
 
   /* ---- Shift (dark section) ---- */

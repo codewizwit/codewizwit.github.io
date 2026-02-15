@@ -1,7 +1,8 @@
 export const frameworks = {
   lift: {
+    tagline: 'AI adoption that elevates everyone.',
     description:
-      'AI adoption built on trust, driven by collaboration, and sustained through Encoding Intent. A framework that starts and ends with people.',
+      'The Lift starts with trust, shifts quality and accountability left, and builds through collaboration. A framework that starts and ends with people.',
   },
   fourLenses: {
     description:

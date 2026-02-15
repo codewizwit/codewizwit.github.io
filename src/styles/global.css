@@ -59,7 +59,7 @@
 
   /* Layout */
   --max-width: 72rem;      /* 1152px content max */
-  --max-width-prose: 42rem; /* ~65ch for readability */
+  --max-width-prose: 48rem; /* ~72ch for readability + code blocks */
   --max-width-narrow: 36rem;
   --gutter: clamp(1.25rem, 1rem + 1.25vw, 2.5rem);
 
