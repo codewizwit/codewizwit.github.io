@@ -74,13 +74,13 @@ Alexandra grew up in six countries (Taiwan, Latvia, Czech Republic, England, Sco
 | Asset                         | Location / Notes                                  |
 | :---------------------------- | :------------------------------------------------ |
 | Hot dog logo                  | `/public/images/codewizwit-logo.jpg` -- AI-simplified rendering of a hand-carved block print from DePaul capstone |
-| Resume PDF                    | `/public/resume/ResumeAlexandraKelstrom2026.pdf`  |
+| Resume PDF                    | `/public/resume/AlexandraKelstrom_Resume.pdf`     |
 | Fonts (self-hosted)           | `/public/fonts/` -- lora-regular, lora-bold, lora-italic, inter-latin, jetbrains-mono-latin (all WOFF2) |
 | Favicon                       | `/public/favicon.svg` and `/public/favicon.ico`   |
 | robots.txt                    | `/public/robots.txt`                              |
 | Dispatch No13                 | Published article on responsible AI infrastructure |
 | Field Note No1                | Published article on Claude Code skill files       |
-| Human-in-the-Loop CLI         | npm package: `@human-in-the-loop/cli`             |
+| Human-in-the-Loop Skills Lib  | npm package: `@human-in-the-loop/cli` — skills library for responsible AI patterns |
 | GitHub                        | github.com/codewizwit                             |
 | LinkedIn                      | linkedin.com/in/akelstrom                         |
 | Medium                        | codewizwit.medium.com                             |
