@@ -12,10 +12,11 @@ const projects = [
     ],
   },
   {
-    name: 'Claude Code Playbook',
-    desc: 'Claude Code configs and getting started guides for standard tech roles. Starters, settings, and skills you can clone and use immediately.',
-    tech: ['Claude Code', 'Skills', 'Hooks', 'Markdown'],
+    name: 'claude & i',
+    desc: 'My Claude Code environment. 21 specialized agents, 27 auto-injected skills, 12 role-based standards. Fork it, run the setup wizard, make it yours.',
+    tech: ['Claude Code', 'Astro', 'Agents', 'Skills'],
     links: [
+      { label: 'Live site', href: 'https://claude-code-playbook-sigma.vercel.app' },
       { label: 'GitHub', href: 'https://github.com/codewizwit/claude-code-playbook' },
     ],
   },
@@ -28,9 +29,18 @@ const projects = [
     ],
   },
   {
-    name: 'Awesome AI Registry',
-    desc: 'A governed registry of AI tools and prompts with CI checks for documentation quality, developer trust, and ethical impact.',
-    tech: ['TypeScript', 'GitHub Actions', 'AWS Bedrock'],
+    name: 'Human-in-the-Loop CLI',
+    desc: 'A curated prompt library that keeps developers in the loop. 21 prompts for code review, security, testing, and governance -- installable as Claude Code slash commands. AI-assisted development with humans in control.',
+    tech: ['TypeScript', 'Nx', 'Commander.js', 'Claude Code'],
+    links: [
+      { label: 'npm', href: 'https://www.npmjs.com/package/@human-in-the-loop/cli' },
+      { label: 'GitHub', href: 'https://github.com/codewizwit/human-in-the-loop' },
+    ],
+  },
+  {
+    name: 'Awesome AI Governance',
+    desc: 'A centralized registry of AI tools with automated responsible AI evaluation, security checks, and documentation standards. Governance that scales without being a bottleneck.',
+    tech: ['TypeScript', 'AWS Lambda', 'S3', 'EventBridge', 'DynamoDB', 'Bedrock', 'GitHub Actions'],
     links: [],
   },
   {
