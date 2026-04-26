@@ -17,7 +17,7 @@ Strip the personal layer, and the work stops being human.
 
 AI made automation cheap. Writing a small piece of it used to take hours. You'd scope it, build it, debug it, maintain it, and most of the time the cost outweighed the time saved, so most of it never got built. Now it takes minutes. Skills, agents, and Claude rules were designed exactly for this: cheap, iterable, disposable, written in natural language inside simple markdown files with consistent syntax. The tools are meant to be in everyone's hands.
 
-So developers started doing what developers do when something gets cheap: noticing patterns in their own work and automating their own flows. The job stopped being task-by-task ticket pulling and started being something more like designing how the work gets done.
+So developers started doing what developers do when presented with a new tool that makes their job easier: noticing patterns in their own work and automating their own flows. The job stopped being task-by-task ticket pulling and started being something more like designing how the work gets done.
 
 Here's where this gets serious. The new shape of the work asks developers to think differently. To spot patterns in their own flows, design their own automations, exercise judgment about what's worth encoding. That muscle memory only forms through reps. If we react to this moment by automating everything from the top down, developers never build the muscle the new era is asking for. They fall behind the expectations AI created, because the org never gave them the chance to keep up.
 
