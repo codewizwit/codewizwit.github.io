@@ -21,7 +21,7 @@ So developers started doing what developers do when presented with a new tool th
 
 Here's where this gets serious. The new shape of the work asks developers to think differently. To spot patterns in their own flows, design their own automations, exercise judgment about what's worth encoding. That muscle memory only forms through reps. If we react to this moment by automating everything from the top down, developers never build the muscle the new era is asking for. They fall behind the expectations AI created, because the org never gave them the chance to keep up.
 
-What I worry about is what happens by default. When something new and powerful shows up in an org, the reflex is to funnel it through one central team, and a few months from now we look up and the most democratic shift in how engineering works has been quietly turned into another gatekeeping function. Nobody intends that. It just happens unless we name it and decide otherwise.
+What I worry about is what happens by default. When something new and powerful shows up in an org, the reflex is to funnel it through one central team, and a few months from now we look up and the most democratic shift in how engineering works has been quietly turned into another permission slip. Nobody intends that. It just happens unless we name it and decide otherwise.
 
 The biggest return comes from letting people build their own tools, develop their own style, make their own mistakes, and learn from them. That compounds in a way a curated library of approved skills never will. The job is teaching people to fish.
 
