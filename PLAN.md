@@ -34,57 +34,57 @@ Alexandra grew up in six countries (Taiwan, Latvia, Czech Republic, England, Sco
 
 ### Stack
 
-| Decision          | Choice                                           |
-| :---------------- | :----------------------------------------------- |
-| Framework         | Astro 5.x (static-first, content-focused)        |
-| Content           | Astro Content Collections with MDX                |
-| Styling           | Vanilla CSS with custom properties (no Tailwind)  |
-| Typography        | Lora (headings), Inter (body), JetBrains Mono (code) |
-| Fonts             | Self-hosted WOFF2 (no Google Fonts CDN)           |
-| Images            | Sharp (via @astrojs/image integration)            |
-| Syntax highlight  | Shiki with github-dark theme                      |
-| Sitemap           | @astrojs/sitemap                                  |
-| RSS               | @astrojs/rss                                      |
-| TypeScript        | Strict mode                                       |
+| Decision         | Choice                                               |
+| :--------------- | :--------------------------------------------------- |
+| Framework        | Astro 5.x (static-first, content-focused)            |
+| Content          | Astro Content Collections with MDX                   |
+| Styling          | Vanilla CSS with custom properties (no Tailwind)     |
+| Typography       | Lora (headings), Inter (body), JetBrains Mono (code) |
+| Fonts            | Self-hosted WOFF2 (no Google Fonts CDN)              |
+| Images           | Sharp (via @astrojs/image integration)               |
+| Syntax highlight | Shiki with github-dark theme                         |
+| Sitemap          | @astrojs/sitemap                                     |
+| RSS              | @astrojs/rss                                         |
+| TypeScript       | Strict mode                                          |
 
 ### Hosting
 
-| Decision          | Choice                                           |
-| :---------------- | :----------------------------------------------- |
-| Hosting           | Static deploy (Vercel, Netlify, or Cloudflare Pages) |
-| Domain            | codewizwit.com                                   |
-| SSL               | Automatic via host                                |
+| Decision | Choice                                               |
+| :------- | :--------------------------------------------------- |
+| Hosting  | Static deploy (Vercel, Netlify, or Cloudflare Pages) |
+| Domain   | codewizwit.com                                       |
+| SSL      | Automatic via host                                   |
 
 ### Visual Direction
 
-| Decision          | Choice                                           |
-| :---------------- | :----------------------------------------------- |
-| Palette           | Cream, near-black, single gold accent             |
-| Feel              | Warm, editorial, confident but not corporate      |
-| Texture           | Subtle grain overlay at 3% opacity ("A human made this") |
-| Color blocking    | Full-bleed section backgrounds (cream, dark, gold) |
-| Animation         | Scroll-triggered reveals, hero stagger animations |
-| Reduced motion    | Full prefers-reduced-motion support               |
-| Dark mode         | Not for V1 (the cream IS the brand)               |
+| Decision       | Choice                                                   |
+| :------------- | :------------------------------------------------------- |
+| Palette        | Cream, near-black, single gold accent                    |
+| Feel           | Warm, editorial, confident but not corporate             |
+| Texture        | Subtle grain overlay at 3% opacity ("A human made this") |
+| Color blocking | Full-bleed section backgrounds (cream, dark, gold)       |
+| Animation      | Scroll-triggered reveals, hero stagger animations        |
+| Reduced motion | Full prefers-reduced-motion support                      |
+| Dark mode      | Not for V1 (the cream IS the brand)                      |
 
 ---
 
 ## Existing Assets
 
-| Asset                         | Location / Notes                                  |
-| :---------------------------- | :------------------------------------------------ |
-| Hot dog logo                  | `/public/images/codewizwit-logo.jpg` -- AI-simplified rendering of a hand-carved block print from DePaul capstone |
-| Resume PDF                    | `/public/resume/AlexandraKelstrom_Resume.pdf`     |
-| Fonts (self-hosted)           | `/public/fonts/` -- lora-regular, lora-bold, lora-italic, inter-latin, jetbrains-mono-latin (all WOFF2) |
-| Favicon                       | `/public/favicon.svg` and `/public/favicon.ico`   |
-| robots.txt                    | `/public/robots.txt`                              |
-| Dispatch No13                 | Published article on responsible AI infrastructure |
-| Field Note No1                | Published article on Claude Code skill files       |
-| Human-in-the-Loop Skills Lib  | npm package: `@human-in-the-loop/cli` — skills library for responsible AI patterns |
-| GitHub                        | github.com/codewizwit                             |
-| LinkedIn                      | linkedin.com/in/akelstrom                         |
-| Medium                        | codewizwit.medium.com                             |
-| Email                         | akelstrom@icloud.com                              |
+| Asset                        | Location / Notes                                                                                                  |
+| :--------------------------- | :---------------------------------------------------------------------------------------------------------------- |
+| Hot dog logo                 | `/public/images/codewizwit-logo.jpg` -- AI-simplified rendering of a hand-carved block print from DePaul capstone |
+| Resume PDF                   | `/public/resume/AlexandraKelstrom_Resume.pdf`                                                                     |
+| Fonts (self-hosted)          | `/public/fonts/` -- lora-regular, lora-bold, lora-italic, inter-latin, jetbrains-mono-latin (all WOFF2)           |
+| Favicon                      | `/public/favicon.svg` and `/public/favicon.ico`                                                                   |
+| robots.txt                   | `/public/robots.txt`                                                                                              |
+| Dispatch No13                | Published article on responsible AI infrastructure                                                                |
+| Field Note No1               | Published article on Claude Code skill files                                                                      |
+| Human-in-the-Loop Skills Lib | npm package: `@human-in-the-loop/cli` — skills library for responsible AI patterns                                |
+| GitHub                       | github.com/codewizwit                                                                                             |
+| LinkedIn                     | linkedin.com/in/akelstrom                                                                                         |
+| Medium                       | codewizwit.medium.com                                                                                             |
+| Email                        | akelstrom@icloud.com                                                                                              |
 
 ---
 
@@ -93,6 +93,7 @@ Alexandra grew up in six countries (Taiwan, Latvia, Czech Republic, England, Sco
 **CRITICAL: NO EM DASHES.** Never use `--` rendered as an em dash character. Use periods, commas, colons, semicolons, or restructure the sentence. This is a non-negotiable stylistic constraint across all content.
 
 Additional writing rules:
+
 - Short sentences. Punchy. Direct.
 - Active voice always.
 - No corporate jargon. No buzzword bingo.
@@ -125,6 +126,7 @@ Additional writing rules:
 **Main nav (header):** About | The Lift | Writing | Connect
 
 **Footer nav:**
+
 - Explore: About, The Lift, Writing, The Hot Dog
 - Connect: GitHub, LinkedIn, Medium, RSS
 
@@ -136,18 +138,19 @@ Additional writing rules:
 
 ```css
 /* Core Palette */
---color-cream:       #F5F3EE;    /* Primary background */
---color-black:       #1A1A1A;    /* Primary text, dark sections */
---color-gold:        #C8973E;    /* THE accent -- used sparingly */
---color-gold-dark:   #9A7230;    /* WCAG AA on cream for text */
---color-gold-hover:  #B5862F;    /* Interactive hover state */
---color-gray:        #6B6B6B;    /* Secondary text */
---color-gray-light:  #A3A3A3;    /* Muted text */
---color-gray-border: #D4D2CD;    /* Borders, dividers */
---color-white:       #FFFFFF;    /* Card hovers, occasional use */
+--color-cream: #f5f3ee; /* Primary background */
+--color-black: #1a1a1a; /* Primary text, dark sections */
+--color-gold: #c8973e; /* THE accent -- used sparingly */
+--color-gold-dark: #9a7230; /* WCAG AA on cream for text */
+--color-gold-hover: #b5862f; /* Interactive hover state */
+--color-gray: #6b6b6b; /* Secondary text */
+--color-gray-light: #a3a3a3; /* Muted text */
+--color-gray-border: #d4d2cd; /* Borders, dividers */
+--color-white: #ffffff; /* Card hovers, occasional use */
 ```
 
 **Gold discipline:** Gold is the only color pop on the entire site. It appears in:
+
 - Labels (`.label-gold`)
 - Hover underlines on navigation links
 - The single full-bleed Gold Moment section on the homepage
@@ -158,25 +161,25 @@ Additional writing rules:
 
 ### Typography
 
-| Role      | Family           | Fallback Stack                                   | Weights  |
-| :-------- | :--------------- | :----------------------------------------------- | :------- |
-| Headings  | Lora             | Georgia, Times New Roman, serif                   | 400, 700 |
-| Body      | Inter            | -apple-system, BlinkMacSystemFont, Segoe UI, sans | 100-900  |
-| Code      | JetBrains Mono   | Fira Code, Cascadia Code, monospace               | 100-800  |
+| Role     | Family         | Fallback Stack                                    | Weights  |
+| :------- | :------------- | :------------------------------------------------ | :------- |
+| Headings | Lora           | Georgia, Times New Roman, serif                   | 400, 700 |
+| Body     | Inter          | -apple-system, BlinkMacSystemFont, Segoe UI, sans | 100-900  |
+| Code     | JetBrains Mono | Fira Code, Cascadia Code, monospace               | 100-800  |
 
 **Type Scale (fluid clamp):**
 
 ```css
---text-xs:    clamp(0.75rem,  0.7rem  + 0.25vw, 0.8125rem);
---text-sm:    clamp(0.8125rem, 0.75rem + 0.3vw,  0.9375rem);
---text-base:  clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
---text-lg:    clamp(1.125rem, 1rem    + 0.5vw,  1.3125rem);
---text-xl:    clamp(1.25rem,  1.1rem  + 0.75vw, 1.5rem);
---text-2xl:   clamp(1.5rem,   1.2rem  + 1.5vw,  2rem);
---text-3xl:   clamp(1.875rem, 1.4rem  + 2.4vw,  2.75rem);
---text-4xl:   clamp(2.25rem,  1.5rem  + 3.75vw, 3.75rem);
---text-5xl:   clamp(2.75rem,  1.8rem  + 4.75vw, 5rem);
---text-hero:  clamp(3rem,     2rem    + 5vw,    6rem);
+--text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+--text-sm: clamp(0.8125rem, 0.75rem + 0.3vw, 0.9375rem);
+--text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+--text-lg: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem);
+--text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+--text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
+--text-3xl: clamp(1.875rem, 1.4rem + 2.4vw, 2.75rem);
+--text-4xl: clamp(2.25rem, 1.5rem + 3.75vw, 3.75rem);
+--text-5xl: clamp(2.75rem, 1.8rem + 4.75vw, 5rem);
+--text-hero: clamp(3rem, 2rem + 5vw, 6rem);
 ```
 
 ### Texture
@@ -188,11 +191,11 @@ Additional writing rules:
 
 Three section backgrounds that alternate to create visual rhythm:
 
-| Class             | Background         | Text Color          |
-| :---------------- | :----------------- | :------------------ |
-| `.section-cream`  | `--color-cream`    | `--color-text`      |
-| `.section-dark`   | `--color-black`    | `--color-cream`     |
-| `.section-gold`   | `--color-gold`     | `--color-black`     |
+| Class            | Background      | Text Color      |
+| :--------------- | :-------------- | :-------------- |
+| `.section-cream` | `--color-cream` | `--color-text`  |
+| `.section-dark`  | `--color-black` | `--color-cream` |
+| `.section-gold`  | `--color-gold`  | `--color-black` |
 
 The homepage alternates: cream > dark > cream > cream > cream > gold > cream > dark (footer).
 
@@ -294,15 +297,21 @@ codewizwit.com/
 
 ```typescript
 // src/content.config.ts
-import { defineCollection, z } from 'astro:content';
-import { glob } from 'astro/loaders';
+import { defineCollection, z } from "astro:content";
+import { glob } from "astro/loaders";
 
 const writing = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/writing' }),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/writing" }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    type: z.enum(['dispatch', 'field-note', 'side-piece', 'case-study', 'think-piece']),
+    type: z.enum([
+      "dispatch",
+      "field-note",
+      "side-piece",
+      "case-study",
+      "think-piece",
+    ]),
     number: z.number(),
     publishDate: z.coerce.date(),
     tags: z.array(z.string()),
@@ -316,13 +325,13 @@ export const collections = { writing };
 
 ### Article Types
 
-| Type          | Label           | Description                                      |
-| :------------ | :-------------- | :----------------------------------------------- |
-| `dispatch`    | Dispatch        | Long-form essays on responsible AI and developer culture |
-| `field-note`  | Field Note      | Practical how-to guides and tool-specific writing |
-| `side-piece`  | Side Piece      | Short reflections, opinion, cultural commentary   |
-| `case-study`  | Case Study      | Detailed project walkthroughs and outcomes        |
-| `think-piece` | Think Piece     | Philosophical or forward-looking essays           |
+| Type          | Label       | Description                                              |
+| :------------ | :---------- | :------------------------------------------------------- |
+| `dispatch`    | Dispatch    | Long-form essays on responsible AI and developer culture |
+| `field-note`  | Field Note  | Practical how-to guides and tool-specific writing        |
+| `side-piece`  | Side Piece  | Short reflections, opinion, cultural commentary          |
+| `case-study`  | Case Study  | Detailed project walkthroughs and outcomes               |
+| `think-piece` | Think Piece | Philosophical or forward-looking essays                  |
 
 ### Frontmatter Example
 
