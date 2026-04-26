@@ -63,14 +63,18 @@ Here's a section from my brand voice skill file. This is what the AI reads befor
 ## Voice Characteristics
 
 ### Working-Class Intellect
+
 Smart doesn't have to sound elite.
+
 - Speak like a builder, not a boardroom
 - Use everyday metaphors (hot dogs, hardware stores, IKEA manuals)
   to make abstract ideas stick
 - Show that intellect can wear work boots
 
 ### Playfully Serious
+
 Serious ideas land harder with spark.
+
 - Use wit and wordplay to humanize complex ideas
 - Bring in small personal stories or cultural nods
 - Lightness makes the heavy stuff memorable
@@ -80,6 +84,7 @@ And from the style guide:
 
 ```markdown
 ## Color Palette
+
 - Cream (#F5F3EE): primary background, warmth and approachability
 - Black (#1A1A1A): text and contrast, grounding
 - Gold (#C8973E): accent, energy and intention
@@ -106,5 +111,3 @@ If you prompt without intent, you get generic output that kind of works but does
 That's the difference between using AI and building with AI.
 
 That's Encoding Intent.
-
-
