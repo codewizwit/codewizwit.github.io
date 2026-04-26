@@ -58,9 +58,10 @@ const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
             year: 'numeric',
             month: 'short',
           });
+          const href = article.data.experienceUrl ?? `/writing/${article.id}`;
           return (
             <a
-              href={`/writing/${article.id}`}
+              href={href}
               class="writing-card"
               data-type={type}
             >
