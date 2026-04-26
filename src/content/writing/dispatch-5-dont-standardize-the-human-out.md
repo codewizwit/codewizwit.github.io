@@ -29,7 +29,7 @@ The tools we're using are already designed to support this. They hold encoded in
 
 ## The enterprise layer
 
-The enterprise layer is the floor: deploy pipelines, security gates, compliance hooks, environment setup. Centralize this. Make it boring and identical everywhere. No one needs to get creative with the test pass. Govern that the standards exist and that the tooling is safe to use on production code, and then move on.
+The enterprise layer is the floor: deploy pipelines, security gates, compliance hooks, environment setup. Centralize this. Make it boring and identical everywhere. Nobody needs to get fancy with the test pass. Govern that the standards exist and that the tooling is safe to use on production code, and then move on.
 
 ## The team layer
 
