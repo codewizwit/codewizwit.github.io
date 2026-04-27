@@ -1,2 +1,2 @@
-:HL["/writing/hallway-story/_next/static/chunks/09h54odhc9zgc.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"imGk4Nxv5rYItrRSffEtF"}
+:HL["/writing/hallway-story/_next/static/chunks/0i9h7e91aqze..css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"cp0URfnKQabO3DpuBw-Ej"}
