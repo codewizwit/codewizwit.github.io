@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: "codewizwit",
     description:
-      "Dispatches, Field Notes, and reflections on responsible AI, developer experience, and human-centered technology. By Alexandra Kelstrom.",
+      "Essays and Wizwit Shorts on responsible AI, developer experience, and human-centered technology. By Alexandra Kelstrom.",
     site: context.site!,
     items: sorted.map((article) => ({
       title: article.data.title,

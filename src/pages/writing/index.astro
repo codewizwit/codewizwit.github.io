@@ -8,11 +8,8 @@ const sortedWriting = allWriting.sort(
 );
 
 const typeLabels: Record<string, string> = {
-  'dispatch': 'Dispatch',
-  'field-note': 'Field Note',
-  'side-piece': 'Side Piece',
-  'case-study': 'Case Study',
-  'think-piece': 'Think Piece',
+  'essay': 'Essay',
+  'wizshort': 'Wizwit Short',
 };
 
 // Only show filter buttons for types that have published articles
@@ -22,17 +19,20 @@ const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
 
 <PageLayout
   title="Writing"
-  description="Dispatches, Field Notes, and more from codewizwit. Writing on responsible AI, developer experience, and human-centered technology."
+  description="Essays and Wizwit Shorts from codewizwit. Writing and interactive stories on responsible AI, developer experience, and human-centered technology."
 >
   <section class="writing-page section-cream section" aria-labelledby="writing-heading">
     <div class="container">
       <p class="label label-gold">Writing</p>
       <h1 id="writing-heading" class="writing-title">
-        Signals from the field.
+        Essays and Wizwit Shorts.
       </h1>
       <p class="writing-lede">
-        Dispatches on responsible AI and reflections on building technology
-        that serves people.
+        Essays are reflections on responsible AI and developer experience.
+        Wizwit Shorts are illustrated scroll-stories about the future of
+        work. Both are built with Claude Code. As my fluency with the tools
+        grew, the writing transformed. And more of me started showing up
+        on the page.
       </p>
 
       <!-- Filters (only shown when multiple types exist) -->

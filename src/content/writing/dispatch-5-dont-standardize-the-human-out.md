@@ -1,8 +1,8 @@
 ---
 title: "Don't Standardize the Human Out of the Work"
 description: "AI made automation cheap. The defaults orgs set right now about who gets to build their own tools will hold for a decade. Three layers, and only one of them belongs in a central registry."
-type: dispatch
-number: 5
+type: essay
+number: 8
 publishDate: 2026-04-26
 tags:
   - ResponsibleAI

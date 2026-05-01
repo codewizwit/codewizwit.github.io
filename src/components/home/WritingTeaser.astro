@@ -2,11 +2,8 @@
 import { getCollection } from 'astro:content';
 
 const typeLabels: Record<string, string> = {
-  'dispatch': 'Dispatch',
-  'field-note': 'Field Note',
-  'side-piece': 'Side Piece',
-  'case-study': 'Case Study',
-  'think-piece': 'Think Piece',
+  'essay': 'Essay',
+  'wizshort': 'Wizwit Short',
 };
 
 const allWriting = await getCollection('writing', ({ data }) => !data.draft);
@@ -18,7 +15,7 @@ const articles = allWriting
     number: entry.data.number,
     title: entry.data.title,
     description: entry.data.description,
-    href: `/writing/${entry.id}`,
+    href: entry.data.experienceUrl ?? `/writing/${entry.id}`,
     date: entry.data.publishDate.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
@@ -30,7 +27,7 @@ const articles = allWriting
   <div class="container">
     <p class="label label-gold reveal">Writing</p>
     <h2 id="writing-heading" class="writing-teaser-heading reveal">
-      Signals from where technology and humanity collide.
+      Stories from where technology and humanity collide.
     </h2>
 
     <div class="articles-list">

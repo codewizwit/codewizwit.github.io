@@ -6,13 +6,7 @@ const writing = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    type: z.enum([
-      "dispatch",
-      "field-note",
-      "side-piece",
-      "case-study",
-      "think-piece",
-    ]),
+    type: z.enum(["essay", "wizshort"]),
     number: z.number(),
     publishDate: z.coerce.date(),
     tags: z.array(z.string()),
