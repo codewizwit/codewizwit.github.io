@@ -149,6 +149,15 @@ body {
   min-height: 100dvh;
 }
 
+::selection {
+  background-color: var(--color-cobalt);
+  color: var(--color-lime);
+}
+::-moz-selection {
+  background-color: var(--color-cobalt);
+  color: var(--color-lime);
+}
+
 img,
 picture,
 video,
