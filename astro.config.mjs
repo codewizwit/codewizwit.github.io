@@ -7,6 +7,14 @@ export default defineConfig({
   site: "https://codewizwit.github.io",
   trailingSlash: "ignore",
   build: { format: "directory" },
+  redirects: {
+    "/frameworks": "/",
+    "/frameworks/the-lift": "/",
+    "/frameworks/four-lenses": "/",
+    "/projects": "/#work",
+    "/connect": "/about",
+    "/speaking": "/about",
+  },
   integrations: [mdx(), sitemap()],
   markdown: {
     shikiConfig: {

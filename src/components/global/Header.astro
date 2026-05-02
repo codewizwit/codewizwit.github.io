@@ -5,17 +5,17 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="site-header" role="banner">
-  <nav class="site-nav container" aria-label="Main navigation">
-    <a href="/" class="site-logo" aria-label="codewizwit home">
+  <div class="site-nav container" aria-label="Main navigation">
+    <a href="/" class="site-mark" aria-label="wizwit home">
       <img
         src="/images/logo-final.png"
         alt=""
-        class="site-logo-img"
-        width="48"
-        height="33"
+        class="site-mark-logo"
+        width="40"
+        height="28"
         loading="eager"
       />
-      <span class="site-logo-text">codewizwit</span>
+      <span class="site-mark-brand">WIZWIT</span>
     </a>
 
     <button
@@ -29,23 +29,25 @@ const currentPath = Astro.url.pathname;
       <span class="nav-toggle-bar" aria-hidden="true"></span>
     </button>
 
-    <ul id="nav-menu" class="nav-list" role="list">
-      {mainNav.map(({ label, href }) => {
-        const isActive = currentPath === href || (href !== '/' && currentPath.startsWith(href));
-        return (
-          <li>
-            <a
-              href={href}
-              class:list={['nav-link', { active: isActive }]}
-              aria-current={isActive ? 'page' : undefined}
-            >
-              {label}
-            </a>
-          </li>
-        );
-      })}
-    </ul>
-  </nav>
+    <nav id="nav-menu" class="nav-list" role="navigation" aria-label="Main">
+      <ul role="list" class="nav-items">
+        {mainNav.map(({ label, href }) => {
+          const isActive = currentPath === href || (href !== '/' && href !== '/#work' && currentPath.startsWith(href));
+          return (
+            <li>
+              <a
+                href={href}
+                class:list={['nav-link', { active: isActive }]}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <style>
@@ -69,10 +71,7 @@ const currentPath = Astro.url.pathname;
   .site-header.menu-open {
     z-index: 9999;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background-color: var(--color-cream);
@@ -83,48 +82,57 @@ const currentPath = Astro.url.pathname;
     align-items: center;
     justify-content: space-between;
     height: 4.5rem;
+    gap: var(--space-md);
   }
 
-  .site-logo {
+  .site-mark {
     display: flex;
     align-items: center;
+    gap: var(--space-xs);
     text-decoration: none;
+    color: var(--color-text);
     transition: opacity var(--duration-fast);
   }
 
-  .site-logo:hover {
+  .site-mark:hover {
     opacity: 0.8;
   }
 
-  .site-logo-img {
-    width: 48px;
+  .site-mark-logo {
+    width: 40px;
     height: auto;
-    transform: rotate(-30deg);
+    transform: rotate(-12deg);
     transition: transform var(--duration-base) var(--ease-out);
   }
 
-  .site-logo:hover .site-logo-img {
-    transform: rotate(-25deg);
+  .site-mark:hover .site-mark-logo {
+    transform: rotate(-2deg) scale(1.05);
   }
 
-  .site-logo-text {
-    font-family: var(--font-heading);
-    font-size: var(--text-base);
-    font-weight: 700;
+  .site-mark-brand {
+    font-family: var(--font-code);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.16em;
     color: var(--color-text);
-    margin-left: var(--space-xs);
+    line-height: 1;
   }
 
-  .nav-list {
+  .nav-items {
     display: flex;
     gap: var(--space-md);
     align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .nav-link {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    letter-spacing: 0.01em;
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 600;
     color: var(--color-text-secondary);
     text-decoration: none;
     padding: var(--space-3xs) 0;
@@ -135,17 +143,17 @@ const currentPath = Astro.url.pathname;
   .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--color-gold);
+    background-color: var(--color-cobalt);
     transition: width var(--duration-base) var(--ease-out);
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--color-text);
+    color: var(--color-cobalt);
   }
 
   .nav-link:hover::after,
@@ -202,9 +210,9 @@ const currentPath = Astro.url.pathname;
     .nav-list {
       position: fixed;
       inset: 0;
-      flex-direction: column;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      gap: var(--space-lg);
       background-color: var(--color-cream);
       opacity: 0;
       visibility: hidden;
@@ -218,9 +226,16 @@ const currentPath = Astro.url.pathname;
       visibility: visible;
     }
 
+    .nav-items {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
     .nav-link {
       font-family: var(--font-heading);
       font-size: var(--text-2xl);
+      text-transform: none;
+      letter-spacing: -0.01em;
       font-weight: 700;
       color: var(--color-text);
     }
@@ -230,9 +245,8 @@ const currentPath = Astro.url.pathname;
 <script>
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('#nav-menu');
+  const menu = document.querySelector<HTMLElement>('#nav-menu');
 
-  // Sticky header scroll state
   if (header) {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -249,7 +263,6 @@ const currentPath = Astro.url.pathname;
     observer.observe(sentinel);
   }
 
-  // Mobile nav toggle
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
@@ -260,7 +273,6 @@ const currentPath = Astro.url.pathname;
       document.body.style.overflow = expanded ? '' : 'hidden';
     });
 
-    // Close on nav link click
     menu.querySelectorAll('.nav-link').forEach((link) => {
       link.addEventListener('click', () => {
         toggle.setAttribute('aria-expanded', 'false');
@@ -271,7 +283,6 @@ const currentPath = Astro.url.pathname;
       });
     });
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.classList.contains('open')) {
         toggle.setAttribute('aria-expanded', 'false');

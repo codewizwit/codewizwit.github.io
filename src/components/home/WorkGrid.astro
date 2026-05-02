@@ -1,0 +1,167 @@
+---
+/**
+ * WorkGrid: editorial list, not card grid.
+ * Numbered rows with monospace labels, thin dividers, hover row reveals cobalt arrow.
+ */
+import { work } from '../../data/work';
+---
+
+<section id="work" class="work-list section-cream section" aria-labelledby="work-heading">
+  <div class="container">
+    <div class="work-list-head">
+      <h2 id="work-heading" class="work-list-title">The Work</h2>
+    </div>
+
+    <ol class="work-rows" role="list">
+      {work.map(({ name, blurb, href, external }) => (
+        <li class="work-row">
+          <a
+            href={href}
+            class="work-row-link"
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
+            <span class="row-name">{name}</span>
+            <span class="row-blurb">{blurb}</span>
+            <span class="row-arrow" aria-hidden="true">{external ? '↗' : '→'}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .work-list-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-text);
+    margin-bottom: 0;
+  }
+
+  .work-list-title {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .work-list-count {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--color-text-secondary);
+  }
+
+  .work-rows {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .work-row {
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .work-row:last-child {
+    border-bottom: 1px solid var(--color-text);
+  }
+
+  .work-row-link {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2rem;
+    gap: var(--space-md);
+    align-items: baseline;
+    padding-block: var(--space-md);
+    color: var(--color-text);
+    text-decoration: none;
+    transition:
+      background-color 0.2s ease,
+      padding-inline 0.2s ease;
+  }
+
+  .work-row-link:hover,
+  .work-row-link:focus-visible {
+    background-color: var(--color-cobalt);
+    padding-inline: var(--space-xs);
+  }
+
+  .work-row-link:hover .row-name,
+  .work-row-link:focus-visible .row-name {
+    color: var(--color-lime);
+  }
+
+  .work-row-link:hover .row-arrow,
+  .work-row-link:focus-visible .row-arrow {
+    color: var(--color-lime);
+    transform: translateX(4px);
+  }
+
+  .work-row-link:hover .row-blurb,
+  .work-row-link:focus-visible .row-blurb,
+  .work-row-link:hover .row-num,
+  .work-row-link:focus-visible .row-num {
+    color: var(--color-lime);
+  }
+
+  .row-num {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.12em;
+  }
+
+  .row-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease;
+  }
+
+  .row-blurb {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .row-arrow {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    text-align: right;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  @media (max-width: 768px) {
+    .work-row-link {
+      grid-template-columns: 2.5rem 1fr 1.5rem;
+      grid-template-rows: auto auto;
+      gap: var(--space-2xs) var(--space-sm);
+    }
+
+    .row-num {
+      grid-row: 1;
+    }
+
+    .row-name {
+      grid-row: 1;
+      font-size: var(--text-xl);
+    }
+
+    .row-arrow {
+      grid-row: 1;
+    }
+
+    .row-blurb {
+      grid-column: 2 / 4;
+      grid-row: 2;
+    }
+  }
+</style>

@@ -19,6 +19,7 @@
 
 .section {
   padding-block: var(--space-section);
+  scroll-margin-top: 5rem;
 }
 
 /* Tighten gap between header and first section */
@@ -43,12 +44,21 @@ main > .section:first-child {
 }
 
 .section-gold {
-  background-color: var(--color-gold);
+  background-color: var(--color-cobalt);
   color: var(--color-black);
 }
 
 .section-gold .label {
   color: rgba(26, 26, 26, 0.6);
+}
+
+.section-cobalt {
+  background-color: var(--color-cobalt);
+  color: var(--color-lime);
+}
+
+.section-cobalt .label {
+  color: var(--color-lime);
 }
 
 /* Collapse top padding when same-colored sections stack */
@@ -57,6 +67,10 @@ main > .section:first-child {
 }
 
 .section-dark + .section-dark {
+  padding-top: 0;
+}
+
+.section-cobalt + .section-cobalt {
   padding-top: 0;
 }
 
