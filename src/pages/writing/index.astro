@@ -9,7 +9,7 @@ const sortedWriting = allWriting.sort(
 
 const typeLabels: Record<string, string> = {
   'essay': 'Essay',
-  'wizshort': 'Wizwit Short',
+  'wizshort': 'wizwit short',
 };
 
 // Only show filter buttons for types that have published articles
@@ -19,17 +19,17 @@ const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
 
 <PageLayout
   title="Writing"
-  description="Essays and Wizwit Shorts from codewizwit. Writing and interactive stories on responsible AI, developer experience, and human-centered technology."
+  description="Essays and wizwit shorts from codewizwit. Writing and interactive stories on responsible AI, developer experience, and human-centered technology."
 >
   <section class="writing-page section-cream section" aria-labelledby="writing-heading">
     <div class="container">
       <p class="label label-gold">Writing</p>
       <h1 id="writing-heading" class="writing-title">
-        Essays and Wizwit Shorts.
+        Essays and wizwit shorts.
       </h1>
       <p class="writing-lede">
         Essays are reflections on responsible AI and developer experience.
-        Wizwit Shorts are illustrated scroll-stories about the future of
+        wizwit shorts are illustrated scroll-stories about the future of
         work. Both are built with Claude Code. As my fluency with the tools
         grew, the writing transformed. And more of me started showing up
         on the page.
@@ -154,7 +154,7 @@ const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
   }
 
   .writing-card:hover {
-    border-color: var(--color-gold);
+    border-color: var(--color-cobalt);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lift);
   }
@@ -175,7 +175,7 @@ const types = activeTypes.length > 1 ? ['all', ...activeTypes] : [];
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-gold-dark);
+    color: var(--color-cobalt-dark);
   }
 
   .writing-card-date {

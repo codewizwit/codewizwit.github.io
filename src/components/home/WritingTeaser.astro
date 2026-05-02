@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 
 const typeLabels: Record<string, string> = {
   'essay': 'Essay',
-  'wizshort': 'Wizwit Short',
+  'wizshort': 'wizwit short',
 };
 
 const allWriting = await getCollection('writing', ({ data }) => !data.draft);
@@ -86,7 +86,7 @@ const articles = allWriting
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: var(--color-gold-dark);
+    color: var(--color-cobalt-dark);
   }
 
   .article-date {

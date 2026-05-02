@@ -1,0 +1,202 @@
+---
+/**
+ * HotDogTeaser: meta-proof of the brand mark.
+ * 3-frame crossfade: promo shoot → block print → AI-rendered logo.
+ */
+
+const frames = [
+  {
+    src: '/images/hot-dog-promo-shoot.jpg',
+    alt: 'Hot dog symbol, original photo',
+    caption: 'Memories',
+  },
+  {
+    src: '/images/hot-dog-print-sheet.jpg',
+    alt: 'Hand-carved hot dog block print on a guest check',
+    caption: 'Hand-carved block print',
+  },
+  {
+    src: '/images/logo-final.png',
+    alt: 'AI-rendered version of the hot dog block print',
+    caption: 'AI-rendered logo',
+  },
+];
+---
+
+<section class="hot-dog-teaser section-cobalt" aria-labelledby="hot-dog-teaser-heading">
+  <div class="container teaser-layout">
+    <figure class="teaser-figure" aria-label="A symbol carried forward through media">
+      <div class="teaser-stage">
+        {frames.map((f, i) => (
+          <img
+            src={f.src}
+            alt={f.alt}
+            class:list={['stage-img', `stage-img-${i + 1}`]}
+            loading="lazy"
+          />
+        ))}
+      </div>
+      <figcaption class="teaser-caption">
+        {frames.map((f, i) => (
+          <span class:list={['cap', `cap-${i + 1}`]}>{f.caption}</span>
+        ))}
+      </figcaption>
+    </figure>
+
+    <div class="teaser-content">
+      <p class="label">The Hot Dog Logo</p>
+      <h2 id="hot-dog-teaser-heading" class="teaser-heading">
+        The spark, the story, the deeply human part always comes first.
+      </h2>
+      <div class="teaser-prose">
+        <p>
+          A memory became a carving. A carving became a print. AI
+          rendered the print into a digital logo.
+        </p>
+        <p>
+          The technology changed at every step. The meaning only got
+          stronger. AI can refine creativity and carry a symbol forward.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hot-dog-teaser {
+    padding-block: var(--space-lg);
+  }
+
+  .teaser-layout {
+    display: grid;
+    grid-template-columns: clamp(260px, 36%, 380px) 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+  }
+
+  .teaser-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .teaser-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-lime);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  .stage-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8%;
+    background-color: var(--color-lime);
+    opacity: 0;
+  }
+
+  /* 3-frame cycle, 9s total. Each frame visible ~2.4s, ~0.6s crossfade. */
+  .stage-img-1 {
+    animation: frame-1 9s ease-in-out infinite;
+  }
+  .stage-img-2 {
+    animation: frame-2 9s ease-in-out infinite;
+  }
+  .stage-img-3 {
+    animation: frame-3 9s ease-in-out infinite;
+  }
+
+  @keyframes frame-1 {
+    0%, 27% { opacity: 1; }
+    33%, 94% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes frame-2 {
+    0%, 27% { opacity: 0; }
+    33%, 60% { opacity: 1; }
+    66%, 100% { opacity: 0; }
+  }
+
+  @keyframes frame-3 {
+    0%, 60% { opacity: 0; }
+    66%, 94% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  .teaser-caption {
+    position: relative;
+    height: 1.4em;
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--color-lime);
+  }
+
+  .cap {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  .cap-1 { animation: frame-1 9s ease-in-out infinite; }
+  .cap-2 { animation: frame-2 9s ease-in-out infinite; }
+  .cap-3 { animation: frame-3 9s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stage-img, .cap { animation: none; opacity: 0; }
+    .stage-img-1, .cap-1 { opacity: 1; }
+  }
+
+  .teaser-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .teaser-content .label {
+    color: var(--color-lime);
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+  }
+
+  .teaser-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    color: var(--color-lime);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  .teaser-prose {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    color: var(--color-lime);
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    max-width: var(--max-width-prose);
+  }
+
+  @media (max-width: 768px) {
+    .teaser-layout {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+
+    .teaser-figure {
+      max-width: 320px;
+      margin-inline: auto;
+    }
+  }
+</style>

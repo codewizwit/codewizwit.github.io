@@ -1,0 +1,186 @@
+---
+/**
+ * HeroV2: editorial hero with a JS-driven verb rotator.
+ */
+
+const verbs = ['wiz', 'work', 'collaborate', 'think', 'build', 'code', 'prototype', 'experiment', 'plan', 'learn', 'reason', 'teach'];
+---
+
+<section class="hero-v2 section-cream" aria-labelledby="hero-v2-heading">
+  <div class="hero-v2-inner container">
+    <h1 id="hero-v2-heading" class="hero-v2-display">
+      <span class="line">I help humans</span>
+      <span class="line">
+        <span
+          class="verb-rotator"
+          data-verbs={JSON.stringify(verbs)}
+          aria-label={`${verbs.join(', ')} with AI`}
+        >
+          <span class="verb-current" aria-hidden="true">{verbs[0]}</span>
+        </span>
+      </span>
+      <span class="line"><span class="with-ai">with AI.</span></span>
+    </h1>
+
+    <div class="hero-v2-subhead">
+      <p class="subhead-lead">
+        No human left behind.
+      </p>
+      <p class="subhead-body">
+        Senior Software Engineer in AI Enablement. I build the trust,
+        tools, infrastructure, trainings, workshops, and labs that help
+        teams level up with AI without leaving people behind.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const rotator = document.querySelector<HTMLElement>('.verb-rotator');
+  const current = rotator?.querySelector<HTMLElement>('.verb-current');
+  const verbs: string[] = JSON.parse(rotator?.dataset.verbs ?? '[]');
+
+  if (
+    rotator &&
+    current &&
+    verbs.length > 0 &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    let index = 0;
+    const swap = () => {
+      current.classList.add('verb-out');
+      window.setTimeout(() => {
+        index = (index + 1) % verbs.length;
+        current.textContent = verbs[index];
+        current.classList.remove('verb-out');
+        current.classList.add('verb-in');
+        window.setTimeout(() => current.classList.remove('verb-in'), 320);
+      }, 280);
+    };
+    window.setInterval(swap, 2400);
+  }
+</script>
+
+<style>
+  .hero-v2 {
+    display: flex;
+    flex-direction: column;
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .hero-v2-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    width: 100%;
+  }
+
+  .hero-v2-display {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 0, "wght" 800;
+    font-size: clamp(3rem, 1rem + 9vw, 9rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--color-text);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero-v2-display .line {
+    display: block;
+  }
+
+  .verb-rotator {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .verb-current {
+    display: inline-block;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 600;
+    font-variation-settings: normal;
+    color: var(--color-cobalt);
+    letter-spacing: -0.05em;
+    transition:
+      opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+  }
+
+  .verb-current.verb-out {
+    opacity: 0;
+    transform: translateY(-0.15em);
+  }
+
+  .verb-current.verb-in {
+    animation: verb-in-anim 0.32s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes verb-in-anim {
+    from {
+      opacity: 0;
+      transform: translateY(0.15em);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-v2-subhead {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xs);
+    max-width: 42rem;
+    margin-top: var(--space-md);
+  }
+
+  .subhead-lead {
+    font-family: var(--font-sans);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.4;
+  }
+
+  .subhead-body {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 400;
+    color: var(--color-text-secondary);
+    line-height: 1.55;
+  }
+
+
+  .hero-v2-meta {
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--color-lime-dark);
+    display: flex;
+    gap: var(--space-xs);
+    align-items: center;
+    margin-top: var(--space-xl);
+  }
+
+  .meta-dot {
+    color: var(--color-text-muted);
+  }
+
+  @media (max-width: 640px) {
+    .hero-v2 {
+      padding-block: var(--space-md) var(--space-xl);
+    }
+
+    .hero-v2-display {
+      font-size: clamp(2.5rem, 8vw + 1rem, 4.5rem);
+    }
+  }
+</style>
