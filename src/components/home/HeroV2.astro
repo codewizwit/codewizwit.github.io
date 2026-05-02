@@ -3,11 +3,16 @@
  * HeroV2: editorial hero with a JS-driven verb rotator.
  */
 
-const verbs = ['wiz', 'work', 'collaborate', 'think', 'build', 'code', 'prototype', 'experiment', 'plan', 'learn', 'reason', 'teach'];
+const verbs = ['wiz', 'work', 'evolve', 'collaborate', 'think', 'build', 'code', 'prototype', 'experiment', 'plan', 'learn', 'reason', 'teach'];
 ---
 
 <section class="hero-v2 section-cream" aria-labelledby="hero-v2-heading">
   <div class="hero-v2-inner container">
+    <p class="hero-v2-eyebrow">
+      <span>Senior Software Engineer</span>
+      <span class="eyebrow-dot" aria-hidden="true">·</span>
+      <span>AI Enablement Engineer</span>
+    </p>
     <h1 id="hero-v2-heading" class="hero-v2-display">
       <span class="line">I help humans</span>
       <span class="line">
@@ -27,9 +32,11 @@ const verbs = ['wiz', 'work', 'collaborate', 'think', 'build', 'code', 'prototyp
         No human left behind.
       </p>
       <p class="subhead-body">
-        Senior Software Engineer in AI Enablement. I build the trust,
-        tools, infrastructure, trainings, workshops, and labs that help
-        teams level up with AI without leaving people behind.
+        As an AI Enablement Engineer, I coach engineering teams on how
+        to build with AI effectively and responsibly, while shaping the
+        direction of engineering culture at scale. This mission is at the
+        center of the job: building a future where technology, ethics,
+        and humanity move forward together, with no human left behind.
       </p>
     </div>
 
@@ -74,6 +81,23 @@ const verbs = ['wiz', 'work', 'collaborate', 'think', 'build', 'code', 'prototyp
     flex-direction: column;
     gap: var(--space-md);
     width: 100%;
+  }
+
+  .hero-v2-eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6em;
+    font-family: var(--font-code);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-2xs);
+  }
+
+  .eyebrow-dot {
+    color: var(--color-text-muted);
   }
 
   .hero-v2-display {

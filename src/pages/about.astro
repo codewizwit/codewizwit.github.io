@@ -111,9 +111,7 @@ import TypingAnimation from '../components/TypingAnimation.astro';
               for engineers. I built frameworks, shipped code, ran experiments,
               and started writing and speaking publicly about it. That work
               became the groundwork for my mission, <strong>No Human Left
-              Behind</strong>: the principle that as AI advances, the people
-              using it, building it, and affected by it stay at the center
-              of how it gets made.
+              Behind</strong>: keeping humans at the center of AI adoption.
             </p>
             <p>
               Now, as an AI Enablement Engineer, I help teams evolve with
@@ -138,43 +136,6 @@ import TypingAnimation from '../components/TypingAnimation.astro';
       </div>
     </section>
 
-    <!-- Act 3: Beyond the Code -->
-    <section class="section-cream section" aria-labelledby="act3-heading">
-      <div class="container">
-        <p class="label label-gold">Act III</p>
-        <h2 id="act3-heading">Beyond the code</h2>
-        <div class="beyond-grid">
-          <div class="beyond-item">
-            <h3 class="beyond-label">Soundtrack</h3>
-            <p class="beyond-text">Huge music nerd. Soul, jazz, R&amp;B, rock, oldies, reggae, indie. Hip-hop and doo-wop are my favorites. Always loud.</p>
-          </div>
-          <div class="beyond-item">
-            <h3 class="beyond-label">Fuel</h3>
-            <p class="beyond-text">Total foodie. Good meals start the best conversations. Great snacks fuel the best ideas.</p>
-          </div>
-          <div class="beyond-item">
-            <h3 class="beyond-label">Fiction</h3>
-            <p class="beyond-text">Sci-fi. Always pondering the future we're building.</p>
-          </div>
-          <div class="beyond-item">
-            <h3 class="beyond-label">Eye</h3>
-            <p class="beyond-text">DePaul Media &amp; Design grad. Visual thinker solving technical problems.</p>
-          </div>
-          <div class="beyond-item">
-            <h3 class="beyond-label">Superpower</h3>
-            <p class="beyond-text">Empathy. Understanding people, anticipating needs, and turning that into strategic problem solving. The bartender instinct never left.</p>
-          </div>
-          <div class="beyond-item">
-            <h3 class="beyond-label">Roots</h3>
-            <p class="beyond-text">
-              Home is where my head is. Chicago bred, Philly based. Dual citizen
-              (US &amp; EU). Lived in six countries outside the US.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </article>
 </PageLayout>
 
@@ -190,6 +151,37 @@ import TypingAnimation from '../components/TypingAnimation.astro';
     height: 1px;
     background: var(--color-gray-border);
     margin-bottom: var(--space-lg);
+  }
+
+  .manifesto {
+    padding-block: var(--space-xl);
+    text-align: center;
+  }
+
+  .manifesto-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 1.5rem + 3.5vw, 4rem);
+    font-weight: 800;
+    font-variation-settings: "opsz" 144, "SOFT" 0;
+    line-height: 1.0;
+    letter-spacing: -0.035em;
+    margin: 0 0 var(--space-md);
+  }
+
+  .manifesto-em {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 600;
+    color: var(--color-cobalt);
+    letter-spacing: -0.02em;
+  }
+
+  .manifesto-body {
+    font-size: var(--text-lg);
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    max-width: 38rem;
+    margin-inline: auto;
   }
 
   .pull-quote {

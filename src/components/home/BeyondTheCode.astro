@@ -1,0 +1,106 @@
+---
+/**
+ * BeyondTheCode: personal-side grid — soundtrack, fuel, fiction, etc.
+ */
+
+const items = [
+  {
+    label: 'Soundtrack',
+    text: 'Huge music nerd. Soul, jazz, R&B, rock, oldies, reggae, indie. Hip-hop and doo-wop are my favorites. Always loud.',
+  },
+  {
+    label: 'Fuel',
+    text: 'Total foodie. Good meals start the best conversations. Great snacks fuel the best ideas.',
+  },
+  {
+    label: 'Fiction',
+    text: 'Sci-fi. Always pondering the future we\'re building.',
+  },
+  {
+    label: 'Eye',
+    text: 'DePaul Media & Design grad. Visual thinker solving technical problems.',
+  },
+  {
+    label: 'Superpower',
+    text: 'Empathy. Understanding people, anticipating needs, and turning that into strategic problem solving. The bartender instinct never left.',
+  },
+  {
+    label: 'Roots',
+    text: 'Home is where my head is. Chicago bred, Philly based. Dual citizen (US & EU). Lived in six countries outside the US.',
+  },
+];
+---
+
+<section class="beyond section-cream" aria-label="Beyond the code">
+  <div class="container">
+    <p class="label label-gold">Beyond the code</p>
+    <div class="beyond-grid">
+      {items.map(({ label, text }) => (
+        <div class="beyond-item">
+          <h3 class="beyond-label">{label}</h3>
+          <p class="beyond-text">{text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .beyond {
+    padding-block: var(--space-xl);
+  }
+
+  .beyond-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+  }
+
+  .beyond-item {
+    border-top: 1px solid var(--color-gray-border);
+    padding: var(--space-sm) var(--space-sm) var(--space-md);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .beyond-item:hover {
+    background-color: var(--color-cobalt);
+    color: var(--color-lime);
+  }
+
+  .beyond-label {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 700;
+    margin: 0 0 var(--space-2xs);
+    transition: color 0.2s ease;
+  }
+
+  .beyond-item:hover .beyond-label {
+    color: var(--color-lime);
+  }
+
+  .beyond-text {
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+    transition: color 0.2s ease;
+  }
+
+  .beyond-item:hover .beyond-text {
+    color: var(--color-lime);
+  }
+
+  @media (max-width: 768px) {
+    .beyond-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .beyond-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

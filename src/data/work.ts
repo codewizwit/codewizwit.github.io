@@ -10,8 +10,8 @@ export const work: WorkItem[] = [
     name: "wizwit shorts",
     blurb:
       "Illustrated, interactive scrollytelling pieces on AI and human-centered work.",
-    href: "/writing",
-    external: false,
+    href: "https://wizwit-shorts.vercel.app/",
+    external: true,
   },
   {
     name: "Claude & I",
