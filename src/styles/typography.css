@@ -80,7 +80,7 @@ h4,
 }
 
 .label-gold {
-  color: var(--color-cobalt);
+  color: var(--color-text-secondary);
 }
 
 /* Section heading spacing — consistent across all pages */
@@ -179,10 +179,12 @@ h4,
 
 .prose strong {
   font-weight: 600;
+  color: var(--color-cobalt);
 }
 
 .prose em {
   font-style: italic;
+  color: var(--color-cobalt);
 }
 
 .prose a {
