@@ -3,7 +3,7 @@
  * HeroV2: editorial hero with a JS-driven verb rotator.
  */
 
-const verbs = ['wiz', 'evolve', 'build', 'flourish', 'think', 'grow', 'prototype', 'transform', 'teach', 'bloom', 'code', 'elevate', 'plan', 'progress', 'experiment', 'emerge', 'collaborate', 'unlock', 'reason', 'rise'];
+const verbs = ['wiz', 'evolve', 'build', 'flourish', 'brainstorm', 'grow', 'vibe', 'transform', 'think', 'bloom', 'prototype', 'elevate', 'design', 'progress', 'ship', 'emerge', 'innovate', 'strategize', 'amplify', 'experiment', 'unlock', 'sketch', 'create', 'accelerate', 'collaborate', 'empower', 'iterate', 'enable', 'teach', 'rise', 'plan', 'ascend', 'code', 'mature', 'reason'];
 ---
 
 <section class="hero-v2 section-cream" aria-labelledby="hero-v2-heading">
@@ -54,18 +54,44 @@ const verbs = ['wiz', 'evolve', 'build', 'flourish', 'think', 'grow', 'prototype
     verbs.length > 0 &&
     !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   ) {
+    const TYPE_MS = 90;
+    const DELETE_MS = 45;
+    const HOLD_MS = 1500;
+    const SETTLE_MS = 350;
+
     let index = 0;
-    const swap = () => {
-      current.classList.add('verb-out');
-      window.setTimeout(() => {
-        index = (index + 1) % verbs.length;
-        current.textContent = verbs[index];
-        current.classList.remove('verb-out');
-        current.classList.add('verb-in');
-        window.setTimeout(() => current.classList.remove('verb-in'), 320);
-      }, 280);
+    current.textContent = '';
+
+    const type = (verb: string, i: number, done: () => void) => {
+      if (i > verb.length) {
+        window.setTimeout(done, HOLD_MS);
+        return;
+      }
+      current.textContent = verb.slice(0, i);
+      window.setTimeout(() => type(verb, i + 1, done), TYPE_MS);
     };
-    window.setInterval(swap, 2400);
+
+    const erase = (done: () => void) => {
+      const text = current.textContent ?? '';
+      if (text.length === 0) {
+        window.setTimeout(done, SETTLE_MS);
+        return;
+      }
+      current.textContent = text.slice(0, -1);
+      window.setTimeout(() => erase(done), DELETE_MS);
+    };
+
+    const next = () => {
+      const verb = verbs[index];
+      type(verb, 0, () => {
+        erase(() => {
+          index = (index + 1) % verbs.length;
+          next();
+        });
+      });
+    };
+
+    next();
   }
 </script>
 
@@ -134,30 +160,20 @@ const verbs = ['wiz', 'evolve', 'build', 'flourish', 'think', 'grow', 'prototype
     font-variation-settings: normal;
     color: var(--color-cobalt);
     letter-spacing: -0.05em;
-    transition:
-      opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1),
-      transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity, transform;
   }
 
-  .verb-current.verb-out {
-    opacity: 0;
-    transform: translateY(-0.15em);
+  .verb-current::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 0.05em;
+    color: var(--color-cobalt);
+    font-style: normal;
+    font-weight: 400;
+    animation: verb-caret-blink 1s steps(2) infinite;
   }
 
-  .verb-current.verb-in {
-    animation: verb-in-anim 0.32s cubic-bezier(0.4, 0, 0.2, 1) both;
-  }
-
-  @keyframes verb-in-anim {
-    from {
-      opacity: 0;
-      transform: translateY(0.15em);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes verb-caret-blink {
+    50% { opacity: 0; }
   }
 
   .hero-v2-subhead {
@@ -210,20 +226,5 @@ const verbs = ['wiz', 'evolve', 'build', 'flourish', 'think', 'grow', 'prototype
       font-size: clamp(2.25rem, 7vw + 1rem, 4rem);
     }
 
-    /* On phones the translateY makes the line bounce; fade only. */
-    .verb-current.verb-out {
-      transform: none;
-    }
-
-    @keyframes verb-in-anim {
-      from {
-        opacity: 0;
-        transform: none;
-      }
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
   }
 </style>
