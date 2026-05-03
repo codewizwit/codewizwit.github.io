@@ -135,30 +135,25 @@ const currentPath = Astro.url.pathname;
     font-weight: 600;
     color: var(--color-text-secondary);
     text-decoration: none;
-    padding: var(--space-3xs) 0;
+    padding: var(--space-3xs) var(--space-2xs);
     position: relative;
-    transition: color var(--duration-fast);
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-cobalt);
-    transition: width var(--duration-base) var(--ease-out);
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out),
+      padding-inline var(--duration-fast) var(--ease-out);
   }
 
   .nav-link:hover,
-  .nav-link.active {
-    color: var(--color-cobalt);
+  .nav-link:focus-visible {
+    background-color: var(--color-cobalt);
+    color: var(--color-lime);
+    padding-inline: var(--space-xs);
   }
 
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    width: 100%;
+  .nav-link.active {
+    background-color: var(--color-cobalt);
+    color: var(--color-lime);
+    padding-inline: var(--space-xs);
   }
 
   /* ---- Mobile Nav Toggle ---- */

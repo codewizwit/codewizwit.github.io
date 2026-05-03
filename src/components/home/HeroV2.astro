@@ -3,7 +3,7 @@
  * HeroV2: editorial hero with a JS-driven verb rotator.
  */
 
-const verbs = ['wiz', 'evolve', 'build', 'flourish', 'brainstorm', 'grow', 'vibe', 'transform', 'think', 'bloom', 'prototype', 'elevate', 'design', 'progress', 'ship', 'emerge', 'innovate', 'strategize', 'amplify', 'experiment', 'unlock', 'sketch', 'create', 'accelerate', 'collaborate', 'empower', 'iterate', 'enable', 'teach', 'rise', 'plan', 'ascend', 'code', 'mature', 'reason'];
+const verbs = ['wiz', 'evolve', 'build', 'flourish', 'brainstorm', 'grow', 'riff', 'transform', 'vibe', 'bloom', 'groove', 'elevate', 'prototype', 'progress', 'design', 'emerge', 'ship', 'amplify', 'innovate', 'unlock', 'strategize', 'accelerate', 'experiment', 'empower', 'sketch', 'enable', 'create', 'rise', 'collaborate', 'mature', 'delegate', 'ascend', 'iterate', 'transcend', 'teach', 'solve', 'plan', 'code', 'reason'];
 ---
 
 <section class="hero-v2 section-cream" aria-labelledby="hero-v2-heading">
@@ -59,6 +59,17 @@ const verbs = ['wiz', 'evolve', 'build', 'flourish', 'brainstorm', 'grow', 'vibe
     const HOLD_MS = 1500;
     const SETTLE_MS = 350;
 
+    // Always lead with "wiz", then shuffle the rest. Reshuffle each full loop
+    // so the order stays fresh on long sessions.
+    const [first, ...rest] = verbs;
+    const shuffle = (arr: string[]) => {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    };
+    shuffle(rest);
+    let ordered = [first, ...rest];
     let index = 0;
     current.textContent = '';
 
@@ -82,10 +93,14 @@ const verbs = ['wiz', 'evolve', 'build', 'flourish', 'brainstorm', 'grow', 'vibe
     };
 
     const next = () => {
-      const verb = verbs[index];
+      const verb = ordered[index];
       type(verb, 0, () => {
         erase(() => {
-          index = (index + 1) % verbs.length;
+          index = (index + 1) % ordered.length;
+          if (index === 0) {
+            shuffle(rest);
+            ordered = [first, ...rest];
+          }
           next();
         });
       });

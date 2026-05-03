@@ -14,7 +14,7 @@ export const work: WorkItem[] = [
     external: true,
   },
   {
-    name: "Claude & I",
+    name: "claude & i",
     blurb: "A complete Claude Code environment. Fork it and make it yours.",
     href: "https://claude-code-playbook-sigma.vercel.app",
     external: true,
