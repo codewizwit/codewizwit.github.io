@@ -7,6 +7,13 @@ export interface WorkItem {
 
 export const work: WorkItem[] = [
   {
+    name: "wizwit 3D",
+    blurb:
+      "An exploration of 3D motion, physics, and spatial color interactivity.",
+    href: "https://sphere-field.vercel.app",
+    external: true,
+  },
+  {
     name: "wizwit shorts",
     blurb:
       "Illustrated, interactive scrollytelling pieces on AI and human-centered work.",
