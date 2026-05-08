@@ -7,9 +7,9 @@ export interface WorkItem {
 
 export const work: WorkItem[] = [
   {
-    name: "wizwit 3D",
+    name: "spaceland",
     blurb:
-      "An exploration of 3D motion, physics, and spatial color interactivity.",
+      "A Flatland toy. Move the cursor and watch the plane reveal what's underneath.",
     href: "https://sphere-field.vercel.app",
     external: true,
   },
