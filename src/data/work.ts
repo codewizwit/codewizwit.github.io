@@ -9,7 +9,7 @@ export const work: WorkItem[] = [
   {
     name: "spaceland",
     blurb:
-      "A Flatland toy. Move the cursor and watch the plane reveal what's underneath.",
+      "A 3D field of drifting spheres on a 2D screen. Playing with what Spaceland might have felt like to A. Square in Flatland (1884).",
     href: "https://sphere-field.vercel.app",
     external: true,
   },
