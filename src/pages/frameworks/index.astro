@@ -5,7 +5,7 @@ import { frameworks } from '../../data/messaging';
 
 <PageLayout
   title="Frameworks"
-  description="Two frameworks for responsible AI. The Four Lenses assesses whether AI tools serve people. The Lift guides teams through adoption that lifts everyone. No Human Left Behind."
+  description="No Human Left Behind is the mission. The Lift, Encoding Intent, and The Four Lenses are how it becomes practice: responsible AI adoption that keeps humans at the center."
 >
   <article>
     <section class="section-cream section" aria-labelledby="fw-heading">
@@ -13,10 +13,21 @@ import { frameworks } from '../../data/messaging';
         <p class="label label-gold">Human-Centered AI Adoption</p>
         <h1 id="fw-heading" class="fw-title">Frameworks</h1>
         <p class="fw-lede">
-          Adopting AI responsibly requires more than learning new tools. It requires
-          trust, a new way of thinking, and a new way of working. These
-          frameworks guide that shift.
+          Adopting AI responsibly takes more than learning new tools. It takes
+          trust, a new way of thinking, and a new way of working. One mission
+          holds these together, and three methods carry it into practice.
         </p>
+
+        <div class="fw-umbrella">
+          <p class="fw-type">The Mission</p>
+          <h2 id="nhlb-heading" class="fw-umbrella-name">
+            <a href="/frameworks/no-human-left-behind" class="link">No Human Left Behind</a>
+          </h2>
+          <p class="fw-umbrella-desc">
+            {frameworks.noHumanLeftBehind.description}
+          </p>
+        </div>
+
         <div class="fw-grid">
           <div class="fw-entry">
             <p class="fw-type">AI Adoption</p>
@@ -25,6 +36,16 @@ import { frameworks } from '../../data/messaging';
             </h2>
             <p class="fw-desc">
               {frameworks.lift.description}
+            </p>
+          </div>
+
+          <div class="fw-entry">
+            <p class="fw-type">Methodology</p>
+            <h2 id="encoding-intent-heading" class="fw-name">
+              <a href="/frameworks/encoding-intent" class="link">Encoding Intent</a>
+            </h2>
+            <p class="fw-desc">
+              {frameworks.encodingIntent.description}
             </p>
           </div>
 
@@ -55,13 +76,32 @@ import { frameworks } from '../../data/messaging';
     line-height: 1.5;
     color: var(--color-text-secondary);
     max-width: var(--max-width-prose);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
   }
 
+  .fw-umbrella {
+    border-top: 2px solid var(--color-gold-dark);
+    padding-top: var(--space-md);
+    margin-bottom: var(--space-2xl);
+    max-width: var(--max-width-prose);
+  }
+
+  .fw-umbrella-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .fw-umbrella-desc {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
 
   .fw-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--space-2xl);
   }
 
@@ -93,7 +133,7 @@ import { frameworks } from '../../data/messaging';
     margin-bottom: var(--space-xs);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .fw-grid {
       grid-template-columns: 1fr;
     }

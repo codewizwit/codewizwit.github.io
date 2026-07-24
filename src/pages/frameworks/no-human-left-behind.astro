@@ -1,0 +1,165 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="No Human Left Behind"
+  description="The mission underneath the work. A commitment to building a future where technology, ethics, and humanity move forward together, with nobody left behind."
+>
+  <article class="nhlb">
+    <!-- Hero -->
+    <section class="section-cream section" aria-labelledby="nhlb-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">The North Star</p>
+        <h1 id="nhlb-heading" class="nhlb-title">No Human Left Behind</h1>
+        <p class="nhlb-statement">
+          A commitment to building a future where technology, ethics, and
+          humanity move forward together, with nobody left behind.
+        </p>
+      </div>
+    </section>
+
+    <!-- The commitment -->
+    <section class="section-dark section" aria-labelledby="commit-heading">
+      <div class="container container-narrow">
+        <p class="label nhlb-label">The Commitment</p>
+        <h2 id="commit-heading" class="nhlb-section-heading">A tension I live with daily</h2>
+        <div class="prose nhlb-prose">
+          <p>
+            I love AI. I am a power user. It has changed the way I think, build,
+            and create, and I want others to experience that.
+          </p>
+          <p>
+            I am also deeply aware of the damage it can cause. To jobs, to
+            creativity, to human connection. I have struggled with this, and it
+            is not resolved.
+          </p>
+          <p>
+            That tension is my engine. I take everything that keeps me up at
+            night about AI and build it into frameworks, tools, and ways of
+            working that keep humans at the center of AI adoption.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The core tension -->
+    <section class="section-cream section" aria-labelledby="tension-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">What It Is, and Is Not</p>
+        <h2 id="tension-heading" class="nhlb-section-heading">Hold both truths, build anyway</h2>
+        <p class="nhlb-body">
+          This is not anti-AI doomerism, and it is not uncritical AI hype. It is
+          something harder: using the thing you are worried about, responsibly,
+          while helping others do the same. The goal is not to resolve the
+          tension. It is to hold both truths and build anyway.
+        </p>
+      </div>
+    </section>
+
+    <!-- How it becomes practice -->
+    <section class="section-dark section" aria-labelledby="practice-heading">
+      <div class="container container-narrow">
+        <p class="label nhlb-label">How It Becomes Practice</p>
+        <h2 id="practice-heading" class="nhlb-section-heading">Three methods, one mission</h2>
+        <p class="nhlb-prose-lead">
+          A commitment is only as good as what it changes on a Tuesday. These
+          three carry it into the work.
+        </p>
+        <div class="nhlb-methods">
+          <div class="nhlb-method">
+            <h3 class="nhlb-method-name">
+              <a href="/frameworks/the-lift" class="link-light">The Lift</a>
+            </h3>
+            <p class="nhlb-method-desc">
+              How a whole team adopts AI without leaving its slower adopters,
+              its skeptics, or its non-engineers behind.
+            </p>
+          </div>
+          <div class="nhlb-method">
+            <h3 class="nhlb-method-name">
+              <a href="/frameworks/encoding-intent" class="link-light">Encoding Intent</a>
+            </h3>
+            <p class="nhlb-method-desc">
+              How a person stays in control of AI work, by putting human
+              judgment in first, before the model writes anything.
+            </p>
+          </div>
+          <div class="nhlb-method">
+            <h3 class="nhlb-method-name">
+              <a href="/frameworks/four-lenses" class="link-light">The Four Lenses</a>
+            </h3>
+            <p class="nhlb-method-desc">
+              How to check whether an AI tool actually serves the people using
+              it, and the people affected by it, before it scales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .nhlb-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+  }
+
+  .nhlb-statement {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: var(--space-sm);
+    max-width: var(--max-width-prose);
+  }
+
+  .nhlb-section-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+  }
+
+  .nhlb-label {
+    color: var(--color-gold);
+  }
+
+  .nhlb-body,
+  .nhlb-prose-lead {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: var(--max-width-prose);
+  }
+
+  .nhlb-prose-lead {
+    margin-bottom: var(--space-xl);
+  }
+
+  .nhlb-methods {
+    display: grid;
+    gap: var(--space-lg);
+    max-width: var(--max-width-prose);
+  }
+
+  .nhlb-method {
+    border-top: 1px solid var(--color-gray-border-dark, rgba(245, 243, 238, 0.2));
+    padding-top: var(--space-sm);
+  }
+
+  .nhlb-method-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-2xs);
+  }
+
+  .nhlb-method-desc {
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+  }
+</style>

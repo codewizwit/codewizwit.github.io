@@ -1,0 +1,195 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Encoding Intent"
+  description="Plan first. Prompt second. The methodology behind responsible AI work: human judgment goes in first as structure, standards, and guardrails, then AI builds inside it."
+>
+  <article class="intent">
+    <!-- Hero -->
+    <section class="section-cream section" aria-labelledby="ei-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">The Methodology</p>
+        <h1 id="ei-heading" class="ei-title">Encoding Intent</h1>
+        <p class="ei-lede">Plan first. Prompt second. No vibes required.</p>
+        <p class="ei-sub">
+          Encoding Intent is the discipline underneath every framework here. It
+          is how a person stays in control of AI work: not by reviewing every
+          line after the fact, but by putting judgment in first, before the
+          model writes anything.
+        </p>
+      </div>
+    </section>
+
+    <!-- What it is -->
+    <section class="section-dark section" aria-labelledby="what-heading">
+      <div class="container container-narrow">
+        <p class="label intent-label">The Idea</p>
+        <h2 id="what-heading" class="ei-section-heading">Judgment goes in first</h2>
+        <div class="prose intent-prose">
+          <p>
+            Before AI writes a single line of code, it needs to understand who
+            you are, how you work, what quality looks like, the patterns you
+            trust, and the standards you will not compromise.
+          </p>
+          <p>
+            In practice, that means skill files, instruction files, and
+            configuration that capture a team's voice, standards, and
+            decision-making patterns. The knowledge that lives in people's heads
+            gets written down, shared, and made available to AI as context. The
+            encoding itself becomes a collaborative act: teams articulate what
+            they know, together.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to apply -->
+    <section class="section-cream section" aria-labelledby="how-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">How to Apply It</p>
+        <h2 id="how-heading" class="ei-section-heading">Five steps, in order</h2>
+        <ol class="ei-steps">
+          <li>
+            <strong>Define the structure.</strong>
+            Architecture, patterns, boundaries.
+          </li>
+          <li>
+            <strong>Set the standards.</strong>
+            Quality bar, testing requirements, style.
+          </li>
+          <li>
+            <strong>Build the infrastructure.</strong>
+            CI/CD, validation, governance.
+          </li>
+          <li>
+            <strong>Encode the intent.</strong>
+            Skill files, instruction files, configs, guardrails, planning prompts.
+          </li>
+          <li>
+            <strong>Then let AI build.</strong>
+            Inside the structure, following the intent.
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Why it matters -->
+    <section class="section-dark section" aria-labelledby="why-heading">
+      <div class="container container-narrow">
+        <p class="label intent-label">Why It Works</p>
+        <h2 id="why-heading" class="ei-section-heading">The structure holds</h2>
+        <div class="prose intent-prose">
+          <p class="ei-closing">
+            More time in planning and encoding means less time debugging and
+            fixing. The human stays in control because the structure holds.
+            Speed comes from automation. Direction comes from intent.
+          </p>
+        </div>
+        <a
+          href="/writing/dispatch-4-encoding-intent-in-practice"
+          class="link-light ei-callout"
+        >
+          See it in practice: how this site was built with 15 skill files and zero vibes.
+        </a>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section-cream section" aria-labelledby="related-heading">
+      <div class="container container-narrow">
+        <p class="label label-gold">Part of a Larger Whole</p>
+        <h2 id="related-heading" class="ei-section-heading">Where this fits</h2>
+        <p class="ei-related-lede">
+          Encoding Intent is phase five of <a href="/frameworks/the-lift" class="link">The Lift</a>,
+          the point where a team's judgment becomes the environment AI works
+          inside. It serves the same mission as everything here:
+          <a href="/frameworks/no-human-left-behind" class="link">No Human Left Behind</a>.
+        </p>
+      </div>
+    </section>
+  </article>
+</PageLayout>
+
+<style>
+  .ei-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-4xl);
+    line-height: 1.1;
+  }
+
+  .ei-lede {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .ei-sub {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: var(--max-width-prose);
+  }
+
+  .ei-section-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+  }
+
+  .intent-label {
+    color: var(--color-gold);
+  }
+
+  .ei-steps {
+    list-style: none;
+    counter-reset: ei;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--space-md);
+    max-width: var(--max-width-prose);
+  }
+
+  .ei-steps li {
+    counter-increment: ei;
+    position: relative;
+    padding-left: var(--space-xl);
+    font-size: var(--text-lg);
+    line-height: 1.55;
+  }
+
+  .ei-steps li::before {
+    content: counter(ei);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-gold-dark);
+  }
+
+  .ei-closing {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+  }
+
+  .ei-callout {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    font-weight: 600;
+  }
+
+  .ei-related-lede {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    max-width: var(--max-width-prose);
+  }
+</style>
