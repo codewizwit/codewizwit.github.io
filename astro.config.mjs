@@ -8,9 +8,11 @@ export default defineConfig({
   trailingSlash: "ignore",
   build: { format: "directory" },
   redirects: {
-    "/frameworks": "/",
-    "/frameworks/the-lift": "/",
-    "/frameworks/four-lenses": "/",
+    // The frameworks now live on wizwit lab. Send the old URLs to the real
+    // pages instead of dropping visitors on the homepage.
+    "/frameworks": "https://wizwit-lab.vercel.app/",
+    "/frameworks/the-lift": "https://wizwit-lab.vercel.app/the-lift/",
+    "/frameworks/four-lenses": "https://wizwit-lab.vercel.app/four-lenses/",
     "/projects": "/#work",
     "/connect": "/about",
     "/speaking": "/about",
