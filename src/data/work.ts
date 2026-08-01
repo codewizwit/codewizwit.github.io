@@ -9,7 +9,7 @@ export const work: WorkItem[] = [
   {
     name: "wizwit lab",
     blurb:
-      "Frameworks, architecture, and tools for AI adoption that elevates everyone.",
+      "Frameworks, architecture, and published tools for AI adoption that elevates everyone.",
     href: "https://wizwit-lab.vercel.app/",
     external: true,
   },
