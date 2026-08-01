@@ -1,19 +1,30 @@
 ---
 /**
- * WorkGrid: editorial list, not card grid.
- * Numbered rows with monospace labels, thin dividers, hover row reveals cobalt arrow.
+ * WorkGrid: an editorial list of rows with a monospace section label,
+ * thin dividers, and a hover state that reveals a cobalt row and lime arrow.
+ * Defaults to the Live projects list; pass props to render a second list
+ * with the same treatment.
  */
-import { work } from '../../data/work';
+import { work, type WorkItem } from '../../data/work';
+
+interface Props {
+  id?: string;
+  heading?: string;
+  items?: WorkItem[];
+}
+
+const { id = 'work', heading = 'Live projects', items = work } = Astro.props;
+const headingId = `${id}-heading`;
 ---
 
-<section id="work" class="work-list section-cream section" aria-labelledby="work-heading">
+<section id={id} class="work-list section-cream section" aria-labelledby={headingId}>
   <div class="container">
     <div class="work-list-head">
-      <h2 id="work-heading" class="work-list-title">Live projects</h2>
+      <h2 id={headingId} class="work-list-title">{heading}</h2>
     </div>
 
     <ol class="work-rows" role="list">
-      {work.map(({ name, blurb, href, external }) => (
+      {items.map(({ name, blurb, href, external }) => (
         <li class="work-row">
           <a
             href={href}
@@ -31,6 +42,15 @@ import { work } from '../../data/work';
 </section>
 
 <style>
+  /*
+   * Stacked cream sections collapse their top padding globally, which would
+   * butt the second list's label straight against the first list's closing
+   * rule. Restore a gap so the two lists read as separate groups.
+   */
+  .work-list + .work-list {
+    padding-top: var(--space-md);
+  }
+
   .work-list-head {
     display: flex;
     justify-content: space-between;

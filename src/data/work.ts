@@ -26,6 +26,10 @@ export const work: WorkItem[] = [
     href: "https://claude-code-playbook-sigma.vercel.app",
     external: true,
   },
+];
+
+/** Things built for the fun of it. Rendered as its own list below the work rows. */
+export const playground: WorkItem[] = [
   {
     name: "Claude & Claude",
     blurb:
