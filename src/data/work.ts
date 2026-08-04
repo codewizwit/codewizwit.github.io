@@ -7,9 +7,23 @@ export interface WorkItem {
 
 export const work: WorkItem[] = [
   {
+    name: "das",
+    blurb:
+      "Documentation as Skills. Turns any docs source into a token-bounded, progressive-disclosure skill an agent navigates instead of swallowing. On npm.",
+    href: "https://codewizwit.github.io/das-cli/",
+    external: true,
+  },
+  {
+    name: "human-in-the-loop",
+    blurb:
+      "Reusable prompts that keep human judgment inside AI-assisted work, at the points where it actually matters. On npm.",
+    href: "https://codewizwit.github.io/human-in-the-loop/",
+    external: true,
+  },
+  {
     name: "wizwit lab",
     blurb:
-      "Frameworks, architecture, and published tools for AI adoption that elevates everyone.",
+      "Frameworks, architecture, and published tools for AI-assisted work that elevates everyone.",
     href: "https://wizwit-lab.vercel.app/",
     external: true,
   },
@@ -30,6 +44,20 @@ export const work: WorkItem[] = [
 
 /** Things built for the fun of it. Rendered as its own list below the work rows. */
 export const playground: WorkItem[] = [
+  {
+    name: "spaceland",
+    blurb:
+      "A drifting field of spheres that answer the cursor and pop in chain reactions. Three.js, pure ESM, no build step.",
+    href: "https://sphere-field.vercel.app",
+    external: true,
+  },
+  {
+    name: "The Jira Chronicles",
+    blurb:
+      "An interactive click-through story about what project management could look like reimagined with AI.",
+    href: "https://wizwit-shorts.vercel.app/shorts/jira-chronicles/",
+    external: true,
+  },
   {
     name: "Claude & Claude",
     blurb:
