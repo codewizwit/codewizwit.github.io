@@ -8,11 +8,13 @@ export default defineConfig({
   trailingSlash: "ignore",
   build: { format: "directory" },
   redirects: {
-    // The frameworks now live on wizwit lab. Send the old URLs to the real
-    // pages instead of dropping visitors on the homepage.
-    "/frameworks": "https://wizwit-lab.vercel.app/",
-    "/frameworks/the-lift": "https://wizwit-lab.vercel.app/the-lift/",
-    "/frameworks/four-lenses": "https://wizwit-lab.vercel.app/four-lenses/",
+    // The frameworks came home. These forwarded out to wizwit lab; now they
+    // land on /philosophy, which is one page. The diagram is the index, and
+    // every framework on it opens in place, so there are no child pages to
+    // point at.
+    "/frameworks": "/philosophy",
+    "/frameworks/the-lift": "/philosophy",
+    "/frameworks/four-lenses": "/philosophy",
     "/projects": "/#work",
     "/connect": "/about",
     "/speaking": "/about",

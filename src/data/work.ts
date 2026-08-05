@@ -7,36 +7,37 @@ export interface WorkItem {
 
 export const work: WorkItem[] = [
   {
-    name: "das",
+    name: "das-cli",
     blurb:
-      "Documentation as Skills. Turns any docs source into a token-bounded, progressive-disclosure skill an agent navigates instead of swallowing. On npm.",
+      "Slices documentation into context-efficient chunks with an index, so Claude loads only what it needs on demand. Point it at a GitHub URL, a Markdown file, a docs folder, or a project root. Hardened against prompt injection. Published on npm.",
     href: "https://codewizwit.github.io/das-cli/",
     external: true,
   },
   {
     name: "human-in-the-loop",
     blurb:
-      "Reusable prompts that keep human judgment inside AI-assisted work, at the points where it actually matters. On npm.",
-    href: "https://codewizwit.github.io/human-in-the-loop/",
+      "A CLI that finds and installs Claude Code skills from a reviewed library: search, install, diagnose, upgrade. The skills cover code review, security, testing, governance, and team culture. Published on npm, and the subject of my AI Summit talk.",
+    href: "https://www.npmjs.com/package/@human-in-the-loop/cli",
     external: true,
   },
   {
-    name: "wizwit lab",
+    name: "philosophy",
     blurb:
-      "Frameworks, architecture, and published tools for AI-assisted work that elevates everyone.",
-    href: "https://wizwit-lab.vercel.app/",
-    external: true,
+      "One labeled diagram of how AI adoption should work: the north star, the four delivery stages that loop, and the tools underneath that keep it honest. Every piece of it is written out in full under Ideas.",
+    href: "/philosophy",
+    external: false,
   },
   {
     name: "wizwit shorts",
     blurb:
-      "Illustrated, interactive scrollytelling pieces on AI and human-centered work.",
+      "Six illustrated stories about AI and the way we work, told through scrolling. Hand drawn, one self-contained page each.",
     href: "https://wizwit-shorts.vercel.app/",
     external: true,
   },
   {
-    name: "claude & i",
-    blurb: "A complete Claude Code environment. Fork it and make it yours.",
+    name: "wizwit claude",
+    blurb:
+      "The Claude Code setup I actually work in. Agents, skills, and standards, documented so someone else can fork it.",
     href: "https://claude-code-playbook-sigma.vercel.app",
     external: true,
   },
@@ -47,21 +48,14 @@ export const playground: WorkItem[] = [
   {
     name: "spaceland",
     blurb:
-      "A drifting field of spheres that answer the cursor and pop in chain reactions. Three.js, pure ESM, no build step.",
+      "A 3D field of spheres that drift, lean toward your cursor, and pop in chain reactions when you click one. Three.js, no build step, twelve themes.",
     href: "https://sphere-field.vercel.app",
     external: true,
   },
   {
-    name: "The Jira Chronicles",
+    name: "claude vs claude",
     blurb:
-      "An interactive click-through story about what project management could look like reimagined with AI.",
-    href: "https://wizwit-shorts.vercel.app/shorts/jira-chronicles/",
-    external: true,
-  },
-  {
-    name: "Claude & Claude",
-    blurb:
-      "A spectator-mode dialogue between two Claude instances. Pick a topic and watch them riff.",
+      "Spectator mode for two Claude instances. Pick a preset or write your own topic, set the number of rounds, and watch Claude A play contrarian while Claude B hunts for unexpected angles. React and Vite, with an Express proxy so the API key never reaches the browser.",
     href: "https://claude-vs-claude.vercel.app",
     external: true,
   },

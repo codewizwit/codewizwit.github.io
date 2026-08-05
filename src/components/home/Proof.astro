@@ -10,6 +10,7 @@ const speaking = [
     talk: 'Human-in-the-Loop: Responsible AI Engineering in Practice',
     year: '2025',
     note: 'Selected as Future AI Leader',
+    link: 'https://codewizwit.github.io/human-in-the-loop/',
     upcoming: false,
   },
   {
@@ -56,13 +57,17 @@ const affiliations = [
         <p class="label label-gold">Speaking</p>
         <h3 class="proof-heading">On stages</h3>
         <ul class="proof-list" role="list">
-          {speaking.map(({ event, talk, year, note, upcoming }) => (
+          {speaking.map(({ event, talk, year, note, link }) => (
             <li class="proof-item">
               <div class="proof-item-header">
                 <span class="proof-event">{event}</span>
                 <span class="proof-year">{year}</span>
               </div>
-              <p class="proof-talk">{talk}</p>
+              <p class="proof-talk">
+                {link ? (
+                  <a href={link} class="link" target="_blank" rel="noopener noreferrer">{talk}</a>
+                ) : talk}
+              </p>
               {note && <p class="proof-note">{note}</p>}
             </li>
           ))}
