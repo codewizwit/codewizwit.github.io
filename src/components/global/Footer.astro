@@ -4,7 +4,15 @@
 <footer class="site-footer" role="contentinfo">
   <div class="footer-inner container">
     <p class="footer-line">
-      Alexandra Kelstrom <span class="dot">·</span> No Human Left Behind
+      <a class="footer-link footer-home" href="/">WIZWIT</a>
+      <span class="dot">·</span>
+      Alexandra Kelstrom <span class="dot">·</span> No Human Left Behind <span class="dot">·</span>
+      <a
+        class="footer-link"
+        href="https://github.com/codewizwit"
+        target="_blank"
+        rel="noopener noreferrer"
+      >GitHub</a>
     </p>
   </div>
 </footer>
@@ -29,6 +37,30 @@
     letter-spacing: 0.16em;
     color: var(--color-text-secondary);
     margin: 0;
+    text-align: center;
+  }
+
+  /* Inherits the footer line's mono caps; hover matches the header nav. */
+  .footer-link {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--space-3xs) var(--space-2xs);
+    transition:
+      color var(--duration-fast) var(--ease-out),
+      background-color var(--duration-fast) var(--ease-out);
+  }
+
+  .footer-link:hover,
+  .footer-link:focus-visible {
+    background-color: var(--color-cobalt);
+    color: var(--color-lime);
+  }
+
+  /* The one link on the page that always goes home, so it carries the mark. */
+  .footer-home {
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--color-text);
   }
 
   .dot {

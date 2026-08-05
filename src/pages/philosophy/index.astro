@@ -1,0 +1,796 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+
+/**
+ * One page, and the page is the diagram.
+ *
+ * Everything the argument needs is labelled inside the SVG, so there is no
+ * prose beneath it and nothing to click open. Two variants, wide and narrow,
+ * swapped by media query, and every label change has to land in both.
+ * `diagramAlt` is the only text equivalent, so it has to stay in step too.
+ *
+ * No JavaScript. Longer treatments get their own pages later, and the material
+ * for them already sits in `philosophyNodes[].sections` in the data file.
+ */
+
+const diagramAlt =
+  'One system in four layers. At the top, the north star: No Human Left Behind, technology, ethics, and humanity evolving together. An arrow labelled The Lift rises toward it, AI-assisted work that elevates everyone. Below that, the frameworks: a closed loop of four delivery stages. Requirements carries Shift Left, requirements, standards, and the test plan, up front. Build carries Encoding Intent, judgment goes in first and the model builds from it. Testing and audit carries The Four Lenses, does the tool serve the people it touches. Retro carries Capturing What Worked, encode what worked and what failed before it fades. A dashed prevention return runs from retro back to requirements, so every failure becomes a rule, a test, or a doc. The whole loop rests on Documentation as a System, the constant underneath every stage, which every stage reads from and writes back to. Inside it runs a one-way chain: teams write it and own the structure that fits how they work, which produces the gold source, the docs humans read, versioned, reviewed, and treated as code. From that gold source, and only in that direction, skills are derived and never duplicated, one gold copy for two audiences in that order, sized for an agent to load, regenerated when the source changes and never hand-edited. At the bottom, the infrastructure that keeps it true: human-in-the-loop keeps humans in the decision, das performs the derivation, and cpm keeps the standards in sync.';
+---
+
+<PageLayout
+  title="Philosophy"
+  description="A north star, a delivery loop, and the documentation system underneath it. One gold copy that people write and people read, with the agent view derived from it."
+>
+  <article class="phil" data-philosophy>
+    <!-- ================================================================
+         The map, and the map is the page. The diagram already carries the
+         north star and its tagline in its own type, so the heading here is
+         for document structure rather than a second visible statement of it.
+         ================================================================ -->
+    <section class="section section-cream phil-map" aria-labelledby="phil-heading">
+      <div class="container">
+        <p class="phil-eyebrow">Philosophy</p>
+        <h1 id="phil-heading" class="sr-only">No Human Left Behind</h1>
+        <figure class="phil-figure">
+          <!-- ============================================================
+               WIDE VARIANT
+               Left rail x=0..198 carries tier labels.
+               Content column x=200..996.
+               ============================================================ -->
+          <div class="phil-diagram phil-diagram--wide">
+            <svg
+              class="viz viz-wide"
+              viewBox="0 0 1000 1064"
+              role="img"
+              aria-label={diagramAlt}
+            >
+              <!-- ---------- Layer 1: north star ---------- -->
+              <rect class="rule" x="2" y="2" width="26" height="3"></rect>
+              <text class="eyb" x="2" y="24">NORTH STAR</text>
+              <text class="eyb-sub" x="2" y="44">where it all points</text>
+
+              <path
+                class="star"
+                d="M 598 40 Q 602 58 620 62 Q 602 66 598 84 Q 594 66 576 62 Q 594 58 598 40 Z"
+              ></path>
+              <text class="title" x="598" y="126" text-anchor="middle">
+                No Human Left Behind
+              </text>
+              <text class="title-sub" x="598" y="152" text-anchor="middle">
+                Technology, ethics, and humanity evolving together.
+              </text>
+
+              <!-- ---------- The Lift: the rise toward the star ---------- -->
+              <path
+                class="lift"
+                d="M 598 172 L 642 210 L 616 210 L 616 290 L 580 290 L 580 210 L 554 210 Z"
+              ></path>
+              <text class="flow" x="664" y="224">THE LIFT</text>
+              <text class="flow-sub" x="664" y="246">
+                AI-assisted work that elevates everyone
+              </text>
+
+              <!-- ---------- Layer 2: the delivery loop ---------- -->
+              <rect class="rule" x="2" y="302" width="26" height="3"></rect>
+              <text class="eyb" x="2" y="324">FRAMEWORKS</text>
+              <text class="eyb-sub" x="2" y="344">how the work is done</text>
+
+              <!-- prevention closes the loop over the top -->
+              <text class="flow" x="396" y="328">
+                PREVENTION
+                <tspan class="flow-sub" dx="14">
+                  every failure becomes a rule, a test, or a doc
+                </tspan>
+              </text>
+              <path class="line-back" d="M 904 364 V 342 H 292 V 352"></path>
+              <path class="head" d="M 286 352 L 292 364 L 298 352 Z"></path>
+
+              <g>
+                <rect class="box" x="200" y="364" width="184" height="120" rx="2"></rect>
+                <text class="stage" x="214" y="388">REQUIREMENTS</text>
+                <text class="num" x="364" y="388" text-anchor="end">01</text>
+                <text class="name" x="214" y="416">Shift Left</text>
+                <text class="desc" x="214" y="458">Requirements, standards,</text>
+                <text class="desc" x="214" y="474">and the test plan, up front.</text>
+              </g>
+              <g>
+                <rect class="box" x="404" y="364" width="184" height="120" rx="2"></rect>
+                <text class="stage" x="418" y="388">BUILD</text>
+                <text class="num" x="568" y="388" text-anchor="end">02</text>
+                <text class="name" x="418" y="416">Encoding Intent</text>
+                <text class="desc" x="418" y="458">Judgment goes in first.</text>
+                <text class="desc" x="418" y="474">The model builds from it.</text>
+              </g>
+              <g>
+                <rect class="box" x="608" y="364" width="184" height="120" rx="2"></rect>
+                <text class="stage" x="622" y="388">TESTING &amp; AUDIT</text>
+                <text class="num" x="772" y="388" text-anchor="end">03</text>
+                <text class="name" x="622" y="416">The Four Lenses</text>
+                <text class="desc" x="622" y="458">Does the tool serve the</text>
+                <text class="desc" x="622" y="474">people it touches?</text>
+              </g>
+              <g>
+                <rect class="box" x="812" y="364" width="184" height="120" rx="2"></rect>
+                <text class="stage" x="826" y="388">RETRO</text>
+                <text class="num" x="976" y="388" text-anchor="end">04</text>
+                <text class="name" x="826" y="416">Capturing What</text>
+                <text class="name" x="826" y="436">Worked</text>
+                <text class="desc" x="826" y="458">Encode what worked, and</text>
+                <text class="desc" x="826" y="474">what failed, before it fades.</text>
+              </g>
+
+              <g class="line">
+                <path d="M 385 428 H 396"></path>
+                <path d="M 589 428 H 600"></path>
+                <path d="M 793 428 H 804"></path>
+              </g>
+              <g class="head">
+                <path d="M 397 423 L 404 428 L 397 433 Z"></path>
+                <path d="M 601 423 L 608 428 L 601 433 Z"></path>
+                <path d="M 805 423 L 812 428 L 805 433 Z"></path>
+              </g>
+
+              <!-- ---------- Layer 3: the substrate the loop rests on ---------- -->
+              <rect class="rule" x="2" y="524" width="26" height="3"></rect>
+              <text class="eyb" x="2" y="546">DOCUMENTATION</text>
+              <text class="eyb" x="2" y="564">AS A SYSTEM</text>
+              <text class="eyb-sub" x="2" y="586">the constant underneath</text>
+              <text class="eyb-sub" x="2" y="602">every stage</text>
+
+              <rect class="panel" x="200" y="524" width="796" height="388" rx="3"></rect>
+
+              <!-- every stage ties down into the substrate -->
+              <g class="line">
+                <path d="M 292 484 V 524"></path>
+                <path d="M 496 484 V 524"></path>
+                <path d="M 700 484 V 524"></path>
+                <path d="M 904 484 V 524"></path>
+                <path d="M 200 524 H 996"></path>
+              </g>
+              <g class="dot">
+                <circle cx="292" cy="524" r="2.6"></circle>
+                <circle cx="496" cy="524" r="2.6"></circle>
+                <circle cx="700" cy="524" r="2.6"></circle>
+                <circle cx="904" cy="524" r="2.6"></circle>
+              </g>
+              <text class="note" x="980" y="548" text-anchor="end">
+                every stage reads from it, and writes back to it
+              </text>
+
+              <!-- the chain: people author it, the agent view is derived from it -->
+              <text class="note" x="598" y="580" text-anchor="middle">
+                teams write it, and own the structure that fits how they work
+              </text>
+              <path class="line" d="M 598 594 V 624"></path>
+              <path class="head" d="M 592 624 L 598 636 L 604 624 Z"></path>
+
+              <g>
+                <rect class="box-gold" x="428" y="636" width="340" height="104" rx="2"></rect>
+                <text class="tag" x="444" y="660">FOR HUMANS</text>
+                <text class="name-lg" x="444" y="690">The gold source</text>
+                <text class="tool-desc" x="444" y="714">
+                  the docs humans read, versioned, reviewed,
+                </text>
+                <text class="tool-desc" x="444" y="730">and treated as code.</text>
+              </g>
+
+              <path class="line" d="M 598 740 V 776"></path>
+              <path class="head" d="M 592 776 L 598 788 L 604 776 Z"></path>
+              <text class="flow" x="618" y="760">DERIVED, NEVER DUPLICATED</text>
+              <text class="flow-sub" x="618" y="780">
+                one gold copy, two audiences, in that order
+              </text>
+
+              <g>
+                <rect class="box" x="428" y="788" width="340" height="104" rx="2"></rect>
+                <text class="tag" x="444" y="812">FOR AGENTS</text>
+                <text class="name-lg" x="444" y="842">Skills an agent loads</text>
+                <text class="tool-desc" x="444" y="866">
+                  sized for an agent to load, regenerated
+                </text>
+                <text class="tool-desc" x="444" y="882">
+                  when the source changes. Never hand-edited.
+                </text>
+              </g>
+
+              <!-- ---------- Layer 4: infrastructure ---------- -->
+              <rect class="rule" x="2" y="948" width="26" height="3"></rect>
+              <text class="eyb" x="2" y="970">INFRASTRUCTURE</text>
+              <text class="eyb-sub" x="2" y="990">what keeps it true</text>
+
+              <g class="line">
+                <path d="M 326 948 V 560 H 240 V 536"></path>
+                <path d="M 598 948 V 904"></path>
+                <path d="M 870 948 V 840 H 780"></path>
+              </g>
+              <g class="head">
+                <path d="M 234 536 L 240 524 L 246 536 Z"></path>
+                <path d="M 592 904 L 598 892 L 604 904 Z"></path>
+                <path d="M 780 834 L 768 840 L 780 846 Z"></path>
+              </g>
+
+              <g>
+                <rect class="box" x="200" y="948" width="252" height="110" rx="2"></rect>
+                <text class="tool" x="216" y="976">human-in-the-loop</text>
+                <text class="tool-desc" x="216" y="1000">
+                  Keeps human judgment in the work,
+                </text>
+                <text class="tool-desc" x="216" y="1018">
+                  at the points where it matters.
+                </text>
+                <text class="meta" x="216" y="1044">KEEPS HUMANS IN THE DECISION</text>
+              </g>
+              <g>
+                <rect class="box" x="472" y="948" width="252" height="110" rx="2"></rect>
+                <text class="tool" x="488" y="976">das</text>
+                <text class="tool-desc" x="488" y="1000">
+                  Derives the skills from the gold
+                </text>
+                <text class="tool-desc" x="488" y="1018">
+                  source. Regenerates on change.
+                </text>
+                <text class="meta" x="488" y="1044">PERFORMS THE DERIVATION</text>
+              </g>
+              <g>
+                <rect class="box" x="744" y="948" width="252" height="110" rx="2"></rect>
+                <text class="tool" x="760" y="976">cpm</text>
+                <text class="tool-desc" x="760" y="1000">
+                  Distributes and syncs the agreed
+                </text>
+                <text class="tool-desc" x="760" y="1018">
+                  standards to every machine.
+                </text>
+                <text class="meta" x="760" y="1044">KEEPS THE STANDARDS IN SYNC</text>
+              </g>
+            </svg>
+
+          </div>
+
+          <!-- ============================================================
+               NARROW VARIANT
+               Left channel x=14 carries the prevention return and the
+               infrastructure bracket. Right channel x=376 carries the
+               substrate rail. Content x=34..364.
+               ============================================================ -->
+          <div class="phil-diagram phil-diagram--narrow">
+            <svg
+              class="viz viz-narrow"
+              viewBox="0 0 400 1878"
+              role="img"
+              aria-label={diagramAlt}
+            >
+              <!-- ---------- Layer 1: north star ---------- -->
+              <rect class="rule" x="34" y="2" width="24" height="3"></rect>
+              <text class="eyb" x="34" y="22">NORTH STAR</text>
+              <text class="eyb-sub" x="34" y="44">where it all points</text>
+
+              <path
+                class="star"
+                d="M 199 36 Q 202 52 216 58 Q 202 64 199 80 Q 196 64 182 58 Q 196 52 199 36 Z"
+              ></path>
+              <text class="title" x="199" y="112" text-anchor="middle">
+                No Human Left Behind
+              </text>
+              <text class="title-sub" x="199" y="136" text-anchor="middle">
+                Technology, ethics, and humanity
+              </text>
+              <text class="title-sub" x="199" y="154" text-anchor="middle">
+                evolving together.
+              </text>
+
+              <!-- ---------- The Lift ---------- -->
+              <path
+                class="lift"
+                d="M 140 176 L 168 202 L 152 202 L 152 262 L 128 262 L 128 202 L 112 202 Z"
+              ></path>
+              <text class="flow" x="186" y="208">THE LIFT</text>
+              <text class="flow-sub" x="186" y="228">AI-assisted work that</text>
+              <text class="flow-sub" x="186" y="246">elevates everyone</text>
+
+              <!-- ---------- Layer 2: the delivery loop ---------- -->
+              <rect class="rule" x="34" y="282" width="24" height="3"></rect>
+              <text class="eyb" x="34" y="302">FRAMEWORKS</text>
+              <text class="eyb-sub" x="34" y="322">how the work is done</text>
+
+              <g>
+                <rect class="box" x="34" y="342" width="330" height="92" rx="2"></rect>
+                <text class="stage" x="50" y="366">REQUIREMENTS</text>
+                <text class="num" x="348" y="366" text-anchor="end">01</text>
+                <text class="name" x="50" y="394">Shift Left</text>
+                <text class="desc" x="50" y="418">
+                  Requirements, standards, and test plan, up front.
+                </text>
+              </g>
+              <g>
+                <rect class="box" x="34" y="460" width="330" height="92" rx="2"></rect>
+                <text class="stage" x="50" y="484">BUILD</text>
+                <text class="num" x="348" y="484" text-anchor="end">02</text>
+                <text class="name" x="50" y="512">Encoding Intent</text>
+                <text class="desc" x="50" y="536">Judgment goes in first. The model builds from it.</text>
+              </g>
+              <g>
+                <rect class="box" x="34" y="578" width="330" height="92" rx="2"></rect>
+                <text class="stage" x="50" y="602">TESTING &amp; AUDIT</text>
+                <text class="num" x="348" y="602" text-anchor="end">03</text>
+                <text class="name" x="50" y="630">The Four Lenses</text>
+                <text class="desc" x="50" y="654">Does the tool serve the people it touches?</text>
+              </g>
+              <g>
+                <rect class="box" x="34" y="696" width="330" height="92" rx="2"></rect>
+                <text class="stage" x="50" y="720">RETRO</text>
+                <text class="num" x="348" y="720" text-anchor="end">04</text>
+                <text class="name" x="50" y="748">Capturing What Worked</text>
+                <text class="desc" x="50" y="772">Encode what worked and failed, before it fades</text>
+              </g>
+
+              <g class="line">
+                <path d="M 199 435 V 449"></path>
+                <path d="M 199 553 V 567"></path>
+                <path d="M 199 671 V 685"></path>
+              </g>
+              <g class="head">
+                <path d="M 193 450 L 199 460 L 205 450 Z"></path>
+                <path d="M 193 568 L 199 578 L 205 568 Z"></path>
+                <path d="M 193 686 L 199 696 L 205 686 Z"></path>
+              </g>
+
+              <!-- prevention closes the loop up the left channel -->
+              <path class="line-back" d="M 199 788 V 812 H 14 V 388 H 24"></path>
+              <path class="head" d="M 24 382 L 34 388 L 24 394 Z"></path>
+              <text class="flow" x="34" y="838">PREVENTION</text>
+              <text class="flow-sub" x="34" y="858">
+                every failure becomes a rule, a test, or a doc
+              </text>
+
+              <!-- every stage ties out to the substrate rail -->
+              <g class="line">
+                <path d="M 364 388 H 376"></path>
+                <path d="M 364 506 H 376"></path>
+                <path d="M 364 624 H 376"></path>
+                <path d="M 364 742 H 376"></path>
+                <path d="M 376 388 V 970"></path>
+              </g>
+              <g class="dot">
+                <circle cx="376" cy="388" r="2.6"></circle>
+                <circle cx="376" cy="506" r="2.6"></circle>
+                <circle cx="376" cy="624" r="2.6"></circle>
+                <circle cx="376" cy="742" r="2.6"></circle>
+              </g>
+
+              <!-- ---------- Layer 3: the substrate ---------- -->
+              <rect class="rule" x="34" y="884" width="24" height="3"></rect>
+              <text class="eyb" x="34" y="906">DOCUMENTATION</text>
+              <text class="eyb" x="34" y="924">AS A SYSTEM</text>
+              <text class="eyb-sub" x="34" y="946">
+                the constant underneath every stage
+              </text>
+
+              <rect class="panel" x="34" y="970" width="356" height="450" rx="3"></rect>
+              <path class="line" d="M 34 970 H 390"></path>
+
+              <text class="note" x="50" y="994">every stage reads from it,</text>
+              <text class="note" x="50" y="1012">and writes back to it</text>
+
+              <text class="note" x="212" y="1042" text-anchor="middle">
+                teams write it, and own the structure
+              </text>
+              <text class="note" x="212" y="1060" text-anchor="middle">
+                that fits how they work
+              </text>
+              <path class="line" d="M 212 1074 V 1092"></path>
+              <path class="head" d="M 206 1092 L 212 1104 L 218 1092 Z"></path>
+
+              <g>
+                <rect class="box-gold" x="50" y="1104" width="324" height="112" rx="2"></rect>
+                <text class="tag" x="66" y="1130">FOR HUMANS</text>
+                <text class="name-lg" x="66" y="1160">The gold source</text>
+                <text class="tool-desc" x="66" y="1186">
+                  the docs humans read, versioned,
+                </text>
+                <text class="tool-desc" x="66" y="1204">
+                  reviewed, and treated as code.
+                </text>
+              </g>
+
+              <text class="flow" x="212" y="1238" text-anchor="middle">
+                DERIVED, NEVER DUPLICATED
+              </text>
+              <text class="flow-sub" x="212" y="1256" text-anchor="middle">
+                one gold copy, two audiences, in that order
+              </text>
+              <path class="line" d="M 212 1264 V 1276"></path>
+              <path class="head" d="M 206 1276 L 212 1288 L 218 1276 Z"></path>
+
+              <g>
+                <rect class="box" x="50" y="1288" width="324" height="112" rx="2"></rect>
+                <text class="tag" x="66" y="1314">FOR AGENTS</text>
+                <text class="name-lg" x="66" y="1344">Skills an agent loads</text>
+                <text class="tool-desc" x="66" y="1370">
+                  sized for an agent to load, regenerated
+                </text>
+                <text class="tool-desc" x="66" y="1388">
+                  on change. Never hand-edited.
+                </text>
+              </g>
+
+              <!-- ---------- Layer 4: infrastructure ---------- -->
+              <rect class="rule" x="34" y="1446" width="24" height="3"></rect>
+              <text class="eyb" x="34" y="1468">INFRASTRUCTURE</text>
+              <text class="eyb-sub" x="34" y="1488">what keeps it true</text>
+
+              <g class="line">
+                <path d="M 14 1817 V 1432"></path>
+                <path d="M 14 1561 H 34"></path>
+                <path d="M 14 1689 H 34"></path>
+                <path d="M 14 1817 H 34"></path>
+              </g>
+              <path class="head" d="M 8 1432 L 14 1420 L 20 1432 Z"></path>
+              <g class="dot">
+                <circle cx="14" cy="1561" r="2.6"></circle>
+                <circle cx="14" cy="1689" r="2.6"></circle>
+                <circle cx="14" cy="1817" r="2.6"></circle>
+              </g>
+
+              <g>
+                <rect class="box" x="34" y="1506" width="330" height="110" rx="2"></rect>
+                <text class="tool" x="50" y="1534">human-in-the-loop</text>
+                <text class="tool-desc" x="50" y="1558">
+                  Keeps human judgment in the work, at
+                </text>
+                <text class="tool-desc" x="50" y="1576">
+                  the points where it actually matters.
+                </text>
+                <text class="meta" x="50" y="1602">KEEPS HUMANS IN THE DECISION</text>
+              </g>
+              <g>
+                <rect class="box" x="34" y="1634" width="330" height="110" rx="2"></rect>
+                <text class="tool" x="50" y="1662">das</text>
+                <text class="tool-desc" x="50" y="1686">
+                  Derives the skills from the gold source.
+                </text>
+                <text class="tool-desc" x="50" y="1704">
+                  Regenerates when the source changes.
+                </text>
+                <text class="meta" x="50" y="1730">PERFORMS THE DERIVATION</text>
+              </g>
+              <g>
+                <rect class="box" x="34" y="1762" width="330" height="110" rx="2"></rect>
+                <text class="tool" x="50" y="1790">cpm</text>
+                <text class="tool-desc" x="50" y="1814">
+                  Distributes and syncs the agreed
+                </text>
+                <text class="tool-desc" x="50" y="1832">
+                  standards to every machine.
+                </text>
+                <text class="meta" x="50" y="1858">KEEPS THE STANDARDS IN SYNC</text>
+              </g>
+            </svg>
+
+          </div>
+
+        </figure>
+
+      </div>
+    </section>
+
+  </article>
+</PageLayout>
+
+<style>
+  /* ============================================================
+     Page frame
+     ============================================================ */
+
+  .phil {
+    /* The diagram's card fill, and the lime that clears AA on cream at any
+       size. Neither exists in global.css yet. Everything else is a token. */
+    --phil-card-bg: #faf9f5;
+    --phil-lime-text: #5b770d;
+  }
+
+  .phil > .section {
+    padding-block: var(--space-lg);
+  }
+
+  .phil-eyebrow {
+    font-family: var(--font-code);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--phil-lime-text);
+  }
+
+  /* ============================================================
+     The map
+     ============================================================ */
+
+  .phil-figure {
+    padding-block: var(--space-md);
+  }
+
+  /* ============================================================
+     Diagram wrapper
+     Two variants, wide and narrow, swapped by media query.
+     ============================================================ */
+
+  .phil-diagram {
+    position: relative;
+  }
+
+  .phil-diagram--wide {
+    display: none;
+    width: 100%;
+  }
+
+  .phil-diagram--narrow {
+    display: block;
+    width: 100%;
+    max-width: 27rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 60rem) {
+    .phil-diagram--wide {
+      display: block;
+    }
+
+    .phil-diagram--narrow {
+      display: none;
+    }
+  }
+
+  @keyframes phil-rise {
+    from {
+      opacity: 0;
+      transform: translateY(0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ============================================================
+     Diagram: shared type and shapes
+     Lifted from the verified standalone, retokenised to the site.
+     ============================================================ */
+
+  .viz text {
+    font-family: var(--font-sans);
+    fill: var(--color-gray);
+  }
+
+  .viz .eyb {
+    font-family: var(--font-code);
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    fill: var(--phil-lime-text);
+  }
+
+  .viz .stage {
+    font-family: var(--font-code);
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    fill: var(--phil-lime-text);
+  }
+
+  .viz .tag {
+    font-family: var(--font-code);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    fill: var(--phil-lime-text);
+  }
+
+  .viz .num {
+    font-family: var(--font-code);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    fill: var(--color-gray);
+  }
+
+  .viz .name,
+  .viz .name-lg {
+    font-family: var(--font-display);
+    font-variation-settings: 'opsz' 30;
+    font-weight: 700;
+    fill: var(--color-black);
+  }
+
+  .viz .tool {
+    font-family: var(--font-code);
+    font-weight: 500;
+    fill: var(--color-black);
+  }
+
+  .viz .meta {
+    font-family: var(--font-code);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    fill: var(--phil-lime-text);
+  }
+
+  .viz .flow {
+    font-family: var(--font-code);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    fill: var(--color-cobalt-dark);
+  }
+
+  /* also used as a tspan inside .flow, so it must reset the inherited font */
+  .viz .flow-sub,
+  .viz .note {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: normal;
+    fill: var(--color-gray);
+  }
+
+  .viz .title {
+    font-family: var(--font-display);
+    font-variation-settings:
+      'opsz' 144,
+      'SOFT' 0,
+      'WONK' 0;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    fill: var(--color-black);
+  }
+
+  .viz .box {
+    fill: var(--phil-card-bg);
+    stroke: var(--color-gray-border);
+    stroke-width: 1;
+  }
+
+  /* the source carries the heavier border: it is the source, not a copy */
+  .viz .box-gold {
+    fill: var(--phil-card-bg);
+    stroke: var(--color-cobalt);
+    stroke-width: 1.5;
+  }
+
+  .viz .panel {
+    fill: rgba(31, 77, 216, 0.045);
+  }
+
+  .viz .rule {
+    fill: var(--color-lime);
+  }
+
+  .viz .star {
+    fill: var(--color-cobalt);
+  }
+
+  .viz .lift {
+    fill: rgba(31, 77, 216, 0.09);
+    stroke: var(--color-cobalt);
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+
+  .viz .line {
+    fill: none;
+    stroke: var(--color-cobalt);
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .viz .line-back {
+    fill: none;
+    stroke: var(--color-cobalt);
+    stroke-width: 1.6;
+    stroke-dasharray: 5 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .viz .head {
+    fill: var(--color-cobalt);
+  }
+
+  .viz .dot {
+    fill: var(--color-cobalt);
+  }
+
+  /* ---- Wide variant type scale ---- */
+  .viz-wide .eyb {
+    font-size: 11px;
+  }
+  .viz-wide .eyb-sub {
+    font-size: 13px;
+  }
+  .viz-wide .note {
+    font-size: 13px;
+  }
+  .viz-wide .stage {
+    font-size: 10px;
+  }
+  .viz-wide .tag {
+    font-size: 10px;
+  }
+  .viz-wide .num {
+    font-size: 10px;
+  }
+  .viz-wide .name {
+    font-size: 16.5px;
+  }
+  .viz-wide .name-lg {
+    font-size: 19px;
+  }
+  .viz-wide .desc {
+    font-size: 12px;
+  }
+  .viz-wide .tool {
+    font-size: 15px;
+  }
+  .viz-wide .tool-desc {
+    font-size: 12.5px;
+  }
+  .viz-wide .meta {
+    font-size: 10px;
+  }
+  .viz-wide .flow {
+    font-size: 11px;
+  }
+  .viz-wide .flow-sub {
+    font-size: 13px;
+  }
+  .viz-wide .title {
+    font-size: 38px;
+  }
+  .viz-wide .title-sub {
+    font-size: 15px;
+  }
+
+  /* ---- Narrow variant type scale ---- */
+  .viz-narrow .eyb {
+    font-size: 11.5px;
+  }
+  .viz-narrow .eyb-sub {
+    font-size: 13.5px;
+  }
+  .viz-narrow .note {
+    font-size: 13.5px;
+  }
+  .viz-narrow .stage {
+    font-size: 11.5px;
+  }
+  .viz-narrow .tag {
+    font-size: 11.5px;
+  }
+  .viz-narrow .num {
+    font-size: 11.5px;
+  }
+  .viz-narrow .name {
+    font-size: 19.5px;
+  }
+  .viz-narrow .name-lg {
+    font-size: 19.5px;
+  }
+  .viz-narrow .desc {
+    font-size: 13.5px;
+  }
+  .viz-narrow .tool {
+    font-size: 16px;
+  }
+  .viz-narrow .tool-desc {
+    font-size: 13.5px;
+  }
+  .viz-narrow .meta {
+    font-size: 11.5px;
+  }
+  .viz-narrow .flow {
+    font-size: 11.5px;
+  }
+  .viz-narrow .flow-sub {
+    font-size: 13.5px;
+  }
+  .viz-narrow .title {
+    font-size: 27px;
+  }
+  .viz-narrow .title-sub {
+    font-size: 13.5px;
+  }
+</style>

@@ -5,8 +5,9 @@ import Footer from '../components/global/Footer.astro';
 import HeroV2 from '../components/home/HeroV2.astro';
 import WorkGrid from '../components/home/WorkGrid.astro';
 import Manifesto from '../components/home/Manifesto.astro';
-import BeyondTheCode from '../components/home/BeyondTheCode.astro';
+import Proof from '../components/home/Proof.astro';
 import HotDogTeaser from '../components/home/HotDogTeaser.astro';
+import { playground } from '../data/work';
 ---
 
 <BaseLayout
@@ -17,8 +18,9 @@ import HotDogTeaser from '../components/home/HotDogTeaser.astro';
   <main id="main-content">
     <HeroV2 />
     <WorkGrid />
+    <WorkGrid id="playground" heading="Playground" items={playground} />
     <Manifesto />
-    <BeyondTheCode />
+    <Proof />
     <HotDogTeaser />
   </main>
   <Footer />
